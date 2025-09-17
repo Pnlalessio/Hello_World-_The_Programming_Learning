@@ -109,8 +109,7 @@ The system includes **2 action modules** and **7 hybrid modules** that encapsula
 
 ---
 
-## 👩‍💻 Authors
-- Jessica Frabotta –  
-- Alessio Ferrone –   
-
+## Authors
+- [@Pnlalessio](https://github.com/Pnlalessio)  
+- [@JessicaFrabotta](https://github.com/JessicaFrabotta)
 --- 
