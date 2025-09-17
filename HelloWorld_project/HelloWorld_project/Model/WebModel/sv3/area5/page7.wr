@@ -1,0 +1,78 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv3#area5#page7" name="Create new course">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="10" id="sv3#area5#page7#enu7" name="Add course" linkOrder="sv3#area5#page7#enu7#ln17">
+      <Field id="sv3#area5#page7#enu7#fld12" name="Name" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv3#area5#page7#enu7#fld12#mnd13" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="sv3#area5#page7#enu7#fld16" name="Description" type="text" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv3#area5#page7#enu7#fld16#mnd14" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Link id="sv3#area5#page7#enu7#ln17" name="Save" to="sv3#cru3" type="normal" validate="true">
+        <LinkParameter id="sv3#area5#page7#enu7#ln17#par24" name="Description_description" source="sv3#area5#page7#enu7#fld16" target="sv3#cru3.ent2#att10"/>
+        <LinkParameter id="sv3#area5#page7#enu7#ln17#par25" name="Name_Name" source="sv3#area5#page7#enu7#fld12" target="sv3#cru3.ent2#att7"/>
+        <LinkParameter id="sv3#area5#page7#enu7#ln17#par75" name="Category_Category.oid(CourseToCategory)" source="sv3#area5#page7#enu7#sfld1" target="sv3#cru3.rel4#role8.ent9#att22"/>
+      </Link>
+      <SelectionField id="sv3#area5#page7#enu7#sfld1" name="Category" type="string"/>
+    </EntryUnit>
+    <SelectorUnit gr:x="175" gr:y="0" id="sv3#area5#page7#seu4" name="Categories" entity="ent9">
+      <Link id="sv3#area5#page7#seu4#ln16" name="Flow16" to="sv3#area5#page7#enu7" type="transport" validate="true">
+        <LinkParameter id="sv3#area5#page7#seu4#ln16#par73" name="Category_Category [label]" source="ent9#att28Array" target="sv3#area5#page7#enu7#sfld1_label"/>
+        <LinkParameter id="sv3#area5#page7#seu4#ln16#par74" name="oid_Category [output]" source="ent9#att22Array" target="sv3#area5#page7#enu7#sfld1_output"/>
+      </Link>
+    </SelectorUnit>
+    <MultiMessageUnit id="sv3#area5#page7#mssu5" name="Operation outcome" gr:x="315" gr:y="10" messageFile="WEB-INF/descr/message1.template" linkOrder="sv3#area5#page7#mssu5#ln132">
+      <Link id="sv3#area5#page7#mssu5#ln132" name="Add content" to="sv3#area5#miu16" type="normal" validate="true" ajaxEnabled="false" ajaxOpenWindow="false" ajaxWindowUseTitle="false">
+        <LinkParameter id="sv3#area5#page7#mssu5#ln132#par102" name="oid_PASSING_Course key" sourceLinkParameter="sv3#cru10#oln12#par101" target="sv3#area5#miu16.mov1#hym5#icu8#icp4"/>
+      </Link>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv3#area5#page7#enu7">
+          <layout:Link link="sv3#area5#page7#enu7#ln17"/>
+          <layout:Field field="sv3#area5#page7#enu7#fld12"/>
+          <layout:Field field="sv3#area5#page7#enu7#fld16"/>
+          <layout:Field field="sv3#area5#page7#enu7#sfld1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv3#area5#page7#mssu5" layout:unitVisibilityCondition="sv3#area5#page7#cexpr1">
+          <layout:Link link="sv3#area5#page7#mssu5#ln132"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv3#area5#page7#var1" name="var1" value="0" type="integer"/>
+  <ConditionExpression id="sv3#area5#page7#cexpr1" name="ActivationExpression 1">
+    <TextValue xml:space="preserve">return (var1==1)</TextValue>
+  </ConditionExpression>
+</Page>

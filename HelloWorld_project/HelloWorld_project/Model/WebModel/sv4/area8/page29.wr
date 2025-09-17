@@ -1,0 +1,45 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area8#page29" name="View solution" layout:pageLayout="WRDefault/Empty" gr:x="5" gr:y="525">
+  <ContentUnits>
+    <DataUnit id="sv4#area8#page29#dau2" name="Private message answer" gr:x="0" gr:y="0" entity="ent10" displayAttributes="ent10#att45 ent10#att46 ent10#att49">
+      <Selector id="sv4#area8#page29#dau2#su28" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area8#page29#dau2#su28#kcond14" name="KeyCondition24" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area8#page29#dau2" layout:style="MetroStyle">
+          <layout:Attribute attribute="ent10#att45"/>
+          <layout:Attribute attribute="ent10#att46"/>
+          <layout:Attribute attribute="ent10#att49"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

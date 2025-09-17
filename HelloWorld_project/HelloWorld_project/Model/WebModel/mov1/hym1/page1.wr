@@ -1,0 +1,123 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="390" gr:y="345" id="mov1#hym1#page1" name="Registration" layout:frameLayout="None" layout:cellLayout="AdminLTE/Accordion" layout:expirePage="WRDefault/Redirect">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="mov1#hym1#page1#enu1" name="Registration form" entity="User" fieldOrder="mov1#hym1#page1#enu1#fld1 mov1#hym1#page1#enu1#fld2 mov1#hym1#page1#enu1#fld5 mov1#hym1#page1#enu1#fld6 mov1#hym1#page1#enu1#fld7 mov1#hym1#page1#enu1#fld8 mov1#hym1#page1#enu1#fld9 mov1#hym1#page1#enu1#msfld1" gr:showAllParts="false" linkOrder="mov1#hym1#page1#enu1#ln45">
+      <Field id="mov1#hym1#page1#enu1#fld1" name="Username" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym1#page1#enu1#fld1#mnd7" name="Mandatory username" errorMessage="Obbligatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym1#page1#enu1#fld2" name="Password" type="password" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym1#page1#enu1#fld2#mnd5" name="Mandatory password" errorMessage="Obbligatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym1#page1#enu1#fld5" name="Confirm password" type="password" modifiable="true" contentType="text/plain">
+        <VRules>
+          <CompareValidationRule id="mov1#hym1#page1#enu1#fld5#cmp1" name="Require Same Password" predicate="eq" valueField="mov1#hym1#page1#enu1#fld2" errorMessage="This field and password have to be equal!"/>
+          <MandatoryValidationRule id="mov1#hym1#page1#enu1#fld5#mnd1" name="Mandatory password" errorMessage="Obbligatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym1#page1#enu1#fld6" name="Email" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym1#page1#enu1#fld6#mnd2" name="Mandatory email" errorMessage="Obbligatory field"/>
+          <EMailValidationRule id="mov1#hym1#page1#enu1#fld6#email1" name="Email validation" errorMessage="Invalid Email"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym1#page1#enu1#fld7" name="First name" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym1#page1#enu1#fld7#mnd3" name="Mandatory first name" errorMessage="Obbligatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym1#page1#enu1#fld8" name="Last name" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym1#page1#enu1#fld8#mnd4" name="Mandatory last name" errorMessage="Obbligatory field"/>
+        </VRules>
+      </Field>
+      <MultiSelectionField id="mov1#hym1#page1#enu1#msfld1" type="string" name="Terms and Conditions">
+        <Slot id="mov1#hym1#page1#enu1#msfld1#slot1" name="Accept Terms and Conditions" label="true" output="true" value="Accept Terms and Conditions"/>
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym1#page1#enu1#msfld1#mnd6" name="Mandatory terms and conditions" errorMessage="Obbligatory field"/>
+        </VRules>
+      </MultiSelectionField>
+      <Field id="mov1#hym1#page1#enu1#fld9" name="Curriculum" type="blob" modifiable="true" contentType="application/pdf">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym1#page1#enu1#fld9#mnd8" name="Mandatory curriculum" errorMessage="Obbligatory field"/>
+        </VRules>
+      </Field>
+      <Link id="mov1#hym1#page1#enu1#ln45" name="Confirm" to="mov1#hym1#cru1" type="normal" validate="true">
+        <LinkParameter id="mov1#hym1#page1#enu1#ln45#par182" name="Email_Email" source="mov1#hym1#page1#enu1#fld6" target="mov1#hym1#cru1.email"/>
+        <LinkParameter id="mov1#hym1#page1#enu1#ln45#par183" name="First name_FirstName" source="mov1#hym1#page1#enu1#fld7" target="mov1#hym1#cru1.User#att1"/>
+        <LinkParameter id="mov1#hym1#page1#enu1#ln45#par184" name="Group[Group id]_PASSING_Group.oid(defaultGroup)" sourceLinkParameter="mov1#hym1#page8#enu4#ln3#par59" target="mov1#hym1#cru1.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="mov1#hym1#page1#enu1#ln45#par186" name="Group[Group id]_PASSING_Group.oid(groups)" sourceLinkParameter="mov1#hym1#page8#enu4#ln3#par59" target="mov1#hym1#cru1.User2Group.groupOID"/>
+        <LinkParameter id="mov1#hym1#page1#enu1#ln45#par187" name="Group[Approved]_PASSING_isApproved" sourceLinkParameter="mov1#hym1#page8#enu4#ln3#par57" target="mov1#hym1#cru1.User#att4"/>
+        <LinkParameter id="mov1#hym1#page1#enu1#ln45#par188" name="Last name_LastName" source="mov1#hym1#page1#enu1#fld8" target="mov1#hym1#cru1.User#att2"/>
+        <LinkParameter id="mov1#hym1#page1#enu1#ln45#par189" name="Password_Password" source="mov1#hym1#page1#enu1#fld2" target="mov1#hym1#cru1.password"/>
+        <LinkParameter id="mov1#hym1#page1#enu1#ln45#par190" name="Username_User Name" source="mov1#hym1#page1#enu1#fld1" target="mov1#hym1#cru1.userName"/>
+        <LinkParameter id="mov1#hym1#page1#enu1#ln45#par191" name="User Object_User Object" source="entityBean" target="mov1#hym1#cru1.entityBeans"/>
+        <LinkParameter id="mov1#hym1#page1#enu1#ln45#par192" name="Group[Group id]_PASSING" sourceLinkParameter="mov1#hym1#page8#enu4#ln3#par59" passing="true"/>
+        <LinkParameter id="mov1#hym1#page1#enu1#ln45#par194" name="Key [oid]_PASSING" source="key.userOID" passing="true"/>
+        <LinkParameter id="mov1#hym1#page1#enu1#ln45#par200" name="Curriculum_PASSING" source="mov1#hym1#page1#enu1#fld9" passing="true"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid" layout:frameLayout="AdminLTE/Default">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym1#page1#enu1">
+          <layout:Field field="mov1#hym1#page1#enu1#fld1"/>
+          <layout:Field field="mov1#hym1#page1#enu1#fld2"/>
+          <layout:Field field="mov1#hym1#page1#enu1#fld5"/>
+          <layout:Field field="mov1#hym1#page1#enu1#fld6"/>
+          <layout:Field field="mov1#hym1#page1#enu1#fld7"/>
+          <layout:Field field="mov1#hym1#page1#enu1#fld8"/>
+          <layout:Field field="mov1#hym1#page1#enu1#fld9" layout:fieldVisibilityCondition="mov1#hym1#page1#cexpr3"/>
+          <layout:Field field="mov1#hym1#page1#enu1#msfld1"/>
+          <layout:Link link="mov1#hym1#page1#enu1#ln45"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="mov1#hym1#page1#var2" name="isTutor" type="integer"/>
+  <ConditionExpression id="mov1#hym1#page1#cexpr3" name="TutorOrUser">
+    <TextValue xml:space="preserve">return (isTutor == 2)</TextValue>
+  </ConditionExpression>
+</Page>

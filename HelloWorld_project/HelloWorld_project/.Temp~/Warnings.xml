@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Warnings> 
+  <Warning xpath="id('sv2#miu3')" rootXPath="id('sv2')" error="false" label="sv2#miu3" key="NO_OUTGOING_OK_LINKS"> 
+    <Message>No outgoing OK flow(s) for the operation 'sv2#miu3'</Message> 
+  </Warning>  
+  <Warning xpath="id('sv2#miu3')" rootXPath="id('sv2')" error="false" label="sv2#miu3" key="NO_OUTGOING_KO_LINKS"> 
+    <Message>No outgoing KO flow(s) for the operation 'sv2#miu3'</Message> 
+  </Warning>  
+  <Warning xpath="id('sv2#miu4')" rootXPath="id('sv2')" error="false" label="sv2#miu4" key="NO_OUTGOING_OK_LINKS"> 
+    <Message>No outgoing OK flow(s) for the operation 'sv2#miu4'</Message> 
+  </Warning>  
+  <Warning xpath="id('sv2#area1#page4#enu2#fld4')" rootXPath="id('sv2')" label="Password"> 
+    <Message>Security Warning: the password field 'Password' does not have any validation to ensure password strength</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.AddMissingValidationRuleResolutionGenerator" validationRuleName="PasswordStrengthValidationRule">Add missing Password Strength validation rule</Resolution> 
+  </Warning>  
+  <Warning error="false" xpath="id('sv2#area1#page4')" rootXPath="id('sv2')" key="" label="Home Page"> 
+    <Message>Security Warning: the page 'Home Page' is public but no captcha field is configured on its form component</Message> 
+  </Warning>  
+  <Warning xpath="/WebProject" rootXPath="/WebProject" key="" label="WebProject"> 
+    <Message>Security Warning: the Admin Area generation is enabled</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.ChangeAttributeResolutionGenerator" attribute="adminArea" value="">Remove the 'Admin Area' property</Resolution> 
+  </Warning>  
+  <Warning xpath="/WebProject" rootXPath="/WebProject" key="" label="WebProject" tab="security"> 
+    <Message>Security Warning: the project contains a protected resource but the 'Protect URL' property is missing</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.ChangeAttributeResolutionGenerator" attribute="protectURL" value="true">Set the 'Protect URL' property to 'true'</Resolution> 
+  </Warning> 
+</Warnings>

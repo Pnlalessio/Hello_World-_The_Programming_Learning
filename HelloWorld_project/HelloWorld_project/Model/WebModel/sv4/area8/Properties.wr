@@ -1,0 +1,19 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-220" gr:y="830" id="sv4#area8" name="My courses" landmark="true" defaultPage="sv4#area8#page21">
+  <OperationUnits>
+    <CreateUnit gr:x="770" gr:y="585" id="sv4#area8#cru5" name="Create private message" entity="ent10"/>
+    <CreateUnit id="sv4#area8#cru13" name="Create post" gr:x="0" gr:y="155" entity="ent13"/>
+    <ModuleInstanceUnit gr:x="810" gr:y="50" id="sv4#area8#miu11" action="false" moduleId="mov1#hym2"/>
+    <CreateUnit gr:x="1675" gr:y="675" id="sv4#area8#cru15" name="Create feedback" entity="ent5"/>
+    <ModifyUnit gr:x="950" gr:y="840" id="sv4#area8#mfu6" name="Update feedback" entity="ent5">
+      <Selector id="sv4#area8#mfu6#su43" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area8#mfu6#su43#kcond24" name="KeyCondition24" predicate="in" implied="false"/>
+      </Selector>
+    </ModifyUnit>
+    <DeleteUnit gr:x="985" gr:y="420" id="sv4#area8#dlu7" name="Unfollow course" entity="ent8">
+      <Selector id="sv4#area8#dlu7#su42" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area8#dlu7#su42#kcond25" name="KeyCondition25" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv4#area8#dlu7#oln2" name="OKFlow2" to="sv4#area8#page21#pwu15" automaticCoupling="true"/>
+    </DeleteUnit>
+  </OperationUnits>
+</Area>

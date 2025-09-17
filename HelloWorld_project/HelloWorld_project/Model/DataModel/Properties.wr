@@ -1,0 +1,277 @@
+<DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
+  <Entity id="User" name="User" duration="persistent" gr:x="555" gr:y="250" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att1 User#att2 User#att4" db:database="db2" db:table="USER">
+    <Attribute name="oid" id="userOID" type="integer" key="true" db:column="OID" db:idGenerator="increment"/>
+    <Attribute name="User Name" id="userName" type="string" key="false" db:column="USER_NAME"/>
+    <Attribute name="Password" id="password" type="password" key="false" db:column="PASSWORD"/>
+    <Attribute name="Email" id="email" type="string" key="false" db:column="EMAIL"/>
+    <Attribute id="User#att1" name="FirstName" type="string" db:column="FIRSTNAME"/>
+    <Attribute id="User#att2" name="LastName" type="string" db:column="LASTNAME"/>
+    <Attribute id="User#att4" name="isApproved" type="integer" db:column="ISAPPROVED"/>
+  </Entity>
+  <Entity id="Group" name="Group" duration="persistent" gr:x="260" gr:y="315" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db2" db:table="GROUP">
+    <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="OID"/>
+    <Attribute name="groupName" id="groupName" type="string" db:column="GROUPNAME"/>
+  </Entity>
+  <Entity id="Module" name="Module" duration="persistent" gr:x="-20" gr:y="325" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db2" db:table="MODULE">
+    <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="OID"/>
+    <Attribute name="moduleID" id="moduleID" type="string" db:column="MODULEID"/>
+    <Attribute name="moduleName" id="moduleName" type="string" db:column="MODULENAME"/>
+  </Entity>
+  <Relationship id="User2Group_Group2User" name="User_Group" sourceEntity="User" targetEntity="Group" db:database="db2" db:table="USER_GROUP">
+    <RelationshipRole1 id="User2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Group2User" name="users" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="GROUP_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="113,42,-112,44" db:database="db2" db:table="USER">
+    <RelationshipRole1 id="User2DefaultGroup" name="defaultGroup" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultGroup2User" name="defaultUsers" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="GROUP_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Group2DefaultModule_DefaultModule2Group" name="Group_DefaultModule" sourceEntity="Group" targetEntity="Module" db:database="db2" db:table="GROUP">
+    <RelationshipRole1 id="Group2DefaultModule" name="defaultModule" maxCard="1">
+      <db:JoinColumn attribute="groupOID" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultModule2Group" name="defaultGroups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="MODULE_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Group2Module_Module2Group" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="110,41,-115,41" db:database="db2" db:table="GROUP_MODULE">
+    <RelationshipRole1 id="Group2Module" name="modules" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="GROUP_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Module2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="MODULE_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <db:Database id="db2" name="DB" type="Apache Derby" url="jdbc:derby://localhost:1527/hello_world;create=true" username="user" cryptedPassword="true" password="dXNlcg==" schema="APP"/>
+  <Entity gr:x="400" gr:y="110" id="ent3" name="Curriculum" duration="persistent" attributeOrder="ent3#att8 ent3#att9" db:database="db2" db:table="CURRICULUM">
+    <Attribute id="ent3#att8" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent3#att9" name="Curriculum" type="blob" db:column="CURRICULUM"/>
+  </Entity>
+  <Relationship id="rel3" name="User_Curriculum" sourceEntity="User" targetEntity="ent3" db:database="db2" db:table="CURRICULUM">
+    <RelationshipRole1 id="rel3#role5" name="UserToCurriculum" maxCard="1" cascadeDelete="true">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel3#role6" name="CurriculumToUser" maxCard="1">
+      <db:JoinColumn attribute="ent3#att8" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="1095" gr:y="60" id="ent2" name="Course" duration="persistent" attributeOrder="ent2#att6 ent2#att7 ent2#att10 ent2#att26 ent2#att27" db:database="db2" db:table="COURSE">
+    <Attribute id="ent2#att6" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent2#att7" name="Name" type="string" db:column="NAME"/>
+    <Attribute id="ent2#att10" name="description" type="text" db:column="DESCRIPTION" db:clob="true"/>
+    <Attribute id="ent2#att26" name="avgrating" type="float" derivationQuery="calculated::avg(Self.rel8#role15(as Var1).ent5#att24)" db:table="COURSE_AVGRATING_VIEW" db:column="DER_ATTR" storageType="file">
+      <db:JoinColumn attribute="ent2#att6" name="OID"/>
+    </Attribute>
+    <Attribute id="ent2#att27" name="#followers" type="integer" derivationQuery="calculated::count(Self.rel10#role20(as Var1))" db:table="COURSE_FOLLOWERS_VIEW" db:column="DER_ATTR" storageType="file">
+      <db:JoinColumn attribute="ent2#att6" name="OID"/>
+    </Attribute>
+  </Entity>
+  <Relationship id="rel1" name="User_Course" sourceEntity="User" targetEntity="ent2" db:database="db2" db:table="COURSE">
+    <RelationshipRole1 id="rel1#role1" name="UserToCourse" maxCard="N" cascadeDelete="true">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel1#role2" name="CourseToUser" maxCard="1">
+      <db:JoinColumn attribute="ent2#att6" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="1415" gr:y="370" id="ent4" name="Lesson" duration="persistent" attributeOrder="ent4#att14" db:database="db2" db:table="LESSON">
+    <Attribute id="ent4#att14" name="Video" type="blob" db:column="VIDEO"/>
+    <Generalization superEntity="ent6">
+      <db:JoinColumn attribute="ent6#att17" name="CONTENT_OID"/>
+    </Generalization>
+  </Entity>
+  <Entity gr:x="1355" gr:y="180" id="ent6" name="Content" duration="persistent" attributeOrder="ent6#att17 ent6#att18 ent6#att19 ent6#att20" db:database="db2" db:table="CONTENT">
+    <Attribute id="ent6#att17" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent6#att18" name="Order" type="integer" db:column="ORDER"/>
+    <Attribute id="ent6#att19" name="Name" type="string" db:column="NAME"/>
+    <Attribute id="ent6#att20" name="Description" type="text" db:column="DESCRIPTION" db:clob="true"/>
+  </Entity>
+  <Relationship id="rel6" name="Course_Content" sourceEntity="ent2" targetEntity="ent6" db:database="db2" db:table="CONTENT">
+    <RelationshipRole1 id="rel6#role11" name="CourseToContent" maxCard="N" cascadeDelete="true">
+      <db:JoinColumn attribute="ent2#att6" name="COURSE_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel6#role12" name="ContentToCourse" maxCard="1">
+      <db:JoinColumn attribute="ent6#att17" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="760" gr:y="115" id="ent9" name="Category" duration="persistent" attributeOrder="ent9#att22 ent9#att28 ent9#att29" db:database="db2" db:table="CATEGORY">
+    <Attribute id="ent9#att22" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent9#att28" name="Category" type="string" db:column="CATEGORY"/>
+    <Attribute id="ent9#att29" name="#courses" type="integer" derivationQuery="calculated::count(Self.rel4#role7(as Var1))" db:table="CATEGORY_COURSES_VIEW" db:column="DER_ATTR" storageType="file">
+      <db:JoinColumn attribute="ent9#att22" name="OID"/>
+    </Attribute>
+  </Entity>
+  <Relationship id="rel4" name="Category_Course" sourceEntity="ent9" targetEntity="ent2" db:database="db2" db:table="COURSE">
+    <RelationshipRole1 id="rel4#role7" name="CategoryToCourse" maxCard="N">
+      <db:JoinColumn attribute="ent9#att22" name="CATEGORY_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel4#role8" name="CourseToCategory" maxCard="1">
+      <db:JoinColumn attribute="ent2#att6" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="70" gr:y="50" id="ent1" name="Support" duration="persistent" attributeOrder="ent1#att3 ent1#att5 ent1#att11 ent1#att12 ent1#att13 ent1#att15 ent1#att16 ent1#att30" db:database="db2" db:table="SUPPORT">
+    <Attribute id="ent1#att3" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent1#att5" name="Title" type="string" db:column="TITLE"/>
+    <Attribute id="ent1#att11" name="Description" type="text" db:column="DESCRIPTION" db:clob="true"/>
+    <Attribute id="ent1#att12" name="Status " type="string" db:column="STATUS"/>
+    <Attribute id="ent1#att13" name="Solution" type="text" db:column="SOLUTION" db:clob="true"/>
+    <Attribute id="ent1#att15" name="Insertion date" type="date" db:column="INSERTION_DATE"/>
+    <Attribute id="ent1#att16" name="UserOid" type="integer" derivationQuery="simpleImported::Self.rel2#role3.userOID"/>
+    <Attribute id="ent1#att30" name="UserName" type="string" derivationQuery="simpleImported::Self.rel2#role3.userName"/>
+  </Entity>
+  <Relationship id="rel2" name="Support_User" sourceEntity="ent1" targetEntity="User" db:database="db2" db:table="SUPPORT">
+    <RelationshipRole1 id="rel2#role3" name="SupportToUser" maxCard="1" cascadeDelete="true">
+      <db:JoinColumn attribute="ent1#att3" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel2#role4" name="UserToSupport" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity id="ent8" name="Course followed" duration="persistent" attributeOrder="ent8#att33 ent8#att34" gr:x="940" gr:y="625" db:database="db2" db:table="COURSE_FOLLOWED">
+    <Attribute id="ent8#att33" name="oid" key="true" type="integer" db:column="OID"/>
+    <Attribute id="ent8#att34" name="Start date" type="date" db:column="START_DATE"/>
+  </Entity>
+  <Relationship id="rel9" name="User_Courses followed" sourceEntity="User" targetEntity="ent8" db:database="db2" db:table="COURSE_FOLLOWED">
+    <RelationshipRole1 id="rel9#role17" name="UserToCourses followed" maxCard="N" cascadeDelete="true">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel9#role18" name="Courses followedToUser" maxCard="1">
+      <db:JoinColumn attribute="ent8#att33" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel10" name="Courses followed_Course" sourceEntity="ent8" targetEntity="ent2" db:database="db2" db:table="COURSE_FOLLOWED">
+    <RelationshipRole1 id="rel10#role19" name="Courses followedToCourse" maxCard="1">
+      <db:JoinColumn attribute="ent8#att33" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel10#role20" name="CourseToCourses followed" maxCard="N">
+      <db:JoinColumn attribute="ent2#att6" name="COURSE_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="1125" gr:y="715" id="ent12" name="Forum" duration="persistent" attributeOrder="ent12#att38 ent12#att54" db:database="db2" db:table="FORUM">
+    <Attribute id="ent12#att38" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent12#att54" name="Name" type="string" derivationQuery="simpleImported::Self.rel11#role22.ent2#att7"/>
+  </Entity>
+  <Relationship id="rel11" name="Course_Forum" sourceEntity="ent2" targetEntity="ent12" db:database="db2" db:table="FORUM">
+    <RelationshipRole1 id="rel11#role21" name="CourseToForum" maxCard="1" cascadeDelete="true">
+      <db:JoinColumn attribute="ent2#att6" name="COURSE_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel11#role22" name="ForumToCourse" maxCard="1">
+      <db:JoinColumn attribute="ent12#att38" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="550" gr:y="610" id="ent13" name="Post" duration="persistent" attributeOrder="ent13#att40 ent13#att41 ent13#att42 ent13#att21 ent13#att35" db:database="db2" db:table="POST">
+    <Attribute id="ent13#att40" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent13#att41" name="Title" type="string" db:column="TITLE"/>
+    <Attribute id="ent13#att42" name="Description" type="text" db:column="DESCRIPTION" db:clob="true"/>
+    <Attribute id="ent13#att21" name="Insert Time" type="timestamp" db:column="INSERT_TIME"/>
+    <Attribute id="ent13#att35" name="Username" type="string" derivationQuery="simpleImported::Self.rel17#role34.userName"/>
+  </Entity>
+  <Relationship id="rel13" name="Post_Forum" sourceEntity="ent13" targetEntity="ent12" db:database="db2" db:table="POST">
+    <RelationshipRole1 id="rel13#role25" name="PostToForum" maxCard="1" cascadeDelete="true">
+      <db:JoinColumn attribute="ent13#att40" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel13#role26" name="ForumToPost" maxCard="N">
+      <db:JoinColumn attribute="ent12#att38" name="FORUM_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="215" gr:y="465" id="ent14" name="Comment" duration="persistent" attributeOrder="ent14#att43 ent14#att44 ent14#att31 ent14#att36" db:database="db2" db:table="COMMENT">
+    <Attribute id="ent14#att43" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent14#att44" name="Comment" type="text" db:column="COMMENT" db:clob="true"/>
+    <Attribute id="ent14#att31" name="Insert Time" type="timestamp" db:column="INSERT_TIME"/>
+    <Attribute id="ent14#att36" name="Username" type="string" derivationQuery="simpleImported::Self.rel15#role30.userName"/>
+  </Entity>
+  <Relationship id="rel14" name="Comment_Post" sourceEntity="ent14" targetEntity="ent13" db:database="db2" db:table="COMMENT">
+    <RelationshipRole1 id="rel14#role27" name="CommentToPost" maxCard="1" cascadeDelete="true">
+      <db:JoinColumn attribute="ent14#att43" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel14#role28" name="PostToComment" maxCard="N">
+      <db:JoinColumn attribute="ent13#att40" name="POST_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel15" name="User_Comment" sourceEntity="User" targetEntity="ent14" db:database="db2" db:table="COMMENT">
+    <RelationshipRole1 id="rel15#role29" name="UserToComment" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel15#role30" name="CommentToUser" maxCard="1">
+      <db:JoinColumn attribute="ent14#att43" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel17" name="User_Post" sourceEntity="User" targetEntity="ent13" db:database="db2" db:table="POST">
+    <RelationshipRole1 id="rel17#role33" name="UserToPost" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel17#role34" name="PostToUser" maxCard="1">
+      <db:JoinColumn attribute="ent13#att40" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="855" gr:y="300" id="ent10" name="Private message" duration="persistent" attributeOrder="ent10#att37 ent10#att45 ent10#att46 ent10#att47 ent10#att48 ent10#att49 ent10#att50" db:database="db2" db:table="PRIVATE_MESSAGE">
+    <Attribute id="ent10#att37" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent10#att45" name="Title" type="string" db:column="TITLE"/>
+    <Attribute id="ent10#att46" name="Description" type="text" db:column="DESCRIPTION" db:clob="true"/>
+    <Attribute id="ent10#att47" name="Status" type="string" db:column="STATUS"/>
+    <Attribute id="ent10#att48" name="Instertion date" type="date" db:column="INSTERTION_DATE"/>
+    <Attribute id="ent10#att49" name="Answer" type="text" db:column="ANSWER" db:clob="true"/>
+    <Attribute id="ent10#att50" name="UserName" type="string" derivationQuery="simpleImported::Self.rel5#role10.userName"/>
+  </Entity>
+  <Relationship id="rel5" name="User_Private message" sourceEntity="User" targetEntity="ent10" db:database="db2" db:table="PRIVATE_MESSAGE">
+    <RelationshipRole1 id="rel5#role9" name="UserToPrivate message" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel5#role10" name="Private messageToUser" maxCard="1">
+      <db:JoinColumn attribute="ent10#att37" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel7" name="Private message_Course" sourceEntity="ent10" targetEntity="ent2" db:database="db2" db:table="PRIVATE_MESSAGE">
+    <RelationshipRole1 id="rel7#role13" name="Private messageToCourse" maxCard="1">
+      <db:JoinColumn attribute="ent10#att37" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel7#role14" name="CourseToPrivate message" maxCard="N">
+      <db:JoinColumn attribute="ent2#att6" name="COURSE_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="1225" gr:y="370" id="ent7" name="Exercise" duration="persistent" attributeOrder="ent7#att51" db:database="db2" db:table="EXERCISE">
+    <Generalization superEntity="ent6">
+      <db:JoinColumn attribute="ent6#att17" name="CONTENT_OID"/>
+    </Generalization>
+    <Attribute id="ent7#att51" name="Solution" type="string" db:column="SOLUTION"/>
+  </Entity>
+  <Entity gr:x="1250" gr:y="500" id="ent11" name="Option" duration="persistent" attributeOrder="ent11#att52 ent11#att53" db:database="db2" db:table="OPTION">
+    <Attribute id="ent11#att52" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent11#att53" name="Option" type="string" db:column="OPTION"/>
+  </Entity>
+  <Relationship id="rel12" name="Exercise_Options" sourceEntity="ent7" targetEntity="ent11" db:database="db2" db:table="OPTION">
+    <RelationshipRole1 id="rel12#role23" name="ExerciseToOptions" maxCard="N" cascadeDelete="true">
+      <db:JoinColumn attribute="ent6#att17" name="EXERCISE_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel12#role24" name="OptionsToExercise" maxCard="1">
+      <db:JoinColumn attribute="ent11#att52" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="650" gr:y="-15" id="ent5" name="Feedback" duration="persistent" attributeOrder="ent5#att23 ent5#att24" db:database="db2" db:table="FEEDBACK">
+    <Attribute id="ent5#att23" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent5#att24" name="rating" type="integer" db:column="RATING"/>
+  </Entity>
+  <Relationship id="rel8" name="Course_Feedback" sourceEntity="ent2" targetEntity="ent5" db:database="db2" db:table="FEEDBACK">
+    <RelationshipRole1 id="rel8#role15" name="CourseToFeedback" maxCard="N">
+      <db:JoinColumn attribute="ent2#att6" name="COURSE_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel8#role16" name="FeedbackToCourse" maxCard="1">
+      <db:JoinColumn attribute="ent5#att23" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel16" name="User_Feedback" sourceEntity="User" targetEntity="ent5" db:database="db2" db:table="FEEDBACK">
+    <RelationshipRole1 id="rel16#role31" name="UserToFeedback" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel16#role32" name="FeedbackToUser" maxCard="1">
+      <db:JoinColumn attribute="ent5#att23" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+</DataModel>

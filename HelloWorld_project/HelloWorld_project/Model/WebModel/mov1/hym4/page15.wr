@@ -1,0 +1,86 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="435" gr:y="90" id="mov1#hym4#page15" name="Profile info">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym4#page15#enu5" name="Profile data" gr:showAllParts="false" gr:x="25" gr:y="160" entity="User" fieldOrder="mov1#hym4#page15#enu5#fld10 mov1#hym4#page15#enu5#fld13 mov1#hym4#page15#enu5#fld14 mov1#hym4#page15#enu5#fld15" linkOrder="mov1#hym4#page15#enu5#ln69 mov1#hym4#page15#enu5#ln46">
+      <Field id="mov1#hym4#page15#enu5#fld10" name="Username" type="string" modifiable="true" preloaded="true" attribute="userName">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym4#page15#enu5#fld10#mnd23" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym4#page15#enu5#fld13" name="Email" type="string" modifiable="true" preloaded="true" attribute="email">
+        <VRules>
+          <EMailValidationRule id="mov1#hym4#page15#enu5#fld13#email2" name="Email validation" errorMessage="Invalid Email"/>
+          <MandatoryValidationRule id="mov1#hym4#page15#enu5#fld13#mnd20" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym4#page15#enu5#fld14" name="First name" type="string" modifiable="true" preloaded="true" attribute="User#att1">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym4#page15#enu5#fld14#mnd21" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym4#page15#enu5#fld15" name="Last name" type="string" modifiable="true" preloaded="true" attribute="User#att2">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym4#page15#enu5#fld15#mnd22" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Link id="mov1#hym4#page15#enu5#ln46" name="Cancel" to="mov1#hym4#okcu2" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="mov1#hym4#page15#enu5#ln69" name="Save" to="mov1#hym4#mfu9" type="normal" validate="true">
+        <LinkParameter id="mov1#hym4#page15#enu5#ln69#par122" name="Email_Email" source="mov1#hym4#page15#enu5#fld13" target="mov1#hym4#mfu9.email"/>
+        <LinkParameter id="mov1#hym4#page15#enu5#ln69#par124" name="First name_FirstName" source="mov1#hym4#page15#enu5#fld14" target="mov1#hym4#mfu9.User#att1"/>
+        <LinkParameter id="mov1#hym4#page15#enu5#ln69#par126" name="Last name_LastName" source="mov1#hym4#page15#enu5#fld15" target="mov1#hym4#mfu9.User#att2"/>
+        <LinkParameter id="mov1#hym4#page15#enu5#ln69#par127" name="Username_User Name" source="mov1#hym4#page15#enu5#fld10" target="mov1#hym4#mfu9.userName"/>
+        <LinkParameter id="mov1#hym4#page15#enu5#ln69#par131" name="Key [oid]_KeyCondition8 [oid]" source="key.userOID" target="mov1#hym4#mfu9#su29#kcond8.userOID"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit id="mov1#hym4#page15#seu6" name="Retrieve profile data" gr:x="0" gr:y="0" entity="User" distinctAttributes="userName email User#att1 User#att2 userOID">
+      <Selector id="mov1#hym4#page15#seu6#su27" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym4#page15#seu6#su27#kcond21" name="KeyCondition17" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#hym4#page15#seu6#ln36" name="Flow23" to="mov1#hym4#page15#enu5" type="transport" validate="true">
+        <LinkParameter id="mov1#hym4#page15#seu6#ln36#par81" name="oid_Key Condition [oid]" source="userOIDArray" target="mov1#hym4#page15#enu5.userOID"/>
+        <LinkParameter id="mov1#hym4#page15#seu6#ln36#par82" name="Email_Email" source="emailArray" target="mov1#hym4#page15#enu5#fld13_slot"/>
+        <LinkParameter id="mov1#hym4#page15#seu6#ln36#par83" name="FirstName_First name" source="User#att1Array" target="mov1#hym4#page15#enu5#fld14_slot"/>
+        <LinkParameter id="mov1#hym4#page15#seu6#ln36#par85" name="LastName_Last name" source="User#att2Array" target="mov1#hym4#page15#enu5#fld15_slot"/>
+        <LinkParameter id="mov1#hym4#page15#seu6#ln36#par86" name="User Name_Username" source="userNameArray" target="mov1#hym4#page15#enu5#fld10_slot"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym4#page15#enu5">
+          <layout:Field field="mov1#hym4#page15#enu5#fld10"/>
+          <layout:Field field="mov1#hym4#page15#enu5#fld13"/>
+          <layout:Field field="mov1#hym4#page15#enu5#fld14"/>
+          <layout:Field field="mov1#hym4#page15#enu5#fld15"/>
+          <layout:Link link="mov1#hym4#page15#enu5#ln69"/>
+          <layout:Link link="mov1#hym4#page15#enu5#ln46"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

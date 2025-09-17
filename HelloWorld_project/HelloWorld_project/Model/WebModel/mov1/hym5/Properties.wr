@@ -1,0 +1,22 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="510" gr:y="325" id="mov1#hym5" name="Add content">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="125" gr:y="230" id="mov1#hym5#icu8">
+      <InputCollectorParameter id="mov1#hym5#icu8#icp4" name="Course key"/>
+      <OKLink id="mov1#hym5#icu8#oln50" name="OKFlow50" to="mov1#hym5#page22#pwu10">
+        <LinkParameter id="mov1#hym5#icu8#oln50#par225" name="Course key_RoleCondition2 [oid]" source="mov1#hym5#icu8#icp4" target="mov1#hym5#page22#pwu10#su38#rcond8.ent2#att6"/>
+        <LinkParameter id="mov1#hym5#icu8#oln50#par253" name="Course key_PASSING" source="mov1#hym5#icu8#icp4" passing="true"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="610" gr:y="410" id="mov1#hym5#cru7" name="Create lesson" entity="ent4">
+      <OKLink id="mov1#hym5#cru7#oln56" name="OKFlow56" to="mov1#hym5#page22" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit gr:x="555" gr:y="-20" id="mov1#hym5#cru8" name="Create exercise" entity="ent7">
+      <OKLink id="mov1#hym5#cru8#oln58" name="OKFlow58" to="mov1#hym5#miu17" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowResizable="true" ajaxWindowWidth="500" ajaxWindowHeight="500" ajaxWindowClosable="false" ajaxWindowModal="true">
+        <LinkParameter id="mov1#hym5#cru8#oln58#par269" name="oid_Exercise key" source="ent6#att17Array" target="mov1#hym5#miu17.mov1#hym6#icu12#icp18"/>
+      </OKLink>
+    </CreateUnit>
+    <ModuleInstanceUnit gr:x="825" gr:y="150" id="mov1#hym5#miu17" action="false" moduleId="mov1#hym6">
+      <OKLink id="mov1#hym5#miu17#oln63" name="OKFlow63" to="mov1#hym5#page22#pwu10" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</HybridModule>

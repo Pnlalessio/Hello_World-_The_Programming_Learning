@@ -1,0 +1,202 @@
+[10 giu 2023 19:06:49] Building database metadata model
+[10 giu 2023 19:06:49] Properties: {partialRefresh=false, processColumnsUsingSelect=, includePrimaryKeys=true, eventSocketClient=com.webratio.commons.net.EventSocketClient@7ec23849, includeTables=true, username=user, outputLogPath=C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\HelloWorld_project\.Temp~\DB.xml.log, readIndexes=null, driverClass=org.apache.derby.jdbc.ClientDriver, includeSynonyms=true, metaDataProviderClass=com.webratio.commons.db.metadata.DerbyMetaDataProvider, outputPath=C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\HelloWorld_project\.Temp~\DB.xml, schemaRegex=null, readProcedures=null, includeViews=true, derby.system.home=C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\.metadata\.plugins\com.webratio.commons.db\derby, url=jdbc:derby://localhost:1527/hello_world;create=true, tableRegex=null, readSQLDefinitions=true, includeForeignKeys=false, retrieveAllNames=false, tablesToRefresh=, eventSocketPort=62057}
+[10 giu 2023 19:06:49] URL: jdbc:derby://localhost:1527/hello_world;create=true
+[10 giu 2023 19:06:49] Product name: Apache Derby
+[10 giu 2023 19:06:49] Product version: 10.5.3.0 - (802917)
+[10 giu 2023 19:06:49] Driver name: Apache Derby Network Client JDBC Driver
+[10 giu 2023 19:06:49] Driver version: 10.5.3.0 - (802917)
+[10 giu 2023 19:06:49] Driver major version: 10
+[10 giu 2023 19:06:49] Driver minor version: 5
+[10 giu 2023 19:06:49] Identifier quote string: 5
+[10 giu 2023 19:06:49] Retrieving schemas
+[10 giu 2023 19:06:49]   Found schema: APP
+[10 giu 2023 19:06:49]   Found schema: NULLID
+[10 giu 2023 19:06:49]   Found schema: SQLJ
+[10 giu 2023 19:06:49]   Found schema: SYS
+[10 giu 2023 19:06:49]   Found schema: SYSCAT
+[10 giu 2023 19:06:49]   Found schema: SYSCS_DIAG
+[10 giu 2023 19:06:49]   Found schema: SYSCS_UTIL
+[10 giu 2023 19:06:49]   Found schema: SYSFUN
+[10 giu 2023 19:06:49]   Found schema: SYSIBM
+[10 giu 2023 19:06:49]   Found schema: SYSPROC
+[10 giu 2023 19:06:49]   Found schema: SYSSTAT
+[10 giu 2023 19:06:49] Retrieving [TABLE, VIEW, SYNONYM] for schema 'APP'
+[10 giu 2023 19:06:49]   Found 'APP.CATEGORY' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.COMMENT' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.CONTENT' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.COURSE' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.COURSE_FOLLOWED' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.CURRICULUM' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.EXERCISE' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.FEEDBACK' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.FORUM' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.GROUP' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.GROUP_MODULE' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.LESSON' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.MODULE' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.OPTION' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.POST' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.PRIVATE_MESSAGE' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.SUPPORT' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.USER' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.USER_GROUP' [type = TABLE]
+[10 giu 2023 19:06:49]   Found 'APP.CATEGORY_COURSES_VIEW' [type = VIEW]
+[10 giu 2023 19:06:49]   Found 'APP.COURSE_AVGRATING_VIEW' [type = VIEW]
+[10 giu 2023 19:06:49]   Found 'APP.COURSE_FOLLOWERS_VIEW' [type = VIEW]
+[10 giu 2023 19:06:49] Retrieving [TABLE, VIEW, SYNONYM] for schema 'NULLID'
+[10 giu 2023 19:06:49] Retrieving [TABLE, VIEW, SYNONYM] for schema 'SQLJ'
+[10 giu 2023 19:06:50] Retrieving [TABLE, VIEW, SYNONYM] for schema 'SYSCAT'
+[10 giu 2023 19:06:50] Retrieving [TABLE, VIEW, SYNONYM] for schema 'SYSCS_DIAG'
+[10 giu 2023 19:06:50] Retrieving [TABLE, VIEW, SYNONYM] for schema 'SYSCS_UTIL'
+[10 giu 2023 19:06:50] Retrieving [TABLE, VIEW, SYNONYM] for schema 'SYSFUN'
+[10 giu 2023 19:06:50] Retrieving [TABLE, VIEW, SYNONYM] for schema 'SYSPROC'
+[10 giu 2023 19:06:50] Retrieving [TABLE, VIEW, SYNONYM] for schema 'SYSSTAT'
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.CATEGORY' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: CATEGORY [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.CATEGORY' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.COMMENT' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: COMMENT [type = CLOB][SQL/XOPEN type = 2005][size = 10000][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: INSERT_TIME [type = TIMESTAMP][SQL/XOPEN type = 93][size = 26][dec. digits = 6]
+[10 giu 2023 19:06:50]   Found column: POST_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: USER_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.COMMENT' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.CONTENT' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: ORDER [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: NAME [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: DESCRIPTION [type = CLOB][SQL/XOPEN type = 2005][size = 10000][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: COURSE_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.CONTENT' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.COURSE' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: NAME [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: DESCRIPTION [type = CLOB][SQL/XOPEN type = 2005][size = 10000][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: USER_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: CATEGORY_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.COURSE' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.COURSE_FOLLOWED' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: START_DATE [type = DATE][SQL/XOPEN type = 91][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: COURSE_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: USER_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.COURSE_FOLLOWED' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.CURRICULUM' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: CURRICULUM [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: USER_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.CURRICULUM' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.EXERCISE' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: CONTENT_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: SOLUTION [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.EXERCISE' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: CONTENT_OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.FEEDBACK' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: RATING [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: USER_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: COURSE_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.FEEDBACK' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.FORUM' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: COURSE_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.FORUM' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.GROUP' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: GROUPNAME [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: MODULE_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.GROUP' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.GROUP_MODULE' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: GROUP_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: MODULE_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.GROUP_MODULE' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: GROUP_OID
+[10 giu 2023 19:06:50]   Found primary key column: MODULE_OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.LESSON' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: CONTENT_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: VIDEO [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.LESSON' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: CONTENT_OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.MODULE' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: MODULEID [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: MODULENAME [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.MODULE' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.OPTION' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: OPTION [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: EXERCISE_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.OPTION' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.POST' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: TITLE [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: DESCRIPTION [type = CLOB][SQL/XOPEN type = 2005][size = 10000][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: INSERT_TIME [type = TIMESTAMP][SQL/XOPEN type = 93][size = 26][dec. digits = 6]
+[10 giu 2023 19:06:50]   Found column: FORUM_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: USER_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.POST' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.PRIVATE_MESSAGE' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: TITLE [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: DESCRIPTION [type = CLOB][SQL/XOPEN type = 2005][size = 10000][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: STATUS [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: INSTERTION_DATE [type = DATE][SQL/XOPEN type = 91][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: ANSWER [type = CLOB][SQL/XOPEN type = 2005][size = 10000][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: USER_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: COURSE_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.PRIVATE_MESSAGE' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.SUPPORT' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: TITLE [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: DESCRIPTION [type = CLOB][SQL/XOPEN type = 2005][size = 10000][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: STATUS [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: SOLUTION [type = CLOB][SQL/XOPEN type = 2005][size = 10000][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: INSERTION_DATE [type = DATE][SQL/XOPEN type = 91][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: USER_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.SUPPORT' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.USER' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: USER_NAME [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: PASSWORD [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: EMAIL [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: FIRSTNAME [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: LASTNAME [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: ISAPPROVED [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: GROUP_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.USER' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.USER_GROUP' [type = TABLE]
+[10 giu 2023 19:06:50]   Found column: USER_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: GROUP_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.USER_GROUP' [type = TABLE]
+[10 giu 2023 19:06:50]   Found primary key column: USER_OID
+[10 giu 2023 19:06:50]   Found primary key column: GROUP_OID
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.CATEGORY_COURSES_VIEW' [type = VIEW]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: DER_ATTR [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.CATEGORY_COURSES_VIEW' [type = VIEW]
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.COURSE_AVGRATING_VIEW' [type = VIEW]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: DER_ATTR [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.COURSE_AVGRATING_VIEW' [type = VIEW]
+[10 giu 2023 19:06:50] Retrieving columns for 'APP.COURSE_FOLLOWERS_VIEW' [type = VIEW]
+[10 giu 2023 19:06:50]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50]   Found column: DER_ATTR [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[10 giu 2023 19:06:50] Retrieving primary keys for 'APP.COURSE_FOLLOWERS_VIEW' [type = VIEW]
+[10 giu 2023 19:06:50] Database metadata retrieved (286 ms)
+[10 giu 2023 19:06:50] Database connection closed

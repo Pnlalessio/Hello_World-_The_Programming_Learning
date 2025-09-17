@@ -1,0 +1,44 @@
+[07 giu 2023 19:26:11] DEBUG Executing SQL script
+[07 giu 2023 19:26:11] INFO ================================================================================
+[07 giu 2023 19:26:11] INFO onError= 'stop'
+[07 giu 2023 19:26:11] INFO autoCommit= 'false'
+[07 giu 2023 19:26:11] INFO username= 'user'
+[07 giu 2023 19:26:11] INFO outputPath= 'C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\HelloWorld_project\.Temp~\RollbackSQL.xml'
+[07 giu 2023 19:26:11] INFO outputLogPath= 'C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\HelloWorld_project\.Temp~\RollbackSQL.xml.log'
+[07 giu 2023 19:26:11] INFO encoding= ''
+[07 giu 2023 19:26:11] INFO driverClass= 'org.apache.derby.jdbc.ClientDriver'
+[07 giu 2023 19:26:11] INFO sqlScript= 'C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\HelloWorld_project\.Temp~\RollbackSQL.sql'
+[07 giu 2023 19:26:11] INFO eventSocketPort= '60076'
+[07 giu 2023 19:26:11] INFO statementSeparator= ';'
+[07 giu 2023 19:26:11] INFO derby.system.home= 'C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\.metadata\.plugins\com.webratio.commons.db\derby'
+[07 giu 2023 19:26:11] INFO password= 'user'
+[07 giu 2023 19:26:11] INFO url= 'jdbc:derby://localhost:1527/ase_project;create=true'
+[07 giu 2023 19:26:11] INFO ================================================================================
+[07 giu 2023 19:26:11] INFO Connecting to the Database...
+[07 giu 2023 19:26:11] INFO Database connection estabilished
+[07 giu 2023 19:26:11] INFO transaction isolation: 2
+[07 giu 2023 19:26:11] DEBUG ================================================================================
+[07 giu 2023 19:26:11] DEBUG Executing SQL script file: C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\HelloWorld_project\.Temp~\RollbackSQL.sql
+[07 giu 2023 19:26:11] DEBUG Executing statement:  drop table "APP"."CONTENT"
+[07 giu 2023 19:26:11] ERROR Could not execute statement:  drop table "APP"."CONTENT"
+java.sql.SQLSyntaxErrorException: 'DROP TABLE' cannot be performed on 'APP.CONTENT' because it does not exist.
+	at org.apache.derby.client.am.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.client.am.SqlException.getSQLException(Unknown Source)
+	at org.apache.derby.client.am.Statement.execute(Unknown Source)
+	at com.webratio.commons.db.utils.DBUtils.execute(DBUtils.java:523)
+	at com.webratio.commons.db.utils.DBUtils.executeScriptFiles(DBUtils.java:442)
+	at com.webratio.commons.db.utils.DBUtils.main(DBUtils.java:257)
+Caused by: org.apache.derby.client.am.SqlException: 'DROP TABLE' cannot be performed on 'APP.CONTENT' because it does not exist.
+	at org.apache.derby.client.am.Statement.completeSqlca(Unknown Source)
+	at org.apache.derby.client.am.Statement.completeExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.net.NetStatementReply.parseEXCSQLIMMreply(Unknown Source)
+	at org.apache.derby.client.net.NetStatementReply.readExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.net.StatementReply.readExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.net.NetStatement.readExecuteImmediate_(Unknown Source)
+	at org.apache.derby.client.am.Statement.readExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.am.Statement.flowExecute(Unknown Source)
+	at org.apache.derby.client.am.Statement.executeX(Unknown Source)
+	... 4 more
+[07 giu 2023 19:26:11] ERROR SQL SCRIPT EXECUTION FAILED
+[07 giu 2023 19:26:12] INFO Database connection closed
+[07 giu 2023 19:26:12] DEBUG Total time: 500 milliseconds

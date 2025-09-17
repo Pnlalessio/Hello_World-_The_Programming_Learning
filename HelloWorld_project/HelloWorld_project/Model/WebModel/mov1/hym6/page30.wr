@@ -1,0 +1,120 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym6#page30" name="Add options and solution" layout:pageLayout="WRDefault/Empty" gr:x="540" gr:y="180" layout:style="ClearStyle">
+  <ContentUnits>
+    <DataUnit id="mov1#hym6#page30#dau11" name="Details" gr:x="0" gr:y="0" entity="ent7" displayAttributes="ent6#att19 ent6#att20">
+      <Selector id="mov1#hym6#page30#dau11#su51" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym6#page30#dau11#su51#kcond31" name="KeyCondition24" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#hym6#page30#dau11#ln140" name="Flow140" to="mov1#hym6#cru21" type="transport" validate="true">
+        <LinkParameter id="mov1#hym6#page30#dau11#ln140#par305" name="Exercise key_PASSING_Exercise.oid(OptionsToExercise)" sourceLinkParameter="mov1#hym6#icu12#oln60#par304" target="mov1#hym6#cru21.rel12#role24.ent6#att17"/>
+      </Link>
+      <Link id="mov1#hym6#page30#dau11#ln141" name="Flow141" to="mov1#hym6#mfu10" type="transport" validate="true">
+        <LinkParameter id="mov1#hym6#page30#dau11#ln141#par306" name="Exercise key_PASSING_KeyCondition32 [oid]" sourceLinkParameter="mov1#hym6#icu12#oln60#par304" target="mov1#hym6#mfu10#su52#kcond32.ent6#att17"/>
+      </Link>
+    </DataUnit>
+    <EntryUnit gr:x="130" gr:y="5" id="mov1#hym6#page30#enu27" name="Add options" linkOrder="mov1#hym6#page30#enu27#ln136">
+      <Link id="mov1#hym6#page30#enu27#ln136" name="Add" to="mov1#hym6#cru21" type="normal" validate="true">
+        <LinkParameter id="mov1#hym6#page30#enu27#ln136#par286" name="Option_Option" source="mov1#hym6#page30#enu27#fld35" target="mov1#hym6#cru21.ent11#att53"/>
+      </Link>
+      <Field id="mov1#hym6#page30#enu27#fld35" name="Option" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym6#page30#enu27#fld35#mnd25" name="mandatory field"/>
+        </VRules>
+      </Field>
+    </EntryUnit>
+    <EntryUnit gr:x="130" gr:y="100" id="mov1#hym6#page30#enu29" name="Add solution" linkOrder="mov1#hym6#page30#enu29#ln139">
+      <Link id="mov1#hym6#page30#enu29#ln139" name="Add" to="mov1#hym6#mfu10" type="normal" validate="true">
+        <LinkParameter id="mov1#hym6#page30#enu29#ln139#par289" name="Solution_Solution" source="mov1#hym6#page30#enu29#fld36" target="mov1#hym6#mfu10.ent7#att51"/>
+      </Link>
+      <Field id="mov1#hym6#page30#enu29#fld36" name="Solution" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym6#page30#enu29#fld36#mnd26" name="Mandatory field"/>
+        </VRules>
+      </Field>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="310" gr:y="100" id="mov1#hym6#page30#mssu17" name="Advice" linkOrder="mov1#hym6#page30#mssu17#ln142">
+      <Message xml:space="preserve">If you have finished, click on 'Finish'.</Message>
+      <Link id="mov1#hym6#page30#mssu17#ln142" name="Finish" to="mov1#hym6#okcu7" automaticCoupling="true" type="normal" validate="true"/>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid layout:style="ClearStyle">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym6#page30#dau11" layout:style="ClearStyle">
+          <layout:Attribute attribute="ent6#att19"/>
+          <layout:Attribute attribute="ent6#att20"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym6#page30#enu27" layout:style="ClearStyle">
+          <layout:Link link="mov1#hym6#page30#enu27#ln136"/>
+          <layout:Field field="mov1#hym6#page30#enu27#fld35"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym6#page30#enu29" layout:unitVisibilityCondition="mov1#hym6#page30#cexpr9" layout:style="ClearStyle">
+          <layout:Link link="mov1#hym6#page30#enu29#ln139"/>
+          <layout:Field field="mov1#hym6#page30#enu29#fld36"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym6#page30#mssu17" layout:style="ClearStyle">
+          <layout:Link link="mov1#hym6#page30#mssu17#ln142"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="mov1#hym6#page30#var9" name="var9" type="integer" value="0"/>
+  <ConditionExpression id="mov1#hym6#page30#cexpr9" name="ActivationExpression 9">
+    <TextValue xml:space="preserve">return (var9==0)</TextValue>
+  </ConditionExpression>
+</Page>

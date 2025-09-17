@@ -1,0 +1,91 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area10#page23" name="Manage profiles">
+  <ContentUnits>
+    <EntryUnit id="sv1#area10#page23#enu10" name="Search profiles" gr:x="25" gr:y="5" entity="User" linkOrder="sv1#area10#page23#enu10#ln56">
+      <Field id="sv1#area10#page23#enu10#fld21" name="Search" type="string" modifiable="true"/>
+      <SelectionField id="sv1#area10#page23#enu10#sfld5" name="Role" type="string"/>
+      <Link id="sv1#area10#page23#enu10#ln56" name="Search" to="sv1#area10#page23#pwu4" type="normal" validate="true">
+        <LinkParameter id="sv1#area10#page23#enu10#ln56#par233" name="Search_Search" source="sv1#area10#page23#enu10#fld21" target="sv1#area10#page23#pwu4#su22#acond21"/>
+        <LinkParameter id="sv1#area10#page23#enu10#ln56#par237" name="Role_Role [oid]" source="sv1#area10#page23#enu10#sfld5" target="sv1#area10#page23#pwu4#su22#rcond1.moduleOID"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="255" gr:y="0" id="sv1#area10#page23#seu14" name="Role" entity="Group">
+      <Selector id="sv1#area10#page23#seu14#su21" defaultPolicy="fill" booleanOperator="and"/>
+      <Link id="sv1#area10#page23#seu14#ln55" name="Flow55" to="sv1#area10#page23#enu10" type="transport" validate="true">
+        <LinkParameter id="sv1#area10#page23#seu14#ln55#par231" name="groupName_Role [label]" source="groupNameArray" target="sv1#area10#page23#enu10#sfld5_label"/>
+        <LinkParameter id="sv1#area10#page23#seu14#ln55#par232" name="groupName_Role [output]" source="groupOIDArray" target="sv1#area10#page23#enu10#sfld5_output"/>
+      </Link>
+    </SelectorUnit>
+    <PowerIndexUnit gr:x="0" gr:y="165" id="sv1#area10#page23#pwu4" name="Profiles list" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="userOID userName email User#att1 User#att2 User2DefaultGroup.groupName" linkOrder="sv1#area10#page23#pwu4#ln4 sv1#area10#page23#pwu4#ln5">
+      <Selector id="sv1#area10#page23#pwu4#su22" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#area10#page23#pwu4#su22#acond21" name="Search" predicate="contains" ignoreCase="true" booleanOperator="or" implied="true" attributes="userName email User#att1 User#att2"/>
+        <RelationshipRoleCondition id="sv1#area10#page23#pwu4#su22#rcond1" name="Role" predicate="in" implied="true" role="DefaultModule2Group.Group2User"/>
+        <AttributesCondition id="sv1#area10#page23#pwu4#su22#acond6" name="AttCondition6" predicate="eq" booleanOperator="or" implied="false" attributes="User#att4" value="1"/>
+      </Selector>
+      <Link id="sv1#area10#page23#pwu4#ln4" name="Edit" to="sv1#area10#miu2" type="normal" validate="true">
+        <LinkParameter id="sv1#area10#page23#pwu4#ln4#par4" name="oid_Profile key" source="data[].userOID" target="sv1#area10#miu2.mov1#hym4#icu7#icp16"/>
+      </Link>
+      <Link id="sv1#area10#page23#pwu4#ln5" name="Delete" to="sv1#area10#dlu1" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area10#page23#enu10">
+          <layout:Field field="sv1#area10#page23#enu10#fld21"/>
+          <layout:Field field="sv1#area10#page23#enu10#sfld5"/>
+          <layout:Link link="sv1#area10#page23#enu10#ln56"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area10#page23#pwu4" layout:style="PureStyle">
+          <layout:Attribute attribute="userOID"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="User#att1"/>
+          <layout:Attribute attribute="User#att2"/>
+          <layout:Attribute attribute="User2DefaultGroup.groupName"/>
+          <layout:Link link="sv1#area10#page23#pwu4#ln4"/>
+          <layout:Link link="sv1#area10#page23#pwu4#ln5"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

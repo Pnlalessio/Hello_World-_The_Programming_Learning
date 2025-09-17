@@ -1,0 +1,17 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="735" gr:y="145" id="mov1#hym4" name="Profile details">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="195" gr:y="150" id="mov1#hym4#icu7">
+      <InputCollectorParameter id="mov1#hym4#icu7#icp16" name="Profile key"/>
+      <OKLink id="mov1#hym4#icu7#oln34" name="OKFlow27" to="mov1#hym4#page15#seu6">
+        <LinkParameter id="mov1#hym4#icu7#oln34#par87" name="User key_KeyCondition17 [oid]" source="mov1#hym4#icu7#icp16" target="mov1#hym4#page15#seu6#su27#kcond21.userOID"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="710" gr:y="310" id="mov1#hym4#okcu2" name="OK"/>
+    <ModifyUnit gr:x="475" gr:y="420" id="mov1#hym4#mfu9" name="Update profile" entity="User">
+      <Selector id="mov1#hym4#mfu9#su29" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym4#mfu9#su29#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#hym4#mfu9#oln23" name="OKFlow23" to="mov1#hym4#okcu2" automaticCoupling="true"/>
+    </ModifyUnit>
+  </OperationUnits>
+</HybridModule>

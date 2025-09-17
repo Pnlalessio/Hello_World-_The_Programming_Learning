@@ -1,0 +1,208 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area8#page25" layout:pageLayout="WRDefault/Empty" gr:x="1860" gr:y="90" name="Content view" layout:style="ClearStyle">
+  <ContentUnits>
+    <DataUnit id="sv4#area8#page25#dau6" name="Lesson details" ajaxTooltipEnabled="false" ajaxEnableExpandedLinks="false" gr:x="400" gr:y="0" entity="ent4" displayAttributes="ent6#att19 ent6#att20 ent4#att14">
+      <Selector id="sv4#area8#page25#dau6#su37" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area8#page25#dau6#su37#kcond16" name="Product" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <DataUnit gr:x="400" gr:y="210" id="sv4#area8#page25#dau9" name="Exercise details" entity="ent7" displayAttributes="ent6#att19 ent6#att20">
+      <Selector id="sv4#area8#page25#dau9#su45" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area8#page25#dau9#su45#kcond17" name="KeyCondition17" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <MultiMessageUnit gr:x="0" gr:y="95" id="sv4#area8#page25#mssu14" name="Correct answer">
+      <Link id="sv4#area8#page25#mssu14#ln89" name="Flow89" to="sv4#area8#page25#seu8" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page25#mssu14#ln89#par148" name="oid_PASSING_KeyCondition18 [oid]" sourceLinkParameter="sv4#area8#page20#pwu11#ln84#par147" target="sv4#area8#page25#seu8#su46#kcond18.ent6#att17"/>
+        <LinkParameter id="sv4#area8#page25#mssu14#ln89#par419" name="tvvvbevdvedfuvbeiubviviurviuvbiuebv_UserSolution" sourceValue="tvvvbevdvedfuvbeiubviviurviuvbiuebv" targetVariable="sv4#area8#page25#var15"/>
+      </Link>
+      <Link id="sv4#area8#page25#mssu14#ln90" name="Flow90" to="sv4#area8#page25#seu9" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page25#mssu14#ln90#par149" name="oid_PASSING_KeyCondition20 [oid]" sourceLinkParameter="sv4#area8#page20#pwu11#ln84#par147" target="sv4#area8#page25#seu9#su47#kcond20.ent6#att17"/>
+      </Link>
+      <Link id="sv4#area8#page25#mssu14#ln190" name="Flow190" to="sv4#area8#page25#seu20" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page25#mssu14#ln190#par392" name="oid_PASSING" sourceLinkParameter="sv4#area8#page20#pwu11#ln84#par147" passing="true"/>
+        <LinkParameter id="sv4#area8#page25#mssu14#ln190#par393" name="oid_PASSING_RoleCondition19 [oid]" sourceLinkParameter="sv4#area8#page20#pwu11#ln84#par147" target="sv4#area8#page25#seu20#su67#rcond19.ent6#att17"/>
+      </Link>
+      <Message xml:space="preserve">CORRECT ANSWER!</Message>
+    </MultiMessageUnit>
+    <SelectorUnit gr:x="215" gr:y="15" id="sv4#area8#page25#seu8" name="Get lesson" entity="ent4">
+      <Selector id="sv4#area8#page25#seu8#su46" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area8#page25#seu8#su46#kcond18" name="KeyCondition18" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#area8#page25#seu8#ln91" name="Flow91" to="sv4#area8#page25#dau6" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page25#seu8#ln91#par150" name="oid_Product [oid]" source="ent6#att17Array" target="sv4#area8#page25#dau6#su37#kcond16.ent6#att17"/>
+        <LinkParameter id="sv4#area8#page25#seu8#ln91#par153" name="Data Size_var7" source="dataSize" targetVariable="sv4#area8#page25#var7"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="205" gr:y="185" id="sv4#area8#page25#seu9" name="Get exercise" entity="ent7">
+      <Selector id="sv4#area8#page25#seu9#su47" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area8#page25#seu9#su47#kcond20" name="KeyCondition20" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#area8#page25#seu9#ln92" name="Flow92" to="sv4#area8#page25#dau9" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page25#seu9#ln92#par154" name="oid_KeyCondition17 [oid]" source="ent6#att17Array" target="sv4#area8#page25#dau9#su45#kcond17.ent6#att17"/>
+        <LinkParameter id="sv4#area8#page25#seu9#ln92#par155" name="Data Size_var7" source="dataSize" targetVariable="sv4#area8#page25#var7"/>
+      </Link>
+      <Link id="sv4#area8#page25#seu9#ln196" name="Flow196" to="sv4#area8#page25#enu28" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page25#seu9#ln196#par416" name="Solution_PASSING" source="ent7#att51Array" passing="true"/>
+        <LinkParameter id="sv4#area8#page25#seu9#ln196#par417" name="Solution_CorrectSolution" source="ent7#att51Array" targetVariable="sv4#area8#page25#var14"/>
+        <LinkParameter id="sv4#area8#page25#seu9#ln196#par421" name="Solution_NotCorrectSolution" source="ent7#att51Array" targetVariable="sv4#area8#page25#var17"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit gr:x="430" gr:y="455" id="sv4#area8#page25#enu28" name="Solve exercise" linkOrder="sv4#area8#page25#enu28#ln194">
+      <SelectionField id="sv4#area8#page25#enu28#sfld8" name="Select answer" type="string">
+        <VRules>
+          <MandatoryValidationRule id="sv4#area8#page25#enu28#sfld8#mnd55" name="Mandatory field"/>
+        </VRules>
+      </SelectionField>
+      <Link id="sv4#area8#page25#enu28#ln194" name="Send" to="sv4#area8#page25#mssu23" type="normal" validate="true">
+        <LinkParameter id="sv4#area8#page25#enu28#ln194#par411" name="Option_PASSING_UserSolution" targetVariable="sv4#area8#page25#var15" source="sv4#area8#page25#enu28#sfld8"/>
+        <LinkParameter id="sv4#area8#page25#enu28#ln194#par418" name="Solution_PASSING_CorrectSolution" sourceLinkParameter="sv4#area8#page25#seu9#ln196#par416" targetVariable="sv4#area8#page25#var14"/>
+        <LinkParameter id="sv4#area8#page25#enu28#ln194#par420" name="Select answer_NotCorrectSolution" source="sv4#area8#page25#enu28#sfld8" targetVariable="sv4#area8#page25#var17"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="180" gr:y="330" id="sv4#area8#page25#seu20" name="Get option" entity="ent11">
+      <Link id="sv4#area8#page25#seu20#ln191" name="Flow191" to="sv4#area8#page25#enu28" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page25#seu20#ln191#par394" name="Option_Options [label]" source="ent11#att53Array" target="sv4#area8#page25#enu28#sfld8_label"/>
+        <LinkParameter id="sv4#area8#page25#seu20#ln191#par395" name="oid_Options [output]" source="ent11#att53Array" target="sv4#area8#page25#enu28#sfld8_output"/>
+      </Link>
+      <Selector id="sv4#area8#page25#seu20#su67" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area8#page25#seu20#su67#rcond19" name="RoleCondition19" role="rel12#role23" predicate="in" implied="false"/>
+      </Selector>
+    </SelectorUnit>
+    <MultiMessageUnit gr:x="200" gr:y="465" id="sv4#area8#page25#mssu23" name="Wrong answer">
+      <Message xml:space="preserve">WRONG ANSWER!</Message>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid layout:style="ClearStyle">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area8#page25#dau6" layout:unitVisibilityCondition="sv4#area8#page25#cexpr8" layout:unitVisibilityConditionNegated="true" layout:style="ClearStyle">
+          <layout:Attribute attribute="ent6#att19"/>
+          <layout:Attribute attribute="ent6#att20"/>
+          <layout:Attribute attribute="ent4#att14"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area8#page25#dau9" layout:unitVisibilityCondition="sv4#area8#page25#cexpr8">
+          <layout:Attribute attribute="ent6#att19"/>
+          <layout:Attribute attribute="ent6#att20"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area8#page25#enu28" layout:unitVisibilityCondition="sv4#area8#page25#cexpr8">
+          <layout:Link link="sv4#area8#page25#enu28#ln194"/>
+          <layout:Field field="sv4#area8#page25#enu28#sfld8"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area8#page25#mssu23" layout:unitVisibilityCondition="sv4#area8#page25#cexpr15" layout:unitVisibilityConditionNegated="true" layout:style="ClearStyle"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area8#page25#mssu14" layout:unitVisibilityCondition="sv4#area8#page25#cexpr14"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv4#area8#page25#var7" name="var7" type="integer" value="5"/>
+  <ConditionExpression id="sv4#area8#page25#cexpr8" name="ActivationExpression 8">
+    <TextValue xml:space="preserve">return (var7==0)</TextValue>
+  </ConditionExpression>
+  <Variable id="sv4#area8#page25#var14" name="CorrectSolution" type="string"/>
+  <Variable id="sv4#area8#page25#var15" name="UserSolution" type="string"/>
+  <ConditionExpression id="sv4#area8#page25#cexpr14" name="checkCorrectAnswer">
+    <TextValue xml:space="preserve">return (CorrectSolution==UserSolution)</TextValue>
+  </ConditionExpression>
+  <ConditionExpression id="sv4#area8#page25#cexpr15" name="checkWrongAnswer">
+    <TextValue xml:space="preserve">return (CorrectSolution==NotCorrectSolution)</TextValue>
+  </ConditionExpression>
+  <Variable id="sv4#area8#page25#var17" name="NotCorrectSolution" type="string"/>
+</Page>

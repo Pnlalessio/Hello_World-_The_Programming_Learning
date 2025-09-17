@@ -1,0 +1,91 @@
+[10 giu 2023 18:50:16] DEBUG Executing SQL script
+[10 giu 2023 18:50:16] INFO ================================================================================
+[10 giu 2023 18:50:16] INFO onError= 'stop'
+[10 giu 2023 18:50:16] INFO autoCommit= 'false'
+[10 giu 2023 18:50:16] INFO username= 'user'
+[10 giu 2023 18:50:16] INFO outputPath= 'C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\HelloWorld_project\.Temp~\UpdateSQL.xml'
+[10 giu 2023 18:50:16] INFO outputLogPath= 'C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\HelloWorld_project\.Temp~\UpdateSQL.xml.log'
+[10 giu 2023 18:50:16] INFO encoding= ''
+[10 giu 2023 18:50:16] INFO driverClass= 'org.apache.derby.jdbc.ClientDriver'
+[10 giu 2023 18:50:16] INFO sqlScript= 'C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\HelloWorld_project\.Temp~\UpdateSQL.sql'
+[10 giu 2023 18:50:16] INFO eventSocketPort= '61927'
+[10 giu 2023 18:50:16] INFO statementSeparator= ';'
+[10 giu 2023 18:50:16] INFO derby.system.home= 'C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\.metadata\.plugins\com.webratio.commons.db\derby'
+[10 giu 2023 18:50:16] INFO password= 'user'
+[10 giu 2023 18:50:16] INFO url= 'jdbc:derby://localhost:1527/hello_world;create=true'
+[10 giu 2023 18:50:16] INFO ================================================================================
+[10 giu 2023 18:50:16] INFO Connecting to the Database...
+[10 giu 2023 18:50:16] INFO Database connection estabilished
+[10 giu 2023 18:50:16] INFO transaction isolation: 2
+[10 giu 2023 18:50:16] DEBUG ================================================================================
+[10 giu 2023 18:50:16] DEBUG Executing SQL script file: C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\HelloWorld_project\.Temp~\UpdateSQL.sql
+[10 giu 2023 18:50:16] DEBUG Executing statement:  create table "APP"."GROUP" ( "OID"  integer  not null, "GROUPNAME"  varchar(255), primary key ("OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."MODULE" ( "OID"  integer  not null, "MODULEID"  varchar(255), "MODULENAME"  varchar(255), primary key ("OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."USER" ( "OID"  integer  not null, "USER_NAME"  varchar(255), "PASSWORD"  varchar(255), "EMAIL"  varchar(255), "FIRSTNAME"  varchar(255), "LASTNAME"  varchar(255), "ISAPPROVED"  integer, primary key ("OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."SUPPORT" ( "OID"  integer  not null, "TITLE"  varchar(255), "DESCRIPTION"  clob(10000), "STATUS"  varchar(255), "SOLUTION"  clob(10000), "INSERTION_DATE"  date, primary key ("OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."PRIVATE_MESSAGE" ( "OID"  integer  not null, "TITLE"  varchar(255), "DESCRIPTION"  clob(10000), "STATUS"  varchar(255), "INSTERTION_DATE"  date, "ANSWER"  clob(10000), primary key ("OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."OPTION" ( "OID"  integer  not null, "OPTION"  varchar(255), primary key ("OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."FORUM" ( "OID"  integer  not null, primary key ("OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."POST" ( "OID"  integer  not null, "TITLE"  varchar(255), "DESCRIPTION"  clob(10000), "INSERT_TIME"  timestamp, primary key ("OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."COMMENT" ( "OID"  integer  not null, "COMMENT"  clob(10000), "INSERT_TIME"  timestamp, primary key ("OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."COURSE" ( "OID"  integer  not null, "NAME"  varchar(255), "DESCRIPTION"  clob(10000), primary key ("OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."CURRICULUM" ( "OID"  integer  not null, "CURRICULUM"  varchar(255), primary key ("OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."LESSON" ( "CONTENT_OID"  integer  not null, "VIDEO"  varchar(255), primary key ("CONTENT_OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."FEEDBACK" ( "OID"  integer  not null, "RATING"  integer, primary key ("OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."CONTENT" ( "OID"  integer  not null, "ORDER"  integer, "NAME"  varchar(255), "DESCRIPTION"  clob(10000), primary key ("OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."EXERCISE" ( "CONTENT_OID"  integer  not null, "SOLUTION"  varchar(255), primary key ("CONTENT_OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."COURSE_FOLLOWED" ( "OID"  integer  not null, "START_DATE"  date, primary key ("OID") )
+[10 giu 2023 18:50:16] DEBUG Executing statement:    create table "APP"."CATEGORY" ( "OID"  integer  not null, "CATEGORY"  varchar(255), primary key ("OID") )
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."GROUP"  add column  "MODULE_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."GROUP"   add constraint FK_GROUP_MODULE foreign key ("MODULE_OID") references "APP"."MODULE" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    create table "APP"."GROUP_MODULE" ( "GROUP_OID"  integer not null, "MODULE_OID"  integer not null, primary key ("GROUP_OID", "MODULE_OID") )
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."GROUP_MODULE"   add constraint FK_GROUP_MODULE_GROUP foreign key ("GROUP_OID") references "APP"."GROUP" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."GROUP_MODULE"   add constraint FK_GROUP_MODULE_MODULE foreign key ("MODULE_OID") references "APP"."MODULE" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."USER"  add column  "GROUP_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."USER"   add constraint FK_USER_GROUP foreign key ("GROUP_OID") references "APP"."GROUP" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    create table "APP"."USER_GROUP" ( "USER_OID"  integer not null, "GROUP_OID"  integer not null, primary key ("USER_OID", "GROUP_OID") )
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."USER_GROUP"   add constraint FK_USER_GROUP_USER foreign key ("USER_OID") references "APP"."USER" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."USER_GROUP"   add constraint FK_USER_GROUP_GROUP foreign key ("GROUP_OID") references "APP"."GROUP" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."COURSE"  add column  "USER_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."COURSE"   add constraint FK_COURSE_USER foreign key ("USER_OID") references "APP"."USER" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."COURSE_FOLLOWED"  add column  "COURSE_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."COURSE_FOLLOWED"   add constraint FK_COURSE_FOLLOWED_COURSE foreign key ("COURSE_OID") references "APP"."COURSE" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."FORUM"  add column  "COURSE_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."FORUM"   add constraint FK_FORUM_COURSE foreign key ("COURSE_OID") references "APP"."COURSE" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."OPTION"  add column  "EXERCISE_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."OPTION"   add constraint FK_OPTION_EXERCISE foreign key ("EXERCISE_OID") references "APP"."EXERCISE" ("CONTENT_OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."POST"  add column  "FORUM_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."POST"   add constraint FK_POST_FORUM foreign key ("FORUM_OID") references "APP"."FORUM" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."COMMENT"  add column  "POST_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."COMMENT"   add constraint FK_COMMENT_POST foreign key ("POST_OID") references "APP"."POST" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."COMMENT"  add column  "USER_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."COMMENT"   add constraint FK_COMMENT_USER foreign key ("USER_OID") references "APP"."USER" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."FEEDBACK"  add column  "USER_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."FEEDBACK"   add constraint FK_FEEDBACK_USER foreign key ("USER_OID") references "APP"."USER" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."POST"  add column  "USER_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."POST"   add constraint FK_POST_USER foreign key ("USER_OID") references "APP"."USER" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."SUPPORT"  add column  "USER_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."SUPPORT"   add constraint FK_SUPPORT_USER foreign key ("USER_OID") references "APP"."USER" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."CURRICULUM"  add column  "USER_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."CURRICULUM"   add constraint FK_CURRICULUM_USER foreign key ("USER_OID") references "APP"."USER" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."COURSE"  add column  "CATEGORY_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."COURSE"   add constraint FK_COURSE_CATEGORY foreign key ("CATEGORY_OID") references "APP"."CATEGORY" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."PRIVATE_MESSAGE"  add column  "USER_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."PRIVATE_MESSAGE"   add constraint FK_PRIVATE_MESSAGE_USER foreign key ("USER_OID") references "APP"."USER" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."CONTENT"  add column  "COURSE_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."CONTENT"   add constraint FK_CONTENT_COURSE foreign key ("COURSE_OID") references "APP"."COURSE" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."PRIVATE_MESSAGE"  add column  "COURSE_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."PRIVATE_MESSAGE"   add constraint FK_PRIVATE_MESSAGE_COURSE foreign key ("COURSE_OID") references "APP"."COURSE" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."FEEDBACK"  add column  "COURSE_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."FEEDBACK"   add constraint FK_FEEDBACK_COURSE foreign key ("COURSE_OID") references "APP"."COURSE" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."COURSE_FOLLOWED"  add column  "USER_OID"  integer
+[10 giu 2023 18:50:17] DEBUG Executing statement:  alter table "APP"."COURSE_FOLLOWED"   add constraint FK_COURSE_FOLLOWED_USER foreign key ("USER_OID") references "APP"."USER" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."LESSON"   add constraint FK_LESSON_CONTENT foreign key ("CONTENT_OID") references "APP"."CONTENT" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    alter table "APP"."EXERCISE"   add constraint FK_EXERCISE_CONTENT foreign key ("CONTENT_OID") references "APP"."CONTENT" ("OID")
+[10 giu 2023 18:50:17] DEBUG Executing statement:    create view "APP"."COURSE_AVGRATING_VIEW" as select AL1."OID" as "OID", avg(AL2."RATING") as "DER_ATTR" from  "APP"."COURSE" AL1 left outer join "APP"."FEEDBACK" AL2 on AL1."OID"=AL2."COURSE_OID" group by AL1."OID"
+[10 giu 2023 18:50:17] DEBUG Executing statement:    create view "APP"."COURSE_FOLLOWERS_VIEW" as select AL1."OID" as "OID", count(distinct AL2."OID") as "DER_ATTR" from  "APP"."COURSE" AL1 left outer join "APP"."COURSE_FOLLOWED" AL2 on AL1."OID"=AL2."COURSE_OID" group by AL1."OID"
+[10 giu 2023 18:50:17] DEBUG Executing statement:    create view "APP"."CATEGORY_COURSES_VIEW" as select AL1."OID" as "OID", count(distinct AL2."OID") as "DER_ATTR" from  "APP"."CATEGORY" AL1 left outer join "APP"."COURSE" AL2 on AL1."OID"=AL2."CATEGORY_OID" group by AL1."OID"
+[10 giu 2023 18:50:17] DEBUG ================================================================================
+[10 giu 2023 18:50:17] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[10 giu 2023 18:50:17] INFO Database connection closed
+[10 giu 2023 18:50:17] DEBUG Total time: 1489 milliseconds

@@ -1,0 +1,49 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#hym3" name="Delete Category" gr:icon="ModulesIcons/Delete.png" gr:x="495" gr:y="235">
+  <OperationUnits>
+    <SwitchUnit id="mov1#hym3#switch3" name="Category's #Courses" gr:x="235" gr:y="265">
+      <Case value="0"/>
+      <OKLink id="mov1#hym3#switch3#oln24" name="OKLink205" to="mov1#hym3#dlu4" code="0"/>
+      <OKLink id="mov1#hym3#switch3#oln30" name="OKFlow30" to="mov1#hym3#page14#pwu6">
+        <LinkParameter id="mov1#hym3#switch3#oln30#par94" name="Category's #Courses_PASSING_var4" sourceLinkParameter="mov1#hym3#icu6#oln27#par93" targetVariable="mov1#hym3#page14#var4"/>
+      </OKLink>
+    </SwitchUnit>
+    <DeleteUnit id="mov1#hym3#dlu4" name="Delete Category" gr:x="225" gr:y="390" entity="ent9">
+      <Selector id="mov1#hym3#dlu4#su14" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym3#dlu4#su14#kcond9" name="Category" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#hym3#dlu4#oln26" name="OKLink207" to="mov1#hym3#okcu3" automaticCoupling="true"/>
+    </DeleteUnit>
+    <InputCollectorUnit id="mov1#hym3#icu6" gr:x="-145" gr:y="50">
+      <InputCollectorParameter id="mov1#hym3#icu6#icp5" name="Category Key"/>
+      <InputCollectorParameter id="mov1#hym3#icu6#icp6" name="Category's #Courses"/>
+      <Link id="mov1#hym3#icu6#ln32" name="Link228" to="mov1#hym3#dlu4" type="transport" validate="true">
+        <LinkParameter id="mov1#hym3#icu6#ln32#par55" name="Category Key_Category [oid]" source="mov1#hym3#icu6#icp5" target="mov1#hym3#dlu4#su14#kcond9.ent9#att22"/>
+      </Link>
+      <OKLink id="mov1#hym3#icu6#oln27" name="OKLink208" to="mov1#hym3#switch3">
+        <LinkParameter id="mov1#hym3#icu6#oln27#par72" name="Category's #Books" source="mov1#hym3#icu6#icp6" target="mov1#hym3#switch3.switch"/>
+        <LinkParameter id="mov1#hym3#icu6#oln27#par93" name="Category's #Courses_PASSING" source="mov1#hym3#icu6#icp6" passing="true"/>
+      </OKLink>
+      <Link id="mov1#hym3#icu6#ln50" name="Flow50" to="mov1#hym3#page14#pwu6" type="transport" validate="true">
+        <LinkParameter id="mov1#hym3#icu6#ln50#par42" name="Category Key_Category [oid]" source="mov1#hym3#icu6#icp5" target="mov1#hym3#page14#pwu6#su20#rcond5.ent9#att22"/>
+        <LinkParameter id="mov1#hym3#icu6#ln50#par140" name="Category Key_PASSING" source="mov1#hym3#icu6#icp5" passing="true"/>
+      </Link>
+      <Link id="mov1#hym3#icu6#ln78" name="Link231" to="mov1#hym3#page14#enu20" type="transport" validate="true" gr:bendpoints="173,-169,-117,46">
+        <LinkParameter id="mov1#hym3#icu6#ln78#par66" name="Category Key_Key Condition [oid]" source="mov1#hym3#icu6#icp5" target="mov1#hym3#page14#enu20.ent9#att22"/>
+      </Link>
+      <Link id="mov1#hym3#icu6#ln81" name="Link230" to="mov1#hym3#page14#seu11" type="transport" validate="true" gr:bendpoints="368,-93,-192,197">
+        <LinkParameter id="mov1#hym3#icu6#ln81#par56" name="Category Key_Category [oid (not in)]" source="mov1#hym3#icu6#icp5" target="mov1#hym3#page14#seu11#su31#kcond19.ent9#att22"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov1#hym3#okcu3" name="Output" gr:x="965" gr:y="240"/>
+    <ModifyUnit gr:x="810" gr:y="-325" id="mov1#hym3#mfu2" name="Update category" entity="ent2">
+      <Selector id="mov1#hym3#mfu2#su8" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym3#mfu2#su8#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#hym3#mfu2#oln37" name="OKFlow37" to="mov1#hym3#page14#mssu8">
+        <LinkParameter id="mov1#hym3#mfu2#oln37#par138" name="0_var3" sourceValue="0" targetVariable="mov1#hym3#page14#var3"/>
+        <LinkParameter id="mov1#hym3#mfu2#oln37#par139" name="Data Size_PASSING_var5" sourceLinkParameter="mov1#hym3#page14#pwu6#ln21#par133" targetVariable="mov1#hym3#page14#var5"/>
+      </OKLink>
+    </ModifyUnit>
+  </OperationUnits>
+  <Comment xml:space="preserve">Hybrid Module that implements the actions required to delete a Category.</Comment>
+</HybridModule>

@@ -1,0 +1,138 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area7#page19" name="Manage support requests">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="0" gr:y="105" id="sv1#area7#page19#pwu9" name="Support requests list" sortable="true" checkable="false" useCountQuery="false" entity="ent1" displayAttributes="ent1#att15 ent1#att16 ent1#att30 ent1#att5 ent1#att11" linkOrder="sv1#area7#page19#pwu9#ln30">
+      <Selector id="sv1#area7#page19#pwu9#su10" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#area7#page19#pwu9#su10#acond10" name="AttCondition10" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att12" value="Not solved"/>
+        <AttributesCondition id="sv1#area7#page19#pwu9#su10#acond11" name="Search" predicate="contains" ignoreCase="true" booleanOperator="or" implied="true" attributes="ent1#att5 ent1#att11 ent1#att30"/>
+      </Selector>
+      <Link id="sv1#area7#page19#pwu9#ln30" name="Resolve" to="sv1#area7#page19#enu11" type="normal" validate="true">
+        <LinkParameter id="sv1#area7#page19#pwu9#ln30#par48" name="oid_Key Condition [oid]" source="data[].ent1#att3" target="sv1#area7#page19#enu11.ent1#att3"/>
+        <LinkParameter id="sv1#area7#page19#pwu9#ln30#par49" name="Solution_solution" source="data[].ent1#att13" target="sv1#area7#page19#enu11#fld27_slot"/>
+        <LinkParameter id="sv1#area7#page19#pwu9#ln30#par50" name="Status _PASSING" source="data[].ent1#att12" passing="true"/>
+        <LinkParameter id="sv1#area7#page19#pwu9#ln30#par62" name="Solution_PASSING" source="data[].ent1#att13" passing="true"/>
+        <LinkParameter id="sv1#area7#page19#pwu9#ln30#par77" name="1_var4" sourceValue="1" targetVariable="sv1#area7#page19#var4"/>
+      </Link>
+      <Link id="sv1#area7#page19#pwu9#ln34" name="Flow34" to="sv1#area7#page19#mssu11" type="transport" validate="true">
+        <LinkParameter id="sv1#area7#page19#pwu9#ln34#par80" name="Title_supportRequest" source="data[].ent1#att5" target="sv1#area7#page19#mssu11.supportRequest"/>
+      </Link>
+    </PowerIndexUnit>
+    <EntryUnit gr:x="425" gr:y="90" id="sv1#area7#page19#enu11" name="Resolve the request" entity="ent1" linkOrder="sv1#area7#page19#enu11#ln31">
+      <Field id="sv1#area7#page19#enu11#fld27" name="solution" type="text" modifiable="true" attribute="ent1#att13" preloaded="true">
+        <VRules>
+          <MandatoryValidationRule id="sv1#area7#page19#enu11#fld27#mnd17" name="Mandatory field"/>
+        </VRules>
+      </Field>
+      <Link id="sv1#area7#page19#enu11#ln31" name="Send solution" to="sv1#area7#mfu8" type="normal" validate="true">
+        <LinkParameter id="sv1#area7#page19#enu11#ln31#par64" name="Key [oid]_KeyCondition6 [oid]" source="key.ent1#att3" target="sv1#area7#mfu8#su12#kcond6.ent1#att3"/>
+        <LinkParameter id="sv1#area7#page19#enu11#ln31#par67" name="solution_Solution" source="sv1#area7#page19#enu11#fld27" target="sv1#area7#mfu8.ent1#att13"/>
+        <LinkParameter id="sv1#area7#page19#enu11#ln31#par68" name="Solved_Status " sourceValue="Solved" target="sv1#area7#mfu8.ent1#att12"/>
+        <LinkParameter id="sv1#area7#page19#enu11#ln31#par76" name="Support Object_Support Object" source="entityBean" target="sv1#area7#mfu8.entityBeans"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="55" gr:y="0" id="sv1#area7#page19#mssu11" name="Message" messageFile="WEB-INF/descr/message6.template"/>
+    <EntryUnit id="sv1#area7#page19#enu16" name="Search support request" gr:x="210" gr:y="0" linkOrder="sv1#area7#page19#enu16#ln37">
+      <Field id="sv1#area7#page19#enu16#fld28" name="Search" type="string" modifiable="true"/>
+      <Link id="sv1#area7#page19#enu16#ln37" name="Search" to="sv1#area7#page19#pwu9" type="normal" validate="true">
+        <LinkParameter id="sv1#area7#page19#enu16#ln37#par91" name="Search_Search" source="sv1#area7#page19#enu16#fld28" target="sv1#area7#page19#pwu9#su10#acond11"/>
+        <LinkParameter id="sv1#area7#page19#enu16#ln37#par92" name="Search_AttCondition12" source="sv1#area7#page19#enu16#fld28" target="sv1#area7#page19#pwu9#su10#acond12"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="6"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area7#page19#mssu11" layout:unitVisibilityCondition="sv1#area7#page19#cexpr4"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area7#page19#enu16">
+          <layout:Field field="sv1#area7#page19#enu16#fld28"/>
+          <layout:Link link="sv1#area7#page19#enu16#ln37"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area7#page19#enu11" layout:unitVisibilityCondition="sv1#area7#page19#cexpr4">
+          <layout:Field field="sv1#area7#page19#enu11#fld27"/>
+          <layout:Link link="sv1#area7#page19#enu11#ln31"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area7#page19#pwu9" layout:style="PureStyle">
+          <layout:Attribute attribute="ent1#att15"/>
+          <layout:Attribute attribute="ent1#att16"/>
+          <layout:Attribute attribute="ent1#att30"/>
+          <layout:Attribute attribute="ent1#att5"/>
+          <layout:Attribute attribute="ent1#att11"/>
+          <layout:Link link="sv1#area7#page19#pwu9#ln30"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv1#area7#page19#var4" name="var4" type="integer" value="0"/>
+  <ConditionExpression id="sv1#area7#page19#cexpr4" name="ActivationExpression 4">
+    <TextValue xml:space="preserve">return (var4==1)</TextValue>
+  </ConditionExpression>
+</Page>

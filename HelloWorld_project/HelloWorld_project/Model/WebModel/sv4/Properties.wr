@@ -1,0 +1,8 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv4" name="User View" landmarks="sv4#area17 sv4#area8 sv4#area15 sv4#area16" homePage="sv4#area17#page27">
+  <OperationUnits>
+    <LogoutUnit id="sv4#lou4" name="Logout" gr:x="540" gr:y="110" siteView="sv2"/>
+    <CreateUnit gr:x="1880" gr:y="675" id="sv4#cru6" name="Create course followed" entity="ent8">
+      <OKLink id="sv4#cru6#oln57" name="OKFlow57" to="sv4#area8#page21" automaticCoupling="true"/>
+    </CreateUnit>
+  </OperationUnits>
+</SiteView>

@@ -1,0 +1,40 @@
+[10 giu 2023 19:06:49] DEBUG Executing SQL script
+[10 giu 2023 19:06:49] INFO ================================================================================
+[10 giu 2023 19:06:49] INFO onError= 'abort'
+[10 giu 2023 19:06:49] INFO autoCommit= 'false'
+[10 giu 2023 19:06:49] INFO username= 'user'
+[10 giu 2023 19:06:49] INFO outputPath= 'C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\HelloWorld_project\.Temp~\SQL.xml'
+[10 giu 2023 19:06:49] INFO outputLogPath= 'C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\HelloWorld_project\.Temp~\SQL.xml.log'
+[10 giu 2023 19:06:49] INFO encoding= ''
+[10 giu 2023 19:06:49] INFO driverClass= 'org.apache.derby.jdbc.ClientDriver'
+[10 giu 2023 19:06:49] INFO sqlScript= 'C:\Users\User\Desktop\Advanced Sofware Engineering\data.sql'
+[10 giu 2023 19:06:49] INFO eventSocketPort= '62054'
+[10 giu 2023 19:06:49] INFO statementSeparator= ';'
+[10 giu 2023 19:06:49] INFO derby.system.home= 'C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\.metadata\.plugins\com.webratio.commons.db\derby'
+[10 giu 2023 19:06:49] INFO password= 'user'
+[10 giu 2023 19:06:49] INFO url= 'jdbc:derby://localhost:1527/hello_world;create=true'
+[10 giu 2023 19:06:49] INFO ================================================================================
+[10 giu 2023 19:06:49] INFO Connecting to the Database...
+[10 giu 2023 19:06:49] INFO Database connection estabilished
+[10 giu 2023 19:06:49] INFO transaction isolation: 2
+[10 giu 2023 19:06:49] DEBUG ================================================================================
+[10 giu 2023 19:06:49] DEBUG Executing SQL script file: C:\Users\User\Desktop\Advanced Sofware Engineering\data.sql
+[10 giu 2023 19:06:49] DEBUG Executing statement:  INSERT INTO APP.MODULE(OID, MODULEID, MODULENAME)VALUES(1, 'sv4', 'User')
+[10 giu 2023 19:06:49] DEBUG Executing statement:  INSERT INTO APP.MODULE(OID, MODULEID, MODULENAME)VALUES(2, 'sv3', 'Tutor')
+[10 giu 2023 19:06:49] DEBUG Executing statement:  INSERT INTO APP.MODULE(OID, MODULEID, MODULENAME)VALUES(3, 'sv1', 'Administrator')
+[10 giu 2023 19:06:49] DEBUG Executing statement:    INSERT INTO APP."GROUP"(OID, GROUPNAME, MODULE_OID)VALUES (1, 'User', 1)
+[10 giu 2023 19:06:49] DEBUG Executing statement:  INSERT INTO APP."GROUP"(OID, GROUPNAME, MODULE_OID)VALUES (2, 'Tutor', 2)
+[10 giu 2023 19:06:49] DEBUG Executing statement:  INSERT INTO APP."GROUP"(OID, GROUPNAME, MODULE_OID)VALUES (3, 'Administrator', 3)
+[10 giu 2023 19:06:49] DEBUG Executing statement:    INSERT INTO APP.GROUP_MODULE(GROUP_OID, MODULE_OID)VALUES(1, 1)
+[10 giu 2023 19:06:49] DEBUG Executing statement:  INSERT INTO APP.GROUP_MODULE(GROUP_OID, MODULE_OID)VALUES(2, 2)
+[10 giu 2023 19:06:49] DEBUG Executing statement:  INSERT INTO APP.GROUP_MODULE(GROUP_OID, MODULE_OID)VALUES(3, 3)
+[10 giu 2023 19:06:49] DEBUG Executing statement:   INSERT INTO APP."USER"(OID, USER_NAME, PASSWORD, EMAIL, FIRSTNAME, LASTNAME, ISAPPROVED, GROUP_OID)VALUES (1, 'user', 'user', 'user@test.com', 'user', 'user', 1, 1)
+[10 giu 2023 19:06:49] DEBUG Executing statement:  INSERT INTO APP."USER"(OID, USER_NAME, PASSWORD, EMAIL, FIRSTNAME, LASTNAME, ISAPPROVED, GROUP_OID)VALUES (2, 'admin', 'admin', 'admin@test.com', 'admin', 'admin', 1,3)
+[10 giu 2023 19:06:49] DEBUG Executing statement:  INSERT INTO APP."USER"(OID, USER_NAME, PASSWORD, EMAIL, FIRSTNAME, LASTNAME, ISAPPROVED, GROUP_OID)VALUES (3, 'manager', 'manager', 'manager@test.com', 'manager', 'manager', 1,3)
+[10 giu 2023 19:06:49] DEBUG Executing statement:   INSERT INTO APP.USER_GROUP(USER_OID, GROUP_OID)VALUES(1, 1)
+[10 giu 2023 19:06:49] DEBUG Executing statement:  INSERT INTO APP.USER_GROUP(USER_OID, GROUP_OID)VALUES(2, 3)
+[10 giu 2023 19:06:49] DEBUG Executing statement:  INSERT INTO APP.USER_GROUP(USER_OID, GROUP_OID)VALUES(3, 3)
+[10 giu 2023 19:06:49] DEBUG ================================================================================
+[10 giu 2023 19:06:49] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[10 giu 2023 19:06:49] INFO Database connection closed
+[10 giu 2023 19:06:49] DEBUG Total time: 625 milliseconds

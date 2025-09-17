@@ -1,0 +1,13 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="765" gr:y="230" id="mov1#hym2" name="Add comment">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="170" gr:y="155" id="mov1#hym2#icu5">
+      <InputCollectorParameter id="mov1#hym2#icu5#icp2" name="Post key"/>
+      <OKLink id="mov1#hym2#icu5#oln21" name="OKFlow21" to="mov1#hym2#page10#enu18">
+        <LinkParameter id="mov1#hym2#icu5#oln21#par43" name="Post key_PASSING" source="mov1#hym2#icu5#icp2" passing="true"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="905" gr:y="165" id="mov1#hym2#cru11" name="Create comment" entity="ent14">
+      <OKLink id="mov1#hym2#cru11#oln31" name="OKFlow31" to="mov1#hym2#page10" automaticCoupling="true"/>
+    </CreateUnit>
+  </OperationUnits>
+</HybridModule>

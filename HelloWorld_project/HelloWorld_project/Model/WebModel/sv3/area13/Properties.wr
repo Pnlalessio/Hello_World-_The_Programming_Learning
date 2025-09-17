@@ -1,0 +1,13 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3#area13" name="My Details" defaultPage="sv3#area13#miu9" landmark="true" gr:x="200" gr:y="45">
+  <OperationUnits>
+    <ModuleInstanceUnit id="sv3#area13#miu9" name="My Details" landmark="false" gr:x="200" gr:y="10" moduleId="mov1#hym4"/>
+    <GetUnit id="sv3#area13#gtu6" name="Get User" gr:x="0" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="sv3#area13#gtu6#ln63" name="Link140" to="sv3#area13#miu9" type="transport" validate="true">
+        <LinkParameter id="sv3#area13#gtu6#ln63#par171" name="UserCtxParam.oid_User key" source="sv3#area13#gtu6.UserCtxParam" target="sv3#area13#miu9.mov1#hym4#icu7#icp16"/>
+      </Link>
+      <Link id="sv3#area13#gtu6#ln64" name="Flow18" to="sv3#cru3" type="transport" validate="true">
+        <LinkParameter id="sv3#area13#gtu6#ln64#par172" name="UserCtxParam.oid_User.oid(CourseToUser)" source="sv3#area13#gtu6.UserCtxParam" target="sv3#cru3.rel1#role2.userOID"/>
+      </Link>
+    </GetUnit>
+  </OperationUnits>
+</Area>

@@ -1,0 +1,100 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="400" gr:y="65" id="mov1#hym2#page10" name="Comments">
+  <ContentUnits>
+    <EntryUnit gr:x="65" gr:y="15" id="mov1#hym2#page10#enu18" name="Add comment" linkOrder="mov1#hym2#page10#enu18#ln26">
+      <Field id="mov1#hym2#page10#enu18#fld24" name="Comment" type="text" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym2#page10#enu18#fld24#mnd35" name="Mandatory field"/>
+        </VRules>
+      </Field>
+      <Link id="mov1#hym2#page10#enu18#ln26" name="Save" to="mov1#hym2#cru11" type="normal" validate="true">
+        <LinkParameter id="mov1#hym2#page10#enu18#ln26#par40" name="Comment_Comment" source="mov1#hym2#page10#enu18#fld24" target="mov1#hym2#cru11.ent14#att44"/>
+        <LinkParameter id="mov1#hym2#page10#enu18#ln26#par44" name="Post key_PASSING_Post.oid(CommentToPost)" sourceLinkParameter="mov1#hym2#icu5#oln21#par43" target="mov1#hym2#cru11.rel14#role27.ent13#att40"/>
+      </Link>
+      <Link id="mov1#hym2#page10#enu18#ln41" name="Flow41" to="mov1#hym2#page10#pwu16" type="transport" validate="true">
+        <LinkParameter id="mov1#hym2#page10#enu18#ln41#par45" name="Post key_PASSING_RoleCondition21 [oid]" sourceLinkParameter="mov1#hym2#icu5#oln21#par43" target="mov1#hym2#page10#pwu16#su34#rcond21.ent13#att40"/>
+      </Link>
+    </EntryUnit>
+    <GetUnit gr:x="240" gr:y="90" id="mov1#hym2#page10#gtu16" name="Get user" contextParameters="UserCtxParam">
+      <Link id="mov1#hym2#page10#gtu16#ln28" name="Flow28" to="mov1#hym2#cru11" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+    <TimeUnit gr:x="335" gr:y="0" id="mov1#hym2#page10#tmu7" name="Time">
+      <Link id="mov1#hym2#page10#tmu7#ln33" name="Flow33" to="mov1#hym2#cru11" type="transport" validate="true">
+        <LinkParameter id="mov1#hym2#page10#tmu7#ln33#par41" name="Current/Input Timestamp_Insert Time" source="currentTimestamp" target="mov1#hym2#cru11.ent14#att31"/>
+      </Link>
+    </TimeUnit>
+    <PowerIndexUnit gr:x="80" gr:y="220" id="mov1#hym2#page10#pwu16" name="Comments list" sortable="true" checkable="false" useCountQuery="false" entity="ent14" displayAttributes="ent14#att31 ent14#att36 ent14#att44">
+      <Selector id="mov1#hym2#page10#pwu16#su34" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#hym2#page10#pwu16#su34#rcond21" name="RoleCondition21" predicate="in" implied="false" role="rel14#role28"/>
+        <AttributesCondition id="mov1#hym2#page10#pwu16#su34#acond17" name="Search" predicate="contains" ignoreCase="true" booleanOperator="or" implied="true" attributes="ent14#att44 ent14#att36"/>
+      </Selector>
+      <SortAttribute attribute="ent14#att31" order="ascending"/>
+    </PowerIndexUnit>
+    <EntryUnit id="mov1#hym2#page10#enu40" name="Search comment" gr:x="0" gr:y="125" linkOrder="mov1#hym2#page10#enu40#ln83">
+      <Field id="mov1#hym2#page10#enu40#fld50" name="Search" type="string" modifiable="true"/>
+      <Link id="mov1#hym2#page10#enu40#ln83" name="Search" to="mov1#hym2#page10#pwu16" type="normal" validate="true">
+        <LinkParameter id="mov1#hym2#page10#enu40#ln83#par119" name="Search_Search" source="mov1#hym2#page10#enu40#fld50" target="mov1#hym2#page10#pwu16#su34#acond17"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="mov1#hym2#page10#enu18">
+          <layout:Field field="mov1#hym2#page10#enu18#fld24"/>
+          <layout:Link link="mov1#hym2#page10#enu18#ln26"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="mov1#hym2#page10#enu40">
+          <layout:Field field="mov1#hym2#page10#enu40#fld50"/>
+          <layout:Link link="mov1#hym2#page10#enu40#ln83"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym2#page10#pwu16">
+          <layout:Attribute attribute="ent14#att31"/>
+          <layout:Attribute attribute="ent14#att36"/>
+          <layout:Attribute attribute="ent14#att44"/>
+          <layout:Link link="mov1#hym2#page10#pwu16ent14#att31"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

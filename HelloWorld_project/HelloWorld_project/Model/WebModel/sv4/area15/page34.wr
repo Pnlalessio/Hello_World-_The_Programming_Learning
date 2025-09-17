@@ -1,0 +1,86 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area15#page34" name="Manage support requests" gr:x="0" gr:y="0">
+  <ContentUnits>
+    <EntryUnit id="sv4#area15#page34#enu37" name="Send support request" linkOrder="sv4#area15#page34#enu37#ln179" gr:x="190" gr:y="50">
+      <Field id="sv4#area15#page34#enu37#fld64" name="Title" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv4#area15#page34#enu37#fld64#mnd45" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="sv4#area15#page34#enu37#fld65" name="Description" type="text" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv4#area15#page34#enu37#fld65#mnd46" name="mandatory filed"/>
+        </VRules>
+      </Field>
+      <Link id="sv4#area15#page34#enu37#ln179" name="Send" to="sv4#area15#cru22" type="normal" validate="true">
+        <LinkParameter id="sv4#area15#page34#enu37#ln179#par376" name="Description_Description" source="sv4#area15#page34#enu37#fld65" target="sv4#area15#cru22.ent1#att11"/>
+        <LinkParameter id="sv4#area15#page34#enu37#ln179#par377" name="Title_Title" source="sv4#area15#page34#enu37#fld64" target="sv4#area15#cru22.ent1#att5"/>
+        <LinkParameter id="sv4#area15#page34#enu37#ln179#par378" name="Not solved_Solution" target="sv4#area15#cru22.ent1#att13" sourceValue="Not solved"/>
+        <LinkParameter id="sv4#area15#page34#enu37#ln179#par379" name="Not solved_Status " target="sv4#area15#cru22.ent1#att12" sourceValue="Not solved"/>
+        <LinkParameter id="sv4#area15#page34#enu37#ln179#par380" name="UserCtxParam.oid_PASSING_User.oid(SupportToUser)" sourceLinkParameter="sv4#area15#page34#gtu10#ln180#par381" target="sv4#area15#cru22.rel2#role3.userOID"/>
+      </Link>
+    </EntryUnit>
+    <GetUnit id="sv4#area15#page34#gtu10" name="Get User" gr:x="0" gr:y="135" contextParameters="UserCtxParam">
+      <Link id="sv4#area15#page34#gtu10#ln180" name="Flow23" to="sv4#area15#page34#enu37" type="transport" validate="true">
+        <LinkParameter id="sv4#area15#page34#gtu10#ln180#par381" name="UserCtxParam.oid_PASSING" source="sv4#area15#page34#gtu10.UserCtxParam" passing="true"/>
+      </Link>
+      <Link id="sv4#area15#page34#gtu10#ln181" name="Flow25" to="sv4#area15#page34#pwu19" type="transport" automaticCoupling="true" validate="true"/>
+    </GetUnit>
+    <TimeUnit id="sv4#area15#page34#tmu2" name="Insertion date" gr:x="15" gr:y="0">
+      <Link id="sv4#area15#page34#tmu2#ln182" name="Flow24" to="sv4#area15#cru22" type="transport" validate="true">
+        <LinkParameter id="sv4#area15#page34#tmu2#ln182#par382" name="Current/Input Date_Insertion date" source="currentDate" target="sv4#area15#cru22.ent1#att15"/>
+      </Link>
+    </TimeUnit>
+    <PowerIndexUnit id="sv4#area15#page34#pwu19" name="My support requests" linkOrder="sv4#area15#page34#pwu19#ln183" gr:x="190" gr:y="160" sortable="true" checkable="false" useCountQuery="false" entity="ent1" displayAttributes="ent1#att15 ent1#att5 ent1#att11 ent1#att12">
+      <Selector id="sv4#area15#page34#pwu19#su64" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area15#page34#pwu19#su64#rcond18" name="RoleCondition2" role="rel2#role4" predicate="in" implied="false"/>
+      </Selector>
+      <SortAttribute attribute="ent1#att15" order="ascending"/>
+      <Link id="sv4#area15#page34#pwu19#ln183" name="Details" to="sv4#area15#page35#dau14" type="normal" automaticCoupling="true" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowWidth="500" ajaxWindowHeight="500" ajaxWindowResizable="true" ajaxWindowClosable="true" ajaxWindowModal="true"/>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area15#page34#enu37">
+          <layout:Field field="sv4#area15#page34#enu37#fld64"/>
+          <layout:Field field="sv4#area15#page34#enu37#fld65"/>
+          <layout:Link link="sv4#area15#page34#enu37#ln179"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area15#page34#pwu19" layout:style="PureStyle">
+          <layout:Attribute attribute="ent1#att15"/>
+          <layout:Attribute attribute="ent1#att5"/>
+          <layout:Attribute attribute="ent1#att11"/>
+          <layout:Attribute attribute="ent1#att12"/>
+          <layout:Link link="sv4#area15#page34#pwu19#ln183"/>
+          <layout:Link link="sv4#area15#page34#pwu19ent1#att15"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

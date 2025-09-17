@@ -1,0 +1,69 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="150" gr:y="485" id="sv2#area1#page28" name="View content">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="0" gr:y="0" id="sv2#area1#page28#pwu24" name="View content" sortable="true" checkable="false" useCountQuery="false" entity="ent6" displayAttributes="ent6#att18 ent6#att19 ent6#att20">
+      <Selector id="sv2#area1#page28#pwu24#su6" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area1#page28#pwu24#su6#rcond22" name="RoleCondition22" role="rel6#role11" predicate="in" implied="false"/>
+      </Selector>
+      <SortAttribute attribute="ent6#att18" order="ascending"/>
+    </PowerIndexUnit>
+    <MultiMessageUnit gr:x="185" gr:y="5" id="sv2#area1#page28#mssu7" name="Message" linkOrder="sv2#area1#page28#mssu7#ln85">
+      <Message xml:space="preserve">This is the course syllabus. Do you like it? Then register now for free!</Message>
+      <Link id="sv2#area1#page28#mssu7#ln85" name="Sign Up" to="sv2#miu3" automaticCoupling="true" type="normal" validate="true"/>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area1#page28#mssu7">
+          <layout:Link link="sv2#area1#page28#mssu7#ln85"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area1#page28#pwu24" layout:style="PureStyle">
+          <layout:Attribute attribute="ent6#att18"/>
+          <layout:Attribute attribute="ent6#att19"/>
+          <layout:Attribute attribute="ent6#att20"/>
+          <layout:Link link="sv2#area1#page28#pwu24ent6#att18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

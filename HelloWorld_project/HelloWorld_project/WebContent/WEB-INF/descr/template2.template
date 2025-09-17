@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <div>
+            Dear $$username$$,
+        </div> <br/>
+        <div>
+             You are now a Hello World tutor! From this moment, you can log in to our platform.
+             
+             <p>Regards</p>
+        </div> <br/>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="485" gr:y="420" id="mov1#hym6" name="Add options and solution" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="240" gr:y="165" id="mov1#hym6#icu12">
+      <InputCollectorParameter id="mov1#hym6#icu12#icp18" name="Exercise key"/>
+      <InputCollectorParameter id="mov1#hym6#icu12#icp19" name="Name"/>
+      <InputCollectorParameter id="mov1#hym6#icu12#icp20" name="Question"/>
+      <OKLink id="mov1#hym6#icu12#oln60" name="OKFlow60" to="mov1#hym6#page30#dau11">
+        <LinkParameter id="mov1#hym6#icu12#oln60#par272" name="Exercise key_KeyCondition24 [oid]" source="mov1#hym6#icu12#icp18" target="mov1#hym6#page30#dau11#su51#kcond31.ent6#att17"/>
+        <LinkParameter id="mov1#hym6#icu12#oln60#par304" name="Exercise key_PASSING" source="mov1#hym6#icu12#icp18" passing="true"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="790" gr:y="20" id="mov1#hym6#cru21" name="Add options" entity="ent11">
+      <OKLink id="mov1#hym6#cru21#oln61" name="OKFlow61" to="mov1#hym6#page30" automaticCoupling="true"/>
+    </CreateUnit>
+    <ModifyUnit gr:x="715" gr:y="480" id="mov1#hym6#mfu10" name="Add solution" entity="ent7">
+      <Selector id="mov1#hym6#mfu10#su52" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym6#mfu10#su52#kcond32" name="KeyCondition32" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#hym6#mfu10#oln62" name="OKFlow62" to="mov1#hym6#page30">
+        <LinkParameter id="mov1#hym6#mfu10#oln62#par303" name="1_var9" sourceValue="1" targetVariable="mov1#hym6#page30#var9"/>
+      </OKLink>
+    </ModifyUnit>
+    <OKCollectorUnit gr:x="1105" gr:y="330" id="mov1#hym6#okcu7" name="OK Port7"/>
+  </OperationUnits>
+</HybridModule>

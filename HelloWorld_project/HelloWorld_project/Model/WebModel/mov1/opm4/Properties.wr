@@ -1,0 +1,19 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="100" gr:y="220" id="mov1#opm4" name="Delete course">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm4#icu9" gr:x="30" gr:y="230">
+      <InputCollectorParameter id="mov1#opm4#icu9#icp7" name="Course key"/>
+      <OKLink id="mov1#opm4#icu9#oln18" name="OKFlow18" to="mov1#opm4#dlu3">
+        <LinkParameter id="mov1#opm4#icu9#oln18#par95" name="Course key_KeyCondition22 [oid]" source="mov1#opm4#icu9#icp7" target="mov1#opm4#dlu3#su19#kcond10.ent2#att6"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov1#opm4#okcu1" name="OK" gr:x="475" gr:y="230"/>
+    <DeleteUnit id="mov1#opm4#dlu3" name="Delete course" gr:x="275" gr:y="235" entity="ent2">
+      <Selector id="mov1#opm4#dlu3#su19" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm4#dlu3#su19#kcond10" name="KeyCondition22" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm4#dlu3#oln15" name="OKFlow45" to="mov1#opm4#okcu1" automaticCoupling="true"/>
+      <KOLink id="mov1#opm4#dlu3#kln1" name="KOFlow1" to="mov1#opm4#kocu3" automaticCoupling="true"/>
+    </DeleteUnit>
+    <KOCollectorUnit gr:x="475" gr:y="350" id="mov1#opm4#kocu3" name="Error"/>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,134 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym3#page14" name="Delete category " gr:x="340" gr:y="-400" layout:style="ClearStyle">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="0" gr:y="405" id="mov1#hym3#page14#pwu6" name="Category's Courses" sortable="true" checkable="false" useCountQuery="false" entity="ent2" displayAttributes="ent2#att6 ent2#att7 ent2#att10" linkOrder="mov1#hym3#page14#pwu6#ln82">
+      <Selector id="mov1#hym3#page14#pwu6#su20" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#hym3#page14#pwu6#su20#rcond5" name="Category" predicate="in" implied="false" role="rel4#role7"/>
+      </Selector>
+      <Link id="mov1#hym3#page14#pwu6#ln82" name="Assign" to="mov1#hym3#page14#seu11" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Category" ajaxWindowAutoResizing="true" ajaxWindowClosable="true" ajaxWindowDraggable="true">
+        <LinkParameter id="mov1#hym3#page14#pwu6#ln82#par132" name="1_var3" sourceValue="1" targetVariable="mov1#hym3#page14#var3"/>
+        <LinkParameter id="mov1#hym3#page14#pwu6#ln82#par115" name="Name_PASSING" source="data[].ent2#att7" passing="true"/>
+      </Link>
+      <Link id="mov1#hym3#page14#pwu6#ln21" name="Flow21" to="mov1#hym3#mfu2" type="transport" validate="true">
+        <LinkParameter id="mov1#hym3#page14#pwu6#ln21#par112" name="oid_KeyCondition4 [oid]" source="data[].ent2#att6" target="mov1#hym3#mfu2#su8#kcond4.ent2#att6"/>
+        <LinkParameter id="mov1#hym3#page14#pwu6#ln21#par133" name="Data Size_PASSING" source="dataSize" passing="true"/>
+      </Link>
+      <Link id="mov1#hym3#page14#pwu6#ln66" name="Flow66" to="mov1#hym3#page14#mssu8" type="transport" validate="true">
+        <LinkParameter id="mov1#hym3#page14#pwu6#ln66#par141" name="Category Key_PASSING" sourceLinkParameter="mov1#hym3#icu6#ln50#par140" passing="true"/>
+      </Link>
+    </PowerIndexUnit>
+    <MultiMessageUnit gr:x="295" gr:y="495" id="mov1#hym3#page14#mssu8" name="Notice" linkOrder="mov1#hym3#page14#mssu8#ln68">
+      <Message xml:space="preserve">These are the courses associated with the category you want to delete. Assign ALL of them to another category to proceed with the removal.
+ </Message>
+      <Link id="mov1#hym3#page14#mssu8#ln68" name="Delete category" to="mov1#hym3#dlu4" type="normal" validate="true">
+        <LinkParameter id="mov1#hym3#page14#mssu8#ln68#par143" name="Category Key_PASSING_Category [oid]" sourceLinkParameter="mov1#hym3#page14#pwu6#ln66#par141" target="mov1#hym3#dlu4#su14#kcond9.ent9#att22"/>
+      </Link>
+    </MultiMessageUnit>
+    <EntryUnit id="mov1#hym3#page14#enu20" name="Change category" gr:x="95" gr:y="0" entity="ent9" linkOrder="mov1#hym3#page14#enu20#ln18">
+      <SelectionField id="mov1#hym3#page14#enu20#sfld11" name="Category" type="string">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym3#page14#enu20#sfld11#mnd18" name="Mandatory field"/>
+        </VRules>
+      </SelectionField>
+      <Link id="mov1#hym3#page14#enu20#ln18" name="Save" to="mov1#hym3#mfu2" type="normal" validate="true">
+        <LinkParameter id="mov1#hym3#page14#enu20#ln18#par71" name="Category_Category.oid(CourseToCategory)" source="mov1#hym3#page14#enu20#sfld11" target="mov1#hym3#mfu2.rel4#role8.ent9#att22"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit id="mov1#hym3#page14#seu11" name="Select Categories" gr:x="55" gr:y="155" entity="ent9">
+      <Selector id="mov1#hym3#page14#seu11#su31" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym3#page14#seu11#su31#kcond19" name="Category" predicate="notIn" implied="false"/>
+      </Selector>
+      <Link id="mov1#hym3#page14#seu11#ln80" name="Link233" to="mov1#hym3#page14#enu20" type="transport" validate="true">
+        <LinkParameter id="mov1#hym3#page14#seu11#ln80#par123" name="Category Name" source="ent9#att28Array" target="mov1#hym3#page14#enu20#sfld11_label"/>
+        <LinkParameter id="mov1#hym3#page14#seu11#ln80#par152" name="oid_Category [output]" source="ent9#att22Array" target="mov1#hym3#page14#enu20#sfld11_output"/>
+      </Link>
+      <Link id="mov1#hym3#page14#seu11#ln86" name="Flow86" to="mov1#hym3#page14#mssu10" type="transport" validate="true">
+        <LinkParameter id="mov1#hym3#page14#seu11#ln86#par116" name="Name_PASSING_courseName" sourceLinkParameter="mov1#hym3#page14#pwu6#ln82#par115" target="mov1#hym3#page14#mssu10.courseName"/>
+      </Link>
+    </SelectorUnit>
+    <MultiMessageUnit gr:x="280" gr:y="110" id="mov1#hym3#page14#mssu10" name="Message" messageFile="WEB-INF/descr/message5.template"/>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="mov1#hym3#page14#mssu8">
+          <layout:Link link="mov1#hym3#page14#mssu8#ln68" layout:linkVisibilityCondition="mov1#hym3#page14#cexpr6"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="mov1#hym3#page14#mssu10" layout:unitVisibilityCondition="mov1#hym3#page14#cexpr2"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="mov1#hym3#page14#pwu6" layout:style="PureStyle">
+          <layout:Attribute attribute="ent2#att6"/>
+          <layout:Attribute attribute="ent2#att7"/>
+          <layout:Attribute attribute="ent2#att10"/>
+          <layout:Link link="mov1#hym3#page14#pwu6#ln82"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="mov1#hym3#page14#enu20" layout:unitVisibilityCondition="mov1#hym3#page14#cexpr2">
+          <layout:Field field="mov1#hym3#page14#enu20#sfld11"/>
+          <layout:Link link="mov1#hym3#page14#enu20#ln18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="mov1#hym3#page14#var3" name="var3" type="integer"/>
+  <ConditionExpression id="mov1#hym3#page14#cexpr2" name="ActivationExpression 2">
+    <TextValue xml:space="preserve">return (var3==1)</TextValue>
+  </ConditionExpression>
+  <Variable id="mov1#hym3#page14#var5" name="var5" type="integer" value="5"/>
+  <ConditionExpression id="mov1#hym3#page14#cexpr6" name="ActivationExpression 6">
+    <TextValue xml:space="preserve">return (var5==1)</TextValue>
+  </ConditionExpression>
+</Page>

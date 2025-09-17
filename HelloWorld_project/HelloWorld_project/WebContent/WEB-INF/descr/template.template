@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <div>
+            Dear administrator,
+        </div> <br/>
+        <div>
+             My name is $$first_name$$ $$last_name$$ (user id $$user_id$$), my email is $$email$$ and my curriculum is attached to this mail.
+             
+             <p>Regards</p>
+             
+             <p> <img src="$$curriculum$$"/> </p>
+        </div> <br/>
+    </body>
+</html>

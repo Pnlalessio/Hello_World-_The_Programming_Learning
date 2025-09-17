@@ -1,0 +1,141 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="205" gr:y="0" id="sv3#area9#page42" name="Forum page">
+  <ContentUnits>
+    <MultiMessageUnit gr:x="225" gr:y="165" id="sv3#area9#page42#mssu16" name="Message" messageFile="WEB-INF/descr/message8.template" linkOrder="sv3#area9#page42#mssu16#ln108">
+      <Link id="sv3#area9#page42#mssu16#ln108" name="Create post" to="sv3#area9#page42#enu34" type="normal" validate="true">
+        <LinkParameter id="sv3#area9#page42#mssu16#ln108#par210" name="CourseToForum.oid_PASSING" sourceLinkParameter="sv3#area9#page13#pwu7#ln107#par209" passing="true"/>
+        <LinkParameter id="sv3#area9#page42#mssu16#ln108#par220" name="1_var18" sourceValue="1" targetVariable="sv3#area9#page42#var18"/>
+      </Link>
+      <Link id="sv3#area9#page42#mssu16#ln112" name="Flow112" to="sv3#area9#page42#pwu21" type="transport" validate="true">
+        <LinkParameter id="sv3#area9#page42#mssu16#ln112#par223" name="CourseToForum.oid_PASSING" sourceLinkParameter="sv3#area9#page13#pwu7#ln107#par209" passing="true"/>
+        <LinkParameter id="sv3#area9#page42#mssu16#ln112#par226" name="CourseToForum.oid_PASSING_RoleCondition17 [oid]" sourceLinkParameter="sv3#area9#page13#pwu7#ln107#par209" target="sv3#area9#page42#pwu21#su40#rcond17.ent12#att38"/>
+      </Link>
+    </MultiMessageUnit>
+    <EntryUnit gr:x="0" gr:y="170" id="sv3#area9#page42#enu34" name="Create post" linkOrder="sv3#area9#page42#enu34#ln109">
+      <Field id="sv3#area9#page42#enu34#fld30" name="Title" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv3#area9#page42#enu34#fld30#mnd37" name="Mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="sv3#area9#page42#enu34#fld31" name="Description" type="text" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv3#area9#page42#enu34#fld31#mnd38" name="Mandatory field"/>
+        </VRules>
+      </Field>
+      <Link id="sv3#area9#page42#enu34#ln109" name="Save" to="sv3#area9#cru12" type="normal" validate="true">
+        <LinkParameter id="sv3#area9#page42#enu34#ln109#par179" name="Description_Description" source="sv3#area9#page42#enu34#fld31" target="sv3#area9#cru12.ent13#att42"/>
+        <LinkParameter id="sv3#area9#page42#enu34#ln109#par180" name="Title_Title" source="sv3#area9#page42#enu34#fld30" target="sv3#area9#cru12.ent13#att41"/>
+        <LinkParameter id="sv3#area9#page42#enu34#ln109#par219" name="CourseToForum.oid_PASSING_Forum.oid(PostToForum)" sourceLinkParameter="sv3#area9#page42#mssu16#ln108#par210" target="sv3#area9#cru12.rel13#role25.ent12#att38"/>
+      </Link>
+    </EntryUnit>
+    <TimeUnit gr:x="0" gr:y="0" id="sv3#area9#page42#tmu5" name="Insert time">
+      <Link id="sv3#area9#page42#tmu5#ln110" name="Flow110" to="sv3#area9#cru12" type="transport" validate="true">
+        <LinkParameter id="sv3#area9#page42#tmu5#ln110#par178" name="Current/Input Timestamp_Insert Time" source="currentTimestamp" target="sv3#area9#cru12.ent13#att21"/>
+      </Link>
+    </TimeUnit>
+    <GetUnit gr:x="210" gr:y="20" id="sv3#area9#page42#gtu14" name="Get user" contextParameters="UserCtxParam">
+      <Link id="sv3#area9#page42#gtu14#ln111" name="Flow111" to="sv3#area9#cru12" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+    <PowerIndexUnit gr:x="355" gr:y="20" id="sv3#area9#page42#pwu21" name="Posts" sortable="true" checkable="false" useCountQuery="false" entity="ent13" displayAttributes="ent13#att21 ent13#att35 ent13#att41 ent13#att42" linkOrder="sv3#area9#page42#pwu21#ln44">
+      <Selector id="sv3#area9#page42#pwu21#su40" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#area9#page42#pwu21#su40#rcond17" name="RoleCondition17" predicate="in" implied="false" role="rel13#role26"/>
+        <AttributesCondition id="sv3#area9#page42#pwu21#su40#acond12" name="Search" predicate="contains" ignoreCase="true" booleanOperator="or" implied="true" attributes="ent13#att41 ent13#att42 ent13#att35"/>
+      </Selector>
+      <SortAttribute attribute="ent13#att21" order="descending"/>
+      <Link id="sv3#area9#page42#pwu21#ln44" name="Comments" to="sv3#area9#miu8" type="normal" validate="true">
+        <LinkParameter id="sv3#area9#page42#pwu21#ln44#par113" name="oid_Post key" source="data[].ent13#att40" target="sv3#area9#miu8.mov1#hym2#icu5#icp2"/>
+      </Link>
+    </PowerIndexUnit>
+    <EntryUnit id="sv3#area9#page42#enu21" name="Search post" gr:x="495" gr:y="200" linkOrder="sv3#area9#page42#enu21#ln53">
+      <Field id="sv3#area9#page42#enu21#fld25" name="Search" type="string" modifiable="true"/>
+      <Link id="sv3#area9#page42#enu21#ln53" name="Search" to="sv3#area9#page42#pwu21" type="normal" validate="true">
+        <LinkParameter id="sv3#area9#page42#enu21#ln53#par120" name="Search_Search" source="sv3#area9#page42#enu21#fld25" target="sv3#area9#page42#pwu21#su40#acond12"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv3#area9#page42#mssu16">
+          <layout:Link link="sv3#area9#page42#mssu16#ln108"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv3#area9#page42#enu21">
+          <layout:Field field="sv3#area9#page42#enu21#fld25"/>
+          <layout:Link link="sv3#area9#page42#enu21#ln53"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area9#page42#enu34" layout:unitVisibilityCondition="sv3#area9#page42#cexpr16">
+          <layout:Field field="sv3#area9#page42#enu34#fld30"/>
+          <layout:Field field="sv3#area9#page42#enu34#fld31"/>
+          <layout:Link link="sv3#area9#page42#enu34#ln109"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area9#page42#pwu21" layout:style="PureStyle">
+          <layout:Attribute attribute="ent13#att21"/>
+          <layout:Attribute attribute="ent13#att35"/>
+          <layout:Attribute attribute="ent13#att41"/>
+          <layout:Attribute attribute="ent13#att42"/>
+          <layout:Link link="sv3#area9#page42#pwu21#ln44"/>
+          <layout:Link link="sv3#area9#page42#pwu21ent13#att21"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv3#area9#page42#var18" name="var18" value="0" type="integer"/>
+  <ConditionExpression id="sv3#area9#page42#cexpr16" name="ActivationExpression 16">
+    <TextValue xml:space="preserve">return (var18==1)</TextValue>
+  </ConditionExpression>
+</Page>

@@ -1,0 +1,40 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="340" gr:y="165" id="mov1#hym1#page8" name="Registration">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym1#page8#enu4" name="Do you want to register as a tutor or a user?" gr:x="0" gr:y="0" linkOrder="mov1#hym1#page8#enu4#ln3">
+      <SelectionField id="mov1#hym1#page8#enu4#sfld3" name="Group" type="string" splitOutput="true">
+        <Slot id="mov1#hym1#page8#enu4#sfld3#slot8" name="User or Tutor" label="true" output="false" value="User|Tutor"/>
+        <Slot id="mov1#hym1#page8#enu4#sfld3#slot9" name="Group id" label="false" output="true" value="1|2"/>
+        <Slot id="mov1#hym1#page8#enu4#sfld3#slot10" name="Approved" label="false" output="true" value="1|0"/>
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym1#page8#enu4#sfld3#mnd12" name="Mandatory group" errorMessage="Obbligatory field"/>
+        </VRules>
+      </SelectionField>
+      <Link id="mov1#hym1#page8#enu4#ln3" name="Continue" to="mov1#hym1#page1#enu1" type="normal" validate="true">
+        <LinkParameter id="mov1#hym1#page8#enu4#ln3#par84" name="Group[Group id]_isTutor" source="mov1#hym1#page8#enu4#sfld3#slot9" targetVariable="mov1#hym1#page1#var2"/>
+        <LinkParameter id="mov1#hym1#page8#enu4#ln3#par57" name="Group[Approved]_PASSING" source="mov1#hym1#page8#enu4#sfld3#slot10" passing="true"/>
+        <LinkParameter id="mov1#hym1#page8#enu4#ln3#par59" name="Group[Group id]_PASSING" source="mov1#hym1#page8#enu4#sfld3#slot9" passing="true"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym1#page8#enu4">
+          <layout:Field field="mov1#hym1#page8#enu4#sfld3"/>
+          <layout:Link link="mov1#hym1#page8#enu4#ln3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

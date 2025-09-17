@@ -1,0 +1,92 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="285" gr:y="430" id="sv4#area8#page26" name="Contact tutor">
+  <ContentUnits>
+    <TimeUnit id="sv4#area8#page26#tmu4" name="Insertion date" gr:x="285" gr:y="235">
+      <Link id="sv4#area8#page26#tmu4#ln54" name="Flow54" to="sv4#area8#cru5" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page26#tmu4#ln54#par69" name="Current/Input Date_Instertion date" source="currentDate" target="sv4#area8#cru5.ent10#att48"/>
+      </Link>
+    </TimeUnit>
+    <EntryUnit id="sv4#area8#page26#enu9" name="Send private message" gr:x="200" gr:y="0" linkOrder="sv4#area8#page26#enu9#ln60">
+      <Field id="sv4#area8#page26#enu9#fld20" name="Title" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv4#area8#page26#enu9#fld20#mnd19" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="sv4#area8#page26#enu9#fld22" name="Description" type="text" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv4#area8#page26#enu9#fld22#mnd24" name="mandatory filed"/>
+        </VRules>
+      </Field>
+      <Link id="sv4#area8#page26#enu9#ln60" name="Send" to="sv4#area8#cru5" type="normal" validate="true">
+        <LinkParameter id="sv4#area8#page26#enu9#ln60#par105" name="No answer_Answer" sourceValue="No answer" target="sv4#area8#cru5.ent10#att49"/>
+        <LinkParameter id="sv4#area8#page26#enu9#ln60#par106" name="Description_Description" source="sv4#area8#page26#enu9#fld22" target="sv4#area8#cru5.ent10#att46"/>
+        <LinkParameter id="sv4#area8#page26#enu9#ln60#par108" name="oid_PASSING_Course.oid(Private messageToCourse)" sourceLinkParameter="sv4#area8#page21#pwu15#ln57#par107" target="sv4#area8#cru5.rel7#role13.ent2#att6"/>
+        <LinkParameter id="sv4#area8#page26#enu9#ln60#par109" name="No answer_Status" sourceValue="No answer" target="sv4#area8#cru5.ent10#att47"/>
+        <LinkParameter id="sv4#area8#page26#enu9#ln60#par110" name="Title_Title" source="sv4#area8#page26#enu9#fld20" target="sv4#area8#cru5.ent10#att45"/>
+      </Link>
+      <Link id="sv4#area8#page26#enu9#ln76" name="Flow76" to="sv4#area8#page26#pwu13" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page26#enu9#ln76#par114" name="oid_PASSING_RoleCondition6 [oid]" sourceLinkParameter="sv4#area8#page21#pwu15#ln57#par107" target="sv4#area8#page26#pwu13#su25#rcond6.ent2#att6"/>
+      </Link>
+    </EntryUnit>
+    <GetUnit gr:x="270" gr:y="110" id="sv4#area8#page26#gtu13" name="Get User" contextParameters="UserCtxParam">
+      <Link id="sv4#area8#page26#gtu13#ln61" name="Flow61" to="sv4#area8#cru5" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page26#gtu13#ln61#par111" name="UserCtxParam.oid_User.oid(Private messageToUser)" source="sv4#area8#page26#gtu13.UserCtxParam" target="sv4#area8#cru5.rel5#role10.userOID"/>
+      </Link>
+      <Link id="sv4#area8#page26#gtu13#ln65" name="Flow65" to="sv4#area8#page26#pwu13" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page26#gtu13#ln65#par117" name="UserCtxParam.oid_RoleCondition12 [oid]" source="sv4#area8#page26#gtu13.UserCtxParam" target="sv4#area8#page26#pwu13#su25#rcond12.userOID"/>
+      </Link>
+    </GetUnit>
+    <PowerIndexUnit gr:x="0" gr:y="115" id="sv4#area8#page26#pwu13" name="My private messages" sortable="true" checkable="false" useCountQuery="false" entity="ent10" displayAttributes="ent10#att48 ent10#att45 ent10#att46 ent10#att47" linkOrder="sv4#area8#page26#pwu13#ln74">
+      <Selector id="sv4#area8#page26#pwu13#su25" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area8#page26#pwu13#su25#rcond6" name="RoleCondition6" predicate="in" implied="false" role="rel7#role14"/>
+        <RelationshipRoleCondition id="sv4#area8#page26#pwu13#su25#rcond12" name="RoleCondition12" predicate="in" implied="false" role="rel5#role9"/>
+      </Selector>
+      <Link id="sv4#area8#page26#pwu13#ln74" name="Details" to="sv4#area8#page29#dau2" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowWidth="500" ajaxWindowHeight="500" ajaxWindowResizable="true" ajaxWindowClosable="true" ajaxWindowDraggable="true"/>
+      <SortAttribute attribute="ent10#att48" order="ascending"/>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area8#page26#enu9">
+          <layout:Field field="sv4#area8#page26#enu9#fld20"/>
+          <layout:Field field="sv4#area8#page26#enu9#fld22"/>
+          <layout:Link link="sv4#area8#page26#enu9#ln60"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area8#page26#pwu13" layout:style="PureStyle">
+          <layout:Link link="sv4#area8#page26#pwu13#ln74"/>
+          <layout:Link link="sv4#area8#page26#pwu13ent10#att48"/>
+          <layout:Attribute attribute="ent10#att48"/>
+          <layout:Attribute attribute="ent10#att45"/>
+          <layout:Attribute attribute="ent10#att46"/>
+          <layout:Attribute attribute="ent10#att47"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

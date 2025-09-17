@@ -1,0 +1,5 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv4#area15" name="Support requests" defaultPage="sv4#area15#page34" landmark="true" gr:x="-5" gr:y="310">
+  <OperationUnits>
+    <CreateUnit id="sv4#area15#cru22" name="Create support request" gr:x="485" gr:y="15" entity="ent1"/>
+  </OperationUnits>
+</Area>

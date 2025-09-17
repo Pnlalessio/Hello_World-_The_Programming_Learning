@@ -1,0 +1,31 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area3#page16" name="Category" ignoreMasterPage="true" layout:pageLayout="WRDefault/Empty" gr:x="615" gr:y="10" layout:style="ClearStyle">
+  <ContentUnits>
+    <DataUnit id="sv1#area3#page16#dau7" name="Details" gr:x="0" gr:y="0" entity="ent9" displayAttributes="ent9#att28 ent9#att29">
+      <Selector id="sv1#area3#page16#dau7#su23" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area3#page16#dau7#su23#kcond13" name="Category" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area3#page16#dau7">
+          <layout:Attribute attribute="ent9#att28"/>
+          <layout:Attribute attribute="ent9#att29"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Comment xml:space="preserve">Popup Page that displays the information related to a previously selected Category.</Comment>
+</Page>

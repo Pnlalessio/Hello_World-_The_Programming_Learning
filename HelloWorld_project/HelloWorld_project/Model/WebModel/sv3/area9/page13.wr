@@ -1,0 +1,103 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="350" id="sv3#area9#page13" name="Manage courses">
+  <ContentUnits>
+    <EntryUnit id="sv3#area9#page13#enu15" name="Search course" gr:x="0" gr:y="5" linkOrder="sv3#area9#page13#enu15#ln75">
+      <Field id="sv3#area9#page13#enu15#fld32" name="Search" type="string" modifiable="true"/>
+      <Link id="sv3#area9#page13#enu15#ln75" name="Search" to="sv3#area9#page13#pwu7" type="normal" validate="true">
+        <LinkParameter id="sv3#area9#page13#enu15#ln75#par151" name="Search_Search" source="sv3#area9#page13#enu15#fld32" target="sv3#area9#page13#pwu7#su32#acond8"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit id="sv3#area9#page13#pwu7" name="Courses list" gr:x="190" gr:y="0" sortable="true" checkable="false" useCountQuery="false" entity="ent2" displayAttributes="ent2#att7 ent2#att10 ent2#att26 ent2#att27" linkOrder="sv3#area9#page13#pwu7#ln104 sv3#area9#page13#pwu7#ln107 sv3#area9#page13#pwu7#ln102 sv3#area9#page13#pwu7#ln100 sv3#area9#page13#pwu7#ln38">
+      <Selector id="sv3#area9#page13#pwu7#su32" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv3#area9#page13#pwu7#su32#acond8" name="Search" predicate="contains" ignoreCase="true" booleanOperator="or" implied="true" attributes="ent2#att7 ent2#att10"/>
+        <RelationshipRoleCondition id="sv3#area9#page13#pwu7#su32#rcond3" name="RoleCondition3" predicate="in" implied="false" role="rel1#role1"/>
+      </Selector>
+      <Link id="sv3#area9#page13#pwu7#ln100" name="Edit" to="sv3#area9#page18#enu17" type="normal" validate="true">
+        <LinkParameter id="sv3#area9#page13#pwu7#ln100#par211" name="CourseToCategory.oid_Category - Preselection" source="data[].rel4#role8_ent9#att22" target="sv3#area9#page18#enu17#sfld4_presel"/>
+        <LinkParameter id="sv3#area9#page13#pwu7#ln100#par212" name="description_Description" source="data[].ent2#att10" target="sv3#area9#page18#enu17#fld39_slot"/>
+        <LinkParameter id="sv3#area9#page13#pwu7#ln100#par213" name="oid_Key Condition [oid]" source="data[].ent2#att6" target="sv3#area9#page18#enu17.ent2#att6"/>
+        <LinkParameter id="sv3#area9#page13#pwu7#ln100#par214" name="Name_Name" source="data[].ent2#att7" target="sv3#area9#page18#enu17#fld38_slot"/>
+      </Link>
+      <Link id="sv3#area9#page13#pwu7#ln104" name="View content" to="sv3#area9#page17#pwu8" type="normal" validate="true">
+        <LinkParameter id="sv3#area9#page13#pwu7#ln104#par222" name="oid_RoleCondition4 [oid]" source="data[].ent2#att6" target="sv3#area9#page17#pwu8#su35#rcond4.ent2#att6"/>
+        <LinkParameter id="sv3#area9#page13#pwu7#ln104#par248" name="oid_PASSING" source="data[].ent2#att6" passing="true"/>
+      </Link>
+      <Link id="sv3#area9#page13#pwu7#ln38" name="Delete" to="sv3#area9#miu6" type="normal" validate="true">
+        <LinkParameter id="sv3#area9#page13#pwu7#ln38#par96" name="oid_Course key" source="data[].ent2#att6" target="sv3#area9#miu6.mov1#opm4#icu9#icp7"/>
+      </Link>
+      <Link id="sv3#area9#page13#pwu7#ln102" name="Messages" to="sv3#area9#page40#pwu20" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv3#area9#page13#pwu7#ln107" name="Forum" to="sv3#area9#page42#mssu16" type="normal" validate="true">
+        <LinkParameter id="sv3#area9#page13#pwu7#ln107#par181" name="Name_courseName" source="data[].ent2#att7" target="sv3#area9#page42#mssu16.courseName"/>
+        <LinkParameter id="sv3#area9#page13#pwu7#ln107#par209" name="CourseToForum.oid_PASSING" source="data[].rel11#role21_ent12#att38" passing="true"/>
+      </Link>
+    </PowerIndexUnit>
+    <GetUnit id="sv3#area9#page13#gtu8" name="Get User" gr:x="5" gr:y="110" contextParameters="UserCtxParam">
+      <Link id="sv3#area9#page13#gtu8#ln88" name="Flow76" to="sv3#area9#page13#pwu7" type="transport" validate="true">
+        <LinkParameter id="sv3#area9#page13#gtu8#ln88#par159" name="UserCtxParam.oid_RoleCondition3 [oid]" source="sv3#area9#page13#gtu8.UserCtxParam" target="sv3#area9#page13#pwu7#su32#rcond3.userOID"/>
+      </Link>
+    </GetUnit>
+    <MultiMessageUnit gr:x="465" gr:y="170" id="sv3#area9#page13#mssu12" name="Error"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area9#page13#enu15">
+          <layout:Field field="sv3#area9#page13#enu15#fld32"/>
+          <layout:Link link="sv3#area9#page13#enu15#ln75"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area9#page13#pwu7" layout:style="PureStyle">
+          <layout:Link link="sv3#area9#page13#pwu7#ln104"/>
+          <layout:Link link="sv3#area9#page13#pwu7#ln107"/>
+          <layout:Link link="sv3#area9#page13#pwu7#ln102"/>
+          <layout:Link link="sv3#area9#page13#pwu7#ln100"/>
+          <layout:Link link="sv3#area9#page13#pwu7#ln38"/>
+          <layout:Attribute attribute="ent2#att7"/>
+          <layout:Attribute attribute="ent2#att10"/>
+          <layout:Attribute attribute="ent2#att26"/>
+          <layout:Attribute attribute="ent2#att27"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area9#page13#mssu12"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

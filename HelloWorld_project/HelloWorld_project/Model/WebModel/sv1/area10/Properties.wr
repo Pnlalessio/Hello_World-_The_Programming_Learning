@@ -1,0 +1,12 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="1075" gr:y="240" id="sv1#area10" name="Manage profiles" landmark="true" defaultPage="sv1#area10#page23">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="520" gr:y="270" id="sv1#area10#miu2" action="false" moduleId="mov1#hym4" name="Edit profile">
+      <OKLink id="sv1#area10#miu2#oln9" name="OKFlow9" to="sv1#area10#page23" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <DeleteUnit gr:x="545" gr:y="105" id="sv1#area10#dlu1" name="Delete profile" entity="User">
+      <Selector id="sv1#area10#dlu1#su7" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area10#dlu1#su7#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+    </DeleteUnit>
+  </OperationUnits>
+</Area>

@@ -1,0 +1,97 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area17#page27" name="Explore courses" gr:x="0" gr:y="30">
+  <ContentUnits>
+    <EntryUnit id="sv4#area17#page27#enu30" name="Search course" linkOrder="sv4#area17#page27#enu30#ln77" gr:x="5" gr:y="175">
+      <Field id="sv4#area17#page27#enu30#fld53" name="Search" type="string" modifiable="true"/>
+      <Link id="sv4#area17#page27#enu30#ln77" name="Search" to="sv4#area17#page27#pwu14" type="normal" validate="true">
+        <LinkParameter id="sv4#area17#page27#enu30#ln77#par250" name="Search_Search" source="sv4#area17#page27#enu30#fld53" target="sv4#area17#page27#pwu14#su48#acond14"/>
+        <LinkParameter id="sv4#area17#page27#enu30#ln77#par261" name="Search with category_RoleCondition9 [oid]" source="sv4#area17#page27#enu30#sfld2" target="sv4#area17#page27#pwu14#su48#rcond9.ent9#att22"/>
+      </Link>
+      <SelectionField id="sv4#area17#page27#enu30#sfld2" name="Search with category" type="string"/>
+    </EntryUnit>
+    <PowerIndexUnit id="sv4#area17#page27#pwu14" name="Courses list" gr:x="0" gr:y="0" sortable="true" checkable="false" useCountQuery="false" entity="ent2" displayAttributes="ent2#att6 ent2#att7 ent2#att10 rel1#role2.userName rel4#role8.ent9#att28 ent2#att26 ent2#att27" linkOrder="sv4#area17#page27#pwu14#ln20">
+      <Selector id="sv4#area17#page27#pwu14#su48" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#area17#page27#pwu14#su48#acond14" name="Search" predicate="contains" ignoreCase="true" booleanOperator="or" implied="true" attributes="ent2#att7 ent2#att10 rel1#role2.userName"/>
+        <RelationshipRoleCondition id="sv4#area17#page27#pwu14#su48#rcond9" name="RoleCondition9" predicate="in" implied="true" role="rel4#role7"/>
+        <RelationshipRoleCondition id="sv4#area17#page27#pwu14#su48#rcond10" name="RoleCondition10" predicate="notIn" implied="false" role="rel9#role17.rel10#role19"/>
+      </Selector>
+      <Link id="sv4#area17#page27#pwu14#ln20" name="View content" to="sv4#area17#page3#pwu12" type="normal" validate="true">
+        <LinkParameter id="sv4#area17#page27#pwu14#ln20#par20" name="oid_RoleCondition4 [oid]" source="data[].ent2#att6" target="sv4#area17#page3#pwu12#su13#rcond7.ent2#att6"/>
+        <LinkParameter id="sv4#area17#page27#pwu14#ln20#par36" name="oid_PASSING" source="data[].ent2#att6" passing="true"/>
+      </Link>
+      <SortAttribute attribute="ent2#att27" order="descending"/>
+      <SortAttribute attribute="ent2#att26" order="descending"/>
+    </PowerIndexUnit>
+    <SelectorUnit gr:x="190" gr:y="270" id="sv4#area17#page27#seu13" name="Select category" entity="ent9">
+      <Link id="sv4#area17#page27#seu13#ln79" name="Flow79" to="sv4#area17#page27#enu30" type="transport" validate="true">
+        <LinkParameter id="sv4#area17#page27#seu13#ln79#par251" name="Category_Search with category [label]" source="ent9#att28Array" target="sv4#area17#page27#enu30#sfld2_label"/>
+        <LinkParameter id="sv4#area17#page27#seu13#ln79#par252" name="oid_Search with category [output]" source="ent9#att22Array" target="sv4#area17#page27#enu30#sfld2_output"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit id="sv4#area17#page27#gtu11" name="Get User" gr:x="350" gr:y="190" contextParameters="UserCtxParam">
+      <Link id="sv4#area17#page27#gtu11#ln42" name="Flow42" to="sv4#area17#page27#pwu14" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area17#page27#enu30">
+          <layout:Link link="sv4#area17#page27#enu30#ln77"/>
+          <layout:Field field="sv4#area17#page27#enu30#fld53"/>
+          <layout:Field field="sv4#area17#page27#enu30#sfld2"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area17#page27#pwu14" layout:style="PureStyle">
+          <layout:Attribute attribute="ent2#att6"/>
+          <layout:Attribute attribute="ent2#att7"/>
+          <layout:Attribute attribute="ent2#att10"/>
+          <layout:Attribute attribute="rel1#role2.userName"/>
+          <layout:Attribute attribute="rel4#role8.ent9#att28"/>
+          <layout:Attribute attribute="ent2#att26"/>
+          <layout:Attribute attribute="ent2#att27"/>
+          <layout:Link link="sv4#area17#page27#pwu14#ln20"/>
+          <layout:Link link="sv4#area17#page27#pwu14ent2#att27"/>
+          <layout:Link link="sv4#area17#page27#pwu14ent2#att26"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

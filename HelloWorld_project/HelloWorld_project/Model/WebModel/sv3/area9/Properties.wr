@@ -1,0 +1,33 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="190" gr:y="650" id="sv3#area9" name="Manage courses" landmark="true" defaultPage="sv3#area9#page13">
+  <OperationUnits>
+    <ModuleInstanceUnit id="sv3#area9#miu14" gr:x="1055" gr:y="390" action="false" moduleId="mov1#hym5"/>
+    <DeleteUnit gr:x="1095" gr:y="480" id="sv3#area9#dlu2" name="Delete content" entity="ent6">
+      <Selector id="sv3#area9#dlu2#su18" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area9#dlu2#su18#kcond15" name="KeyCondition15" predicate="in" implied="false"/>
+      </Selector>
+    </DeleteUnit>
+    <ModuleInstanceUnit gr:x="420" gr:y="700" id="sv3#area9#miu6" action="true" moduleId="mov1#opm4">
+      <OKLink id="sv3#area9#miu6#oln16" name="OKFlow16" to="sv3#area9#page13#pwu7" automaticCoupling="true" gr:bendpoints="-57,-102,38,138"/>
+      <KOLink id="sv3#area9#miu6#kln3" name="KOFlow3" to="sv3#area9#page13#mssu12">
+        <LinkParameter id="sv3#area9#miu6#kln3#par97" name="Some error occurred. _Shown Messages" sourceValue="Some error occurred. Contact the administrator through a support request." target="sv3#area9#page13#mssu12.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="810" gr:y="700" id="sv3#area9#miu18" action="false" moduleId="mov1#hym7">
+      <OKLink id="sv3#area9#miu18#oln70" name="OKFlow70" to="sv3#area9#page17#pwu8" automaticCoupling="true" gr:bendpoints="-130,-3,190,42"/>
+    </ModuleInstanceUnit>
+    <ModifyUnit gr:x="995" gr:y="920" id="sv3#area9#mfu5" name="Update private message" entity="ent10">
+      <Selector id="sv3#area9#mfu5#su39" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area9#mfu5#su39#kcond22" name="KeyCondition22" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#area9#mfu5#oln22" name="OKFlow22" to="sv3#area9#page40">
+        <LinkParameter id="sv3#area9#mfu5#oln22#par170" name="1_var4" sourceValue="0" targetVariable="sv3#area9#page40#var6"/>
+      </OKLink>
+    </ModifyUnit>
+    <CreateUnit gr:x="10" gr:y="195" id="sv3#area9#cru12" name="Create post" entity="ent13">
+      <OKLink id="sv3#area9#cru12#oln25" name="OKFlow25" to="sv3#area9#page42">
+        <LinkParameter id="sv3#area9#cru12#oln25#par221" name="0_var18" sourceValue="0" targetVariable="sv3#area9#page42#var18"/>
+      </OKLink>
+    </CreateUnit>
+    <ModuleInstanceUnit gr:x="1015" gr:y="90" id="sv3#area9#miu8" action="false" moduleId="mov1#hym2"/>
+  </OperationUnits>
+</Area>

@@ -1,0 +1,36 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="500" gr:y="140" id="mov1#hym1" name="Registration">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="90" gr:y="175" id="mov1#hym1#icu3">
+      <OKLink id="mov1#hym1#icu3#oln7" name="OKFlow7" to="mov1#hym1#page8" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="695" gr:y="375" id="mov1#hym1#cru1" name="Create user" entity="User">
+      <OKLink id="mov1#hym1#cru1#oln38" name="OKFlow38" to="mov1#hym1#switch2">
+        <LinkParameter id="mov1#hym1#cru1#oln38#par185" name="oid_PASSING" source="userOIDArray" passing="true"/>
+        <LinkParameter id="mov1#hym1#cru1#oln38#par195" name="Group[Group id]_PASSING_Switch" sourceLinkParameter="mov1#hym1#page1#enu1#ln45#par192" target="mov1#hym1#switch2.switch"/>
+        <LinkParameter id="mov1#hym1#cru1#oln38#par196" name="Password_PASSING" source="passwordArray" passing="true"/>
+        <LinkParameter id="mov1#hym1#cru1#oln38#par197" name="User Name_PASSING" source="userNameArray" passing="true"/>
+        <LinkParameter id="mov1#hym1#cru1#oln38#par201" name="Curriculum_PASSING" sourceLinkParameter="mov1#hym1#page1#enu1#ln45#par200" passing="true"/>
+      </OKLink>
+    </CreateUnit>
+    <ModuleInstanceUnit gr:x="870" gr:y="220" id="mov1#hym1#miu1" action="true" moduleId="mov1#opm1"/>
+    <SwitchUnit gr:x="895" gr:y="385" id="mov1#hym1#switch2" name="Tutor or User?">
+      <OKLink id="mov1#hym1#switch2#oln39" name="OKFlow39" to="mov1#hym1#miu1" code="1">
+        <LinkParameter id="mov1#hym1#switch2#oln39#par198" name="Password_PASSING_Password" sourceLinkParameter="mov1#hym1#cru1#oln38#par196" target="mov1#hym1#miu1.mov1#opm1#icu1#icp1"/>
+        <LinkParameter id="mov1#hym1#switch2#oln39#par199" name="User Name_PASSING_Username" sourceLinkParameter="mov1#hym1#cru1#oln38#par197" target="mov1#hym1#miu1.mov1#opm1#icu1#icp3"/>
+      </OKLink>
+      <Case value="1"/>
+      <Case value="2"/>
+      <OKLink id="mov1#hym1#switch2#oln41" name="OKFlow41" to="mov1#hym1#cru9" code="2">
+        <LinkParameter id="mov1#hym1#switch2#oln41#par203" name="Curriculum_PASSING_Curriculum Object" sourceLinkParameter="mov1#hym1#cru1#oln38#par201" target="mov1#hym1#cru9.entityBeans"/>
+        <LinkParameter id="mov1#hym1#switch2#oln41#par205" name="Curriculum_PASSING_Curriculum" sourceLinkParameter="mov1#hym1#cru1#oln38#par201" target="mov1#hym1#cru9.ent3#att9"/>
+        <LinkParameter id="mov1#hym1#switch2#oln41#par206" name="Curriculum_PASSING_Curriculum [file name]" sourceLinkParameter="mov1#hym1#cru1#oln38#par201" target="mov1#hym1#cru9.ent3#att9_name"/>
+        <LinkParameter id="mov1#hym1#switch2#oln41#par207" name="oid_PASSING_User.oid(CurriculumToUser)" sourceLinkParameter="mov1#hym1#cru1#oln38#par185" target="mov1#hym1#cru9.rel3#role6.userOID"/>
+      </OKLink>
+    </SwitchUnit>
+    <CreateUnit gr:x="860" gr:y="525" id="mov1#hym1#cru9" name="Create curriculum" entity="ent3">
+      <OKLink id="mov1#hym1#cru9#oln42" name="OKFlow42" to="mov1#hym1#page9#mssu9">
+        <LinkParameter id="mov1#hym1#cru9#oln42#par193" name="The administrator must approve your request. Once your request has been evaluated, you will receive an email (sent to the address used for registration)._Shown Messages" sourceValue="The administrator must approve your request. Once your request has been evaluated, you will receive an email (sent to the address used for registration)." target="mov1#hym1#page9#mssu9.shownMessages"/>
+      </OKLink>
+    </CreateUnit>
+  </OperationUnits>
+</HybridModule>

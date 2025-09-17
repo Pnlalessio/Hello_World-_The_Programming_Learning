@@ -1,0 +1,260 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym7#page31" name="Edit content" gr:x="650" gr:y="5">
+  <ContentUnits>
+    <SelectorUnit id="mov1#hym7#page31#seu15" name="Selector on lesson" gr:x="0" gr:y="770" entity="ent4">
+      <Selector id="mov1#hym7#page31#seu15#su53" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym7#page31#seu15#su53#kcond33" name="KeyCondition25" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#hym7#page31#seu15#ln143" name="Flow149" to="mov1#hym7#page31#enu31" type="transport" validate="true">
+        <LinkParameter id="mov1#hym7#page31#seu15#ln143#par310" name="oid_Key Condition [oid]" source="ent6#att17Array" target="mov1#hym7#page31#enu31.ent6#att17"/>
+        <LinkParameter id="mov1#hym7#page31#seu15#ln143#par311" name="Data Size_var6" source="dataSize" targetVariable="mov1#hym7#page31#var10"/>
+        <LinkParameter id="mov1#hym7#page31#seu15#ln143#par313" name="Description_Description" source="ent6#att20Array" target="mov1#hym7#page31#enu31#fld41_slot"/>
+        <LinkParameter id="mov1#hym7#page31#seu15#ln143#par314" name="Order_Display order" source="ent6#att18Array" target="mov1#hym7#page31#enu31#fld44_slot"/>
+        <LinkParameter id="mov1#hym7#page31#seu15#ln143#par315" name="Name_Name" source="ent6#att19Array" target="mov1#hym7#page31#enu31#fld40_slot"/>
+        <LinkParameter id="mov1#hym7#page31#seu15#ln143#par316" name="Video_Video" source="ent4#att14Array" target="mov1#hym7#page31#enu31#fld43_slot"/>
+        <LinkParameter id="mov1#hym7#page31#seu15#ln143#par332" name="oid_PASSING" source="ent6#att17Array" passing="true"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="mov1#hym7#page31#seu16" name="Selector on exercise" gr:x="85" gr:y="0" entity="ent7">
+      <Selector id="mov1#hym7#page31#seu16#su54" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym7#page31#seu16#su54#kcond34" name="KeyCondition26" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#hym7#page31#seu16#ln147" name="Flow150" to="mov1#hym7#page31#enu32" type="transport" validate="true">
+        <LinkParameter id="mov1#hym7#page31#seu16#ln147#par317" name="Data Size_var6" source="dataSize" targetVariable="mov1#hym7#page31#var10"/>
+        <LinkParameter id="mov1#hym7#page31#seu16#ln147#par319" name="Order_Display order" source="ent6#att18Array" target="mov1#hym7#page31#enu32#fld52_slot"/>
+        <LinkParameter id="mov1#hym7#page31#seu16#ln147#par320" name="Name_Name" source="ent6#att19Array" target="mov1#hym7#page31#enu32#fld45_slot"/>
+        <LinkParameter id="mov1#hym7#page31#seu16#ln147#par321" name="Description_Question" source="ent6#att20Array" target="mov1#hym7#page31#enu32#fld46_slot"/>
+        <LinkParameter id="mov1#hym7#page31#seu16#ln147#par331" name="oid_PASSING" source="ent6#att17Array" passing="true"/>
+        <LinkParameter id="mov1#hym7#page31#seu16#ln147#par339" name="oid_Key Condition [oid]" source="ent6#att17Array" target="mov1#hym7#page31#enu32.ent6#att17"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit id="mov1#hym7#page31#enu31" name="Edit lesson" gr:x="350" gr:y="790" entity="ent4" linkOrder="mov1#hym7#page31#enu31#ln162">
+      <Field id="mov1#hym7#page31#enu31#fld40" name="Name" type="string" modifiable="true" attribute="ent6#att19" preloaded="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym7#page31#enu31#fld40#mnd27" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym7#page31#enu31#fld41" name="Description" type="text" modifiable="true" attribute="ent6#att20" preloaded="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym7#page31#enu31#fld41#mnd28" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym7#page31#enu31#fld43" name="Video" type="blob" modifiable="true" attribute="ent4#att14" preloaded="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym7#page31#enu31#fld43#mnd29" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym7#page31#enu31#fld44" name="Display order" type="integer" modifiable="true" attribute="ent6#att18" preloaded="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym7#page31#enu31#fld44#mnd30" name="mandatory field"/>
+          <TypeValidationRule id="mov1#hym7#page31#enu31#fld44#tvr1" name="Type Validation1" type="integer"/>
+        </VRules>
+      </Field>
+      <Link id="mov1#hym7#page31#enu31#ln162" name="Save" to="mov1#hym7#mfu11" type="normal" validate="true">
+        <LinkParameter id="mov1#hym7#page31#enu31#ln162#par333" name="Description_Description" source="mov1#hym7#page31#enu31#fld41" target="mov1#hym7#mfu11.ent6#att20"/>
+        <LinkParameter id="mov1#hym7#page31#enu31#ln162#par334" name="oid_PASSING_KeyCondition27 [oid]" sourceLinkParameter="mov1#hym7#page31#seu15#ln143#par332" target="mov1#hym7#mfu11#su56#kcond36.ent6#att17"/>
+        <LinkParameter id="mov1#hym7#page31#enu31#ln162#par335" name="Name_Name" source="mov1#hym7#page31#enu31#fld40" target="mov1#hym7#mfu11.ent6#att19"/>
+        <LinkParameter id="mov1#hym7#page31#enu31#ln162#par336" name="Display order_Order" source="mov1#hym7#page31#enu31#fld44" target="mov1#hym7#mfu11.ent6#att18"/>
+        <LinkParameter id="mov1#hym7#page31#enu31#ln162#par337" name="Video_Video" source="mov1#hym7#page31#enu31#fld43" target="mov1#hym7#mfu11.ent4#att14"/>
+        <LinkParameter id="mov1#hym7#page31#enu31#ln162#par338" name="Video_Video [file name]" source="mov1#hym7#page31#enu31#fld43" target="mov1#hym7#mfu11.ent4#att14_name"/>
+      </Link>
+    </EntryUnit>
+    <EntryUnit id="mov1#hym7#page31#enu32" name="Edit exercise" gr:x="350" gr:y="5" entity="ent7" linkOrder="mov1#hym7#page31#enu32#ln163">
+      <Field id="mov1#hym7#page31#enu32#fld45" name="Name" type="string" modifiable="true" preloaded="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym7#page31#enu32#fld45#mnd31" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym7#page31#enu32#fld46" name="Question" type="text" modifiable="true" preloaded="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym7#page31#enu32#fld46#mnd32" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym7#page31#enu32#fld52" name="Display order" type="integer" modifiable="true" preloaded="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym7#page31#enu32#fld52#mnd40" name="mandatory field"/>
+          <TypeValidationRule id="mov1#hym7#page31#enu32#fld52#tvr2" name="Type Validation1" type="integer"/>
+        </VRules>
+      </Field>
+      <Link id="mov1#hym7#page31#enu32#ln163" name="Save" to="mov1#hym7#mfu12" type="normal" validate="true">
+        <LinkParameter id="mov1#hym7#page31#enu32#ln163#par340" name="Question_Description" source="mov1#hym7#page31#enu32#fld46" target="mov1#hym7#mfu12.ent6#att20"/>
+        <LinkParameter id="mov1#hym7#page31#enu32#ln163#par341" name="oid_PASSING_KeyCondition37 [oid]" sourceLinkParameter="mov1#hym7#page31#seu16#ln147#par331" target="mov1#hym7#mfu12#su57#kcond37.ent6#att17"/>
+        <LinkParameter id="mov1#hym7#page31#enu32#ln163#par342" name="Name_Name" source="mov1#hym7#page31#enu32#fld45" target="mov1#hym7#mfu12.ent6#att19"/>
+        <LinkParameter id="mov1#hym7#page31#enu32#ln163#par343" name="Display order_Order" source="mov1#hym7#page31#enu32#fld52" target="mov1#hym7#mfu12.ent6#att18"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit gr:x="205" gr:y="310" id="mov1#hym7#page31#pwu17" name="Options list" sortable="true" checkable="false" useCountQuery="false" entity="ent11" displayAttributes="ent11#att53" linkOrder="mov1#hym7#page31#pwu17#ln169 mov1#hym7#page31#pwu17#ln185">
+      <Selector id="mov1#hym7#page31#pwu17#su58" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#hym7#page31#pwu17#su58#rcond16" name="RoleCondition16" role="rel12#role23" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#hym7#page31#pwu17#ln169" name="Edit" to="mov1#hym7#page32#enu33" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowResizable="true" ajaxWindowWidth="500" ajaxWindowHeight="500" ajaxWindowClosable="true" ajaxWindowModal="true" ajaxWindowHideEffect="Effect.BlindUp">
+        <LinkParameter id="mov1#hym7#page31#pwu17#ln169#par349" name="Option_Option" source="data[].ent11#att53" target="mov1#hym7#page32#enu33#fld54_slot"/>
+        <LinkParameter id="mov1#hym7#page31#pwu17#ln169#par355" name="oid_PASSING" source="data[].ent11#att52" passing="true"/>
+        <LinkParameter id="mov1#hym7#page31#pwu17#ln169#par374" name="Content key_PASSING" sourceLinkParameter="mov1#hym7#page31#mssu22#ln177#par370" passing="true"/>
+      </Link>
+      <Link id="mov1#hym7#page31#pwu17#ln185" name="Delete" to="mov1#hym7#dlu5" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
+    <PowerIndexUnit gr:x="200" gr:y="165" id="mov1#hym7#page31#pwu18" name="Solution" sortable="true" checkable="false" useCountQuery="false" entity="ent7" displayAttributes="ent7#att51" linkOrder="mov1#hym7#page31#pwu18#ln168">
+      <Selector id="mov1#hym7#page31#pwu18#su59" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym7#page31#pwu18#su59#kcond38" name="KeyCondition38" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#hym7#page31#pwu18#ln168" name="Edit" to="mov1#hym7#page33#enu36" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowWidth="500" ajaxWindowHeight="500" ajaxWindowClosable="true" ajaxWindowModal="true" ajaxWindowResizable="true">
+        <LinkParameter id="mov1#hym7#page31#pwu18#ln168#par348" name="Solution_Solution" source="data[].ent7#att51" target="mov1#hym7#page33#enu36#fld63_slot"/>
+        <LinkParameter id="mov1#hym7#page31#pwu18#ln168#par372" name="Content key_PASSING" sourceLinkParameter="mov1#hym7#page31#mssu22#ln176#par371" passing="true"/>
+      </Link>
+    </PowerIndexUnit>
+    <MultiMessageUnit id="mov1#hym7#page31#mssu22" name="Add option" gr:x="40" gr:y="510" linkOrder="mov1#hym7#page31#mssu22#ln188">
+      <Link id="mov1#hym7#page31#mssu22#ln175" name="Flow175" to="mov1#hym7#page31#seu16" type="transport" validate="true">
+        <LinkParameter id="mov1#hym7#page31#mssu22#ln175#par364" name="Content key_PASSING_KeyCondition26 [oid]" sourceLinkParameter="mov1#hym7#icu13#oln69#par363" target="mov1#hym7#page31#seu16#su54#kcond34.ent6#att17"/>
+      </Link>
+      <Link id="mov1#hym7#page31#mssu22#ln176" name="Flow176" to="mov1#hym7#page31#pwu18" type="transport" validate="true">
+        <LinkParameter id="mov1#hym7#page31#mssu22#ln176#par365" name="Content key_PASSING_KeyCondition38 [oid]" sourceLinkParameter="mov1#hym7#icu13#oln69#par363" target="mov1#hym7#page31#pwu18#su59#kcond38.ent6#att17"/>
+        <LinkParameter id="mov1#hym7#page31#mssu22#ln176#par371" name="Content key_PASSING" sourceLinkParameter="mov1#hym7#icu13#oln69#par363" passing="true"/>
+      </Link>
+      <Link id="mov1#hym7#page31#mssu22#ln177" name="Flow177" to="mov1#hym7#page31#pwu17" type="transport" validate="true">
+        <LinkParameter id="mov1#hym7#page31#mssu22#ln177#par366" name="Content key_PASSING_RoleCondition16 [oid]" sourceLinkParameter="mov1#hym7#icu13#oln69#par363" target="mov1#hym7#page31#pwu17#su58#rcond16.ent6#att17"/>
+        <LinkParameter id="mov1#hym7#page31#mssu22#ln177#par370" name="Content key_PASSING" sourceLinkParameter="mov1#hym7#icu13#oln69#par363" passing="true"/>
+      </Link>
+      <Link id="mov1#hym7#page31#mssu22#ln178" name="Flow178" to="mov1#hym7#page31#seu15" type="transport" validate="true">
+        <LinkParameter id="mov1#hym7#page31#mssu22#ln178#par367" name="Content key_PASSING_KeyCondition25 [oid]" sourceLinkParameter="mov1#hym7#icu13#oln69#par363" target="mov1#hym7#page31#seu15#su53#kcond33.ent6#att17"/>
+      </Link>
+      <Link id="mov1#hym7#page31#mssu22#ln188" name="Add option" to="mov1#hym7#page36#enu39" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowWidth="500" ajaxWindowHeight="500" ajaxWindowAutoResizing="false" ajaxWindowClosable="true" ajaxWindowResizable="true" ajaxWindowModal="true" ajaxWindowMaximizable="false">
+        <LinkParameter id="mov1#hym7#page31#mssu22#ln188#par388" name="Content key_PASSING" sourceLinkParameter="mov1#hym7#icu13#oln69#par363" passing="true"/>
+      </Link>
+      <Message xml:space="preserve">If you want to add a new option click on "Add option".</Message>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="mov1#hym7#page31#mssu22" layout:unitVisibilityCondition="mov1#hym7#page31#cexpr10" layout:unitVisibilityConditionNegated="true">
+          <layout:Link link="mov1#hym7#page31#mssu22#ln188"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="mov1#hym7#page31#pwu17" layout:unitVisibilityCondition="mov1#hym7#page31#cexpr10" layout:unitVisibilityConditionNegated="true" layout:style="PureStyle">
+          <layout:Attribute attribute="ent11#att53"/>
+          <layout:Link link="mov1#hym7#page31#pwu17#ln169"/>
+          <layout:Link link="mov1#hym7#page31#pwu17#ln185"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="mov1#hym7#page31#enu32" layout:unitVisibilityCondition="mov1#hym7#page31#cexpr10" layout:unitVisibilityConditionNegated="true">
+          <layout:Field field="mov1#hym7#page31#enu32#fld45"/>
+          <layout:Field field="mov1#hym7#page31#enu32#fld46"/>
+          <layout:Field field="mov1#hym7#page31#enu32#fld52"/>
+          <layout:Link link="mov1#hym7#page31#enu32#ln163"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="mov1#hym7#page31#pwu18" layout:unitVisibilityCondition="mov1#hym7#page31#cexpr10" layout:unitVisibilityConditionNegated="true" layout:style="PureStyle">
+          <layout:Attribute attribute="ent7#att51"/>
+          <layout:Link link="mov1#hym7#page31#pwu18#ln168"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="mov1#hym7#page31#enu31" layout:unitVisibilityCondition="mov1#hym7#page31#cexpr10">
+          <layout:Field field="mov1#hym7#page31#enu31#fld40"/>
+          <layout:Field field="mov1#hym7#page31#enu31#fld41"/>
+          <layout:Field field="mov1#hym7#page31#enu31#fld43"/>
+          <layout:Field field="mov1#hym7#page31#enu31#fld44"/>
+          <layout:Link link="mov1#hym7#page31#enu31#ln162"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="mov1#hym7#page31#var10" name="var6" type="integer" value="5"/>
+  <ConditionExpression id="mov1#hym7#page31#cexpr10" name="ActivationExpression 7">
+    <TextValue xml:space="preserve">return (var6==0)</TextValue>
+  </ConditionExpression>
+</Page>

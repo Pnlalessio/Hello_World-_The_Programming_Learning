@@ -1,0 +1,140 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym5#page22" name="Add content" gr:x="370" gr:y="115">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym5#page22#enu23" name="Add lesson" gr:x="195" gr:y="135" linkOrder="mov1#hym5#page22#enu23#ln116">
+      <Field id="mov1#hym5#page22#enu23#fld55" name="Name" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym5#page22#enu23#fld55#mnd49" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym5#page22#enu23#fld56" name="Description" type="text" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym5#page22#enu23#fld56#mnd50" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym5#page22#enu23#fld57" name="Video" type="blob" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym5#page22#enu23#fld57#mnd51" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym5#page22#enu23#fld58" name="Display order" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym5#page22#enu23#fld58#mnd52" name="mandatory field"/>
+          <TypeValidationRule id="mov1#hym5#page22#enu23#fld58#tvr3" name="Type Validation1" type="integer"/>
+        </VRules>
+      </Field>
+      <Link id="mov1#hym5#page22#enu23#ln116" name="Save" to="mov1#hym5#cru7" type="normal" validate="true">
+        <LinkParameter id="mov1#hym5#page22#enu23#ln116#par227" name="Description_Description" source="mov1#hym5#page22#enu23#fld56" target="mov1#hym5#cru7.ent6#att20"/>
+        <LinkParameter id="mov1#hym5#page22#enu23#ln116#par228" name="Name_Name" source="mov1#hym5#page22#enu23#fld55" target="mov1#hym5#cru7.ent6#att19"/>
+        <LinkParameter id="mov1#hym5#page22#enu23#ln116#par229" name="Display order_Order" source="mov1#hym5#page22#enu23#fld58" target="mov1#hym5#cru7.ent6#att18"/>
+        <LinkParameter id="mov1#hym5#page22#enu23#ln116#par230" name="Video_Video" source="mov1#hym5#page22#enu23#fld57" target="mov1#hym5#cru7.ent4#att14"/>
+        <LinkParameter id="mov1#hym5#page22#enu23#ln116#par234" name="Video_Video [file name]" source="mov1#hym5#page22#enu23#fld57" target="mov1#hym5#cru7.ent4#att14_name"/>
+      </Link>
+    </EntryUnit>
+    <EntryUnit id="mov1#hym5#page22#enu24" name="Add exercise" gr:x="205" gr:y="0" linkOrder="mov1#hym5#page22#enu24#ln117">
+      <Field id="mov1#hym5#page22#enu24#fld59" name="Name" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym5#page22#enu24#fld59#mnd53" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym5#page22#enu24#fld60" name="Question" type="text" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym5#page22#enu24#fld60#mnd54" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym5#page22#enu24#fld66" name="Display order" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym5#page22#enu24#fld66#mnd60" name="mandatory field"/>
+          <TypeValidationRule id="mov1#hym5#page22#enu24#fld66#tvr4" name="Type Validation1" type="integer"/>
+        </VRules>
+      </Field>
+      <Link id="mov1#hym5#page22#enu24#ln117" name="Save" to="mov1#hym5#cru8" type="normal" validate="true">
+        <LinkParameter id="mov1#hym5#page22#enu24#ln117#par236" name="Question_Description" source="mov1#hym5#page22#enu24#fld60" target="mov1#hym5#cru8.ent6#att20"/>
+        <LinkParameter id="mov1#hym5#page22#enu24#ln117#par238" name="Name_Name" source="mov1#hym5#page22#enu24#fld59" target="mov1#hym5#cru8.ent6#att19"/>
+        <LinkParameter id="mov1#hym5#page22#enu24#ln117#par243" name="Display order_Order" source="mov1#hym5#page22#enu24#fld66" target="mov1#hym5#cru8.ent6#att18"/>
+        <LinkParameter id="mov1#hym5#page22#enu24#ln117#par134" name="Solution_Solution" target="mov1#hym5#cru8.ent7#att51" sourceValue="No solution"/>
+      </Link>
+      <Link id="mov1#hym5#page22#enu24#ln135" name="Flow135" to="mov1#hym5#miu17" type="transport" validate="true">
+        <LinkParameter id="mov1#hym5#page22#enu24#ln135#par307" name="Name_Name" source="mov1#hym5#page22#enu24#fld59" target="mov1#hym5#miu17.mov1#hym6#icu12#icp19"/>
+        <LinkParameter id="mov1#hym5#page22#enu24#ln135#par308" name="Question_Question" source="mov1#hym5#page22#enu24#fld60" target="mov1#hym5#miu17.mov1#hym6#icu12#icp20"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit id="mov1#hym5#page22#pwu10" name="Course content" gr:x="0" gr:y="70" sortable="true" checkable="false" useCountQuery="false" entity="ent6" displayAttributes="ent6#att18 ent6#att19 ent6#att20">
+      <SortAttribute attribute="ent6#att18" order="ascending"/>
+      <Selector id="mov1#hym5#page22#pwu10#su38" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#hym5#page22#pwu10#su38#rcond8" name="RoleCondition2" role="rel6#role11" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#hym5#page22#pwu10#ln126" name="Flow126" to="mov1#hym5#cru7" type="transport" validate="true">
+        <LinkParameter id="mov1#hym5#page22#pwu10#ln126#par254" name="Course key_PASSING_Course.oid(ContentToCourse)" sourceLinkParameter="mov1#hym5#icu8#oln50#par253" target="mov1#hym5#cru7.rel6#role12.ent2#att6"/>
+      </Link>
+      <Link id="mov1#hym5#page22#pwu10#ln127" name="Flow127" to="mov1#hym5#cru8" type="transport" validate="true">
+        <LinkParameter id="mov1#hym5#page22#pwu10#ln127#par255" name="Course key_PASSING_Course.oid(ContentToCourse)" sourceLinkParameter="mov1#hym5#icu8#oln50#par253" target="mov1#hym5#cru8.rel6#role12.ent2#att6"/>
+      </Link>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="mov1#hym5#page22#enu23">
+          <layout:Field field="mov1#hym5#page22#enu23#fld55"/>
+          <layout:Field field="mov1#hym5#page22#enu23#fld56"/>
+          <layout:Field field="mov1#hym5#page22#enu23#fld57"/>
+          <layout:Field field="mov1#hym5#page22#enu23#fld58"/>
+          <layout:Link link="mov1#hym5#page22#enu23#ln116"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="mov1#hym5#page22#enu24">
+          <layout:Field field="mov1#hym5#page22#enu24#fld59"/>
+          <layout:Field field="mov1#hym5#page22#enu24#fld60"/>
+          <layout:Field field="mov1#hym5#page22#enu24#fld66"/>
+          <layout:Link link="mov1#hym5#page22#enu24#ln117"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym5#page22#pwu10" layout:style="PureStyle">
+          <layout:Attribute attribute="ent6#att18"/>
+          <layout:Attribute attribute="ent6#att19"/>
+          <layout:Attribute attribute="ent6#att20"/>
+          <layout:Link link="mov1#hym5#page22#pwu10ent6#att18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

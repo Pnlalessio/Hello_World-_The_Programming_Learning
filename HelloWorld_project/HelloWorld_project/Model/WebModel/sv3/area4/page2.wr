@@ -1,0 +1,86 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv3#area4#page2" name="Manage support requests">
+  <ContentUnits>
+    <EntryUnit gr:x="190" gr:y="55" id="sv3#area4#page2#enu8" name="Send support request" linkOrder="sv3#area4#page2#enu8#ln8">
+      <Field id="sv3#area4#page2#enu8#fld17" name="Title" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv3#area4#page2#enu8#fld17#mnd16" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="sv3#area4#page2#enu8#fld19" name="Description" type="text" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv3#area4#page2#enu8#fld19#mnd15" name="mandatory filed"/>
+        </VRules>
+      </Field>
+      <Link id="sv3#area4#page2#enu8#ln8" name="Send" to="sv3#area4#cru4" type="normal" validate="true">
+        <LinkParameter id="sv3#area4#page2#enu8#ln8#par5" name="Description_Description" source="sv3#area4#page2#enu8#fld19" target="sv3#area4#cru4.ent1#att11"/>
+        <LinkParameter id="sv3#area4#page2#enu8#ln8#par6" name="Title_Title" source="sv3#area4#page2#enu8#fld17" target="sv3#area4#cru4.ent1#att5"/>
+        <LinkParameter id="sv3#area4#page2#enu8#ln8#par23" name="Not solved_Solution" sourceValue="Not solved" target="sv3#area4#cru4.ent1#att13"/>
+        <LinkParameter id="sv3#area4#page2#enu8#ln8#par28" name="Not solved_Status " sourceValue="Not solved" target="sv3#area4#cru4.ent1#att12"/>
+        <LinkParameter id="sv3#area4#page2#enu8#ln8#par31" name="UserCtxParam.oid_PASSING_User.oid(SupportToUser)" sourceLinkParameter="sv3#area4#page2#gtu2#ln23#par21" target="sv3#area4#cru4.rel2#role3.userOID"/>
+      </Link>
+    </EntryUnit>
+    <GetUnit id="sv3#area4#page2#gtu2" name="Get User" gr:x="0" gr:y="135" contextParameters="UserCtxParam">
+      <Link id="sv3#area4#page2#gtu2#ln23" name="Flow23" to="sv3#area4#page2#enu8" type="transport" validate="true">
+        <LinkParameter id="sv3#area4#page2#gtu2#ln23#par21" name="UserCtxParam.oid_PASSING" source="sv3#area4#page2#gtu2.UserCtxParam" passing="true"/>
+      </Link>
+      <Link id="sv3#area4#page2#gtu2#ln25" name="Flow25" to="sv3#area4#page2#pwu2" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+    <TimeUnit gr:x="15" gr:y="0" id="sv3#area4#page2#tmu1" name="Insertion date">
+      <Link id="sv3#area4#page2#tmu1#ln24" name="Flow24" to="sv3#area4#cru4" type="transport" validate="true">
+        <LinkParameter id="sv3#area4#page2#tmu1#ln24#par32" name="Current/Input Date_Insertion date" source="currentDate" target="sv3#area4#cru4.ent1#att15"/>
+      </Link>
+    </TimeUnit>
+    <PowerIndexUnit gr:x="190" gr:y="160" id="sv3#area4#page2#pwu2" name="My support requests" sortable="true" checkable="false" useCountQuery="false" entity="ent1" displayAttributes="ent1#att15 ent1#att5 ent1#att11 ent1#att12" linkOrder="sv3#area4#page2#pwu2#ln133">
+      <Selector id="sv3#area4#page2#pwu2#su9" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#area4#page2#pwu2#su9#rcond2" name="RoleCondition2" role="rel2#role4" predicate="in" implied="false"/>
+      </Selector>
+      <SortAttribute attribute="ent1#att15" order="ascending"/>
+      <Link id="sv3#area4#page2#pwu2#ln133" name="Details" to="sv3#area4#page24#dau10" type="normal" automaticCoupling="true" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowResizable="true" ajaxWindowWidth="500" ajaxWindowHeight="500" ajaxWindowClosable="true" ajaxWindowModal="true"/>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area4#page2#enu8">
+          <layout:Field field="sv3#area4#page2#enu8#fld17"/>
+          <layout:Field field="sv3#area4#page2#enu8#fld19"/>
+          <layout:Link link="sv3#area4#page2#enu8#ln8"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area4#page2#pwu2" layout:style="PureStyle">
+          <layout:Attribute attribute="ent1#att15"/>
+          <layout:Attribute attribute="ent1#att5"/>
+          <layout:Attribute attribute="ent1#att11"/>
+          <layout:Attribute attribute="ent1#att12"/>
+          <layout:Link link="sv3#area4#page2#pwu2#ln133"/>
+          <layout:Link link="sv3#area4#page2#pwu2ent1#att15"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

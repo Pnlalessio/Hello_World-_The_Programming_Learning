@@ -1,0 +1,82 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="600" gr:y="0" id="sv4#area17#page3" name="Syllabus">
+  <ContentUnits>
+    <PowerIndexUnit id="sv4#area17#page3#pwu12" name="Content list" gr:x="5" gr:y="0" sortable="true" checkable="false" useCountQuery="false" entity="ent6" displayAttributes="ent6#att18 ent6#att19 ent6#att20">
+      <Selector id="sv4#area17#page3#pwu12#su13" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area17#page3#pwu12#su13#rcond7" name="RoleCondition4" role="rel6#role11" predicate="in" implied="false"/>
+      </Selector>
+      <SortAttribute attribute="ent6#att18" order="ascending"/>
+      <Link id="sv4#area17#page3#pwu12#ln35" name="Flow35" to="sv4#cru6" type="transport" validate="true">
+        <LinkParameter id="sv4#area17#page3#pwu12#ln35#par52" name="oid_PASSING_Course.oid(Courses followedToCourse)" sourceLinkParameter="sv4#area17#page27#pwu14#ln20#par36" target="sv4#cru6.rel10#role19.ent2#att6"/>
+      </Link>
+    </PowerIndexUnit>
+    <MultiMessageUnit gr:x="0" gr:y="345" id="sv4#area17#page3#mssu4" name="Follow the course to start!" linkOrder="sv4#area17#page3#mssu4#ln22">
+      <Link id="sv4#area17#page3#mssu4#ln22" name="Follow" to="sv4#cru6" automaticCoupling="true" type="normal" validate="true"/>
+      <Message xml:space="preserve">If you want to watch the video lessons, do the exercises or talk about the course on the forum, please follow the course:</Message>
+    </MultiMessageUnit>
+    <TimeUnit gr:x="40" gr:y="120" id="sv4#area17#page3#tmu3" name="Start Date">
+      <Link id="sv4#area17#page3#tmu3#ln40" name="Flow40" to="sv4#cru6" type="transport" validate="true">
+        <LinkParameter id="sv4#area17#page3#tmu3#ln40#par51" name="Current/Input Date_Start date" source="currentDate" target="sv4#cru6.ent8#att34"/>
+      </Link>
+    </TimeUnit>
+    <GetUnit id="sv4#area17#page3#gtu7" name="Get User" gr:x="55" gr:y="225" contextParameters="UserCtxParam">
+      <Link id="sv4#area17#page3#gtu7#ln51" name="Flow51" to="sv4#cru6" type="transport" validate="true">
+        <LinkParameter id="sv4#area17#page3#gtu7#ln51#par104" name="UserCtxParam.oid_User.oid(Courses followedToUser)" source="sv4#area17#page3#gtu7.UserCtxParam" target="sv4#cru6.rel9#role18.userOID"/>
+      </Link>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area17#page3#mssu4">
+          <layout:Link link="sv4#area17#page3#mssu4#ln22"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area17#page3#pwu12" layout:style="PureStyle">
+          <layout:Attribute attribute="ent6#att18"/>
+          <layout:Attribute attribute="ent6#att19"/>
+          <layout:Attribute attribute="ent6#att20"/>
+          <layout:Link link="sv4#area17#page3#pwu12ent6#att18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

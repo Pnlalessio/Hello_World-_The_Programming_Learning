@@ -1,0 +1,25 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Administration" protected="true" landmarks="sv1#area2 sv1#area10 sv1#area3 sv1#area6 sv1#area7 sv1#area12" homePage="sv1#area2#page12">
+  <OperationUnits>
+    <LogoutUnit id="sv1#lou2" name="Logout" gr:x="1575" gr:y="80" siteView="sv2"/>
+    <MailUnit id="sv1#mlu2" name="Approval email" gr:x="920" gr:y="495" format="html" smtpServer="smtp2" template="WEB-INF/descr/template2.template"/>
+    <MailUnit id="sv1#mlu3" name="Rejection email" gr:x="920" gr:y="375" format="html" smtpServer="smtp2" template="WEB-INF/descr/template3.template"/>
+    <CreateUnit gr:x="15" gr:y="730" id="sv1#cru2" name="Create category" entity="ent9">
+      <OKLink id="sv1#cru2#oln11" name="OKFlow11" to="sv1#area3#page5#mssu3">
+        <LinkParameter id="sv1#cru2#oln11#par53" name="1_var8" sourceValue="1" targetVariable="sv1#area3#page5#var8"/>
+        <LinkParameter id="sv1#cru2#oln11#par54" name="Category_categoryName" source="ent9#att28Array" target="sv1#area3#page5#mssu3.categoryName"/>
+      </OKLink>
+    </CreateUnit>
+    <ModifyUnit gr:x="1040" gr:y="855" id="sv1#mfu1" name="Update category" entity="ent9">
+      <Selector id="sv1#mfu1#su17" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#mfu1#su17#kcond7" name="KeyCondition7" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv1#mfu1#oln13" name="OKFlow13" to="sv1#area3#page5#pwu3" automaticCoupling="true"/>
+    </ModifyUnit>
+    <ModuleInstanceUnit gr:x="1505" gr:y="1065" id="sv1#miu7" action="true" moduleId="mov1#opm4">
+      <OKLink id="sv1#miu7#oln20" name="OKFlow20" to="sv1#area6#page6#pwu5" automaticCoupling="true" gr:bendpoints="-70,-58,60,92"/>
+      <KOLink id="sv1#miu7#kln6" name="KOFlow6" to="sv1#area6#page6#mssu13">
+        <LinkParameter id="sv1#miu7#kln6#par99" name="The course was not deleted._Shown Messages" sourceValue="The course was not deleted." target="sv1#area6#page6#mssu13.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</SiteView>

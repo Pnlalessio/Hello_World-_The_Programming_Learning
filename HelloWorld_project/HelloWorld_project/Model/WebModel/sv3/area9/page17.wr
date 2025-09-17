@@ -1,0 +1,104 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="625" gr:y="355" id="sv3#area9#page17" name="Manage content">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="65" gr:y="140" id="sv3#area9#page17#pwu8" name="Content list" sortable="true" checkable="false" useCountQuery="false" entity="ent6" displayAttributes="ent6#att18 ent6#att19 ent6#att20" linkOrder="sv3#area9#page17#pwu8#ln174 sv3#area9#page17#pwu8#ln27">
+      <Selector id="sv3#area9#page17#pwu8#su35" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#area9#page17#pwu8#su35#rcond4" name="RoleCondition4" role="rel6#role11" predicate="in" implied="false"/>
+        <AttributesCondition id="sv3#area9#page17#pwu8#su35#acond9" name="Search" predicate="contains" ignoreCase="true" booleanOperator="or" implied="true" attributes="ent6#att19 ent6#att20"/>
+      </Selector>
+      <SortAttribute attribute="ent6#att18" order="ascending"/>
+      <Link id="sv3#area9#page17#pwu8#ln130" name="Flow129" to="sv3#area9#miu14" type="transport" validate="true">
+        <LinkParameter id="sv3#area9#page17#pwu8#ln130#par257" name="oid_PASSING_Course key" sourceLinkParameter="sv3#area9#page13#pwu7#ln104#par248" target="sv3#area9#miu14.mov1#hym5#icu8#icp4"/>
+      </Link>
+      <Link id="sv3#area9#page17#pwu8#ln27" name="Delete" to="sv3#area9#dlu2" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv3#area9#page17#pwu8#ln174" name="Edit" to="sv3#area9#miu18" type="normal" validate="true">
+        <LinkParameter id="sv3#area9#page17#pwu8#ln174#par361" name="oid_Content key" source="data[].ent6#att17" target="sv3#area9#miu18.mov1#hym7#icu13#icp21"/>
+      </Link>
+    </PowerIndexUnit>
+    <EntryUnit id="sv3#area9#page17#enu19" name="Search content" gr:x="0" gr:y="15" linkOrder="sv3#area9#page17#enu19#ln106">
+      <Field id="sv3#area9#page17#enu19#fld42" name="Search" type="string" modifiable="true"/>
+      <Link id="sv3#area9#page17#enu19#ln106" name="Search" to="sv3#area9#page17#pwu8" type="normal" validate="true">
+        <LinkParameter id="sv3#area9#page17#enu19#ln106#par224" name="Search_Search" source="sv3#area9#page17#enu19#fld42" target="sv3#area9#page17#pwu8#su35#acond9"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="200" gr:y="0" id="sv3#area9#page17#mssu6" name="Advice" linkOrder="sv3#area9#page17#mssu6#ln131">
+      <Message xml:space="preserve">If you want to add a new course click here:</Message>
+      <Link id="sv3#area9#page17#mssu6#ln131" name="Add content" to="sv3#area9#miu14" type="normal" validate="true"/>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area9#page17#mssu6">
+          <layout:Link link="sv3#area9#page17#mssu6#ln131"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="4">
+        <layout:Unit unitId="sv3#area9#page17#enu19">
+          <layout:Link link="sv3#area9#page17#enu19#ln106"/>
+          <layout:Field field="sv3#area9#page17#enu19#fld42"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv3#area9#page17#pwu8" layout:style="PureStyle">
+          <layout:Attribute attribute="ent6#att18"/>
+          <layout:Attribute attribute="ent6#att19"/>
+          <layout:Attribute attribute="ent6#att20"/>
+          <layout:Link link="sv3#area9#page17#pwu8#ln174"/>
+          <layout:Link link="sv3#area9#page17#pwu8#ln27"/>
+          <layout:Link link="sv3#area9#page17#pwu8ent6#att18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

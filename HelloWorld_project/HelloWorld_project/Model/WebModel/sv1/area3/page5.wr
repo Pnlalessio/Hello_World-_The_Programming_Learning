@@ -1,0 +1,119 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area3#page5" name="Category management">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv1#area3#page5#enu3" name="Create category " linkOrder="sv1#area3#page5#enu3#ln9">
+      <Field id="sv1#area3#page5#enu3#fld11" name="Category name" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv1#area3#page5#enu3#fld11#mnd11" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Link id="sv1#area3#page5#enu3#ln9" name="Save" to="sv1#cru2" type="normal" validate="true">
+        <LinkParameter id="sv1#area3#page5#enu3#ln9#par22" name="Category name_Category" source="sv1#area3#page5#enu3#fld11" target="sv1#cru2.ent9#att28"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="0" gr:y="80" id="sv1#area3#page5#mssu3" name="Operation outcome" messageFile="WEB-INF/descr/message4.template"/>
+    <EntryUnit gr:x="235" gr:y="5" id="sv1#area3#page5#enu12" name="Search category" linkOrder="sv1#area3#page5#enu12#ln43">
+      <Link id="sv1#area3#page5#enu12#ln43" name="Search" to="sv1#area3#page5#pwu3" type="normal" validate="true">
+        <LinkParameter id="sv1#area3#page5#enu12#ln43#par65" name="Search_Search" source="sv1#area3#page5#enu12#fld34" target="sv1#area3#page5#pwu3#su11#acond7"/>
+      </Link>
+      <Field id="sv1#area3#page5#enu12#fld34" name="Search" type="string" modifiable="true"/>
+    </EntryUnit>
+    <PowerIndexUnit gr:x="220" gr:y="115" id="sv1#area3#page5#pwu3" name="Category list" sortable="true" checkable="false" useCountQuery="false" linkOrder="sv1#area3#page5#pwu3#ln58 sv1#area3#page5#pwu3#ln59 sv1#area3#page5#pwu3#ln49" entity="ent9" displayAttributes="ent9#att22 ent9#att28">
+      <Selector id="sv1#area3#page5#pwu3#su11" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#area3#page5#pwu3#su11#acond7" name="Search" predicate="contains" ignoreCase="true" booleanOperator="or" implied="true" attributes="ent9#att28"/>
+      </Selector>
+      <Link id="sv1#area3#page5#pwu3#ln58" name="Details" to="sv1#area3#page16#dau7" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Category Details" ajaxWindowAutoResizing="true" ajaxWindowClosable="true" ajaxWindowDraggable="true">
+        <LinkParameter id="sv1#area3#page5#pwu3#ln58#par26" name="Category_Category [oid]" source="data[].ent9#att22" target="sv1#area3#page16#dau7#su23#kcond13.ent9#att22"/>
+      </Link>
+      <Link id="sv1#area3#page5#pwu3#ln59" name="Edit" to="sv1#area3#page11#enu14" type="normal" validate="true">
+        <LinkParameter id="sv1#area3#page5#pwu3#ln59#par27" name="Category_Category name" source="data[].ent9#att28" target="sv1#area3#page11#enu14#fld37_slot"/>
+        <LinkParameter id="sv1#area3#page5#pwu3#ln59#par38" name="oid_PASSING" source="data[].ent9#att22" passing="true"/>
+      </Link>
+      <Link id="sv1#area3#page5#pwu3#ln49" name="Delete" to="sv1#area3#miu10" type="normal" validate="true">
+        <LinkParameter id="sv1#area3#page5#pwu3#ln49#par88" name="oid_Category Key" source="data[].ent9#att22" target="sv1#area3#miu10.mov1#hym3#icu6#icp5"/>
+        <LinkParameter id="sv1#area3#page5#pwu3#ln49#par89" name="# courses_Category's #Courses" source="data[].ent9#att29" target="sv1#area3#miu10.mov1#hym3#icu6#icp6"/>
+      </Link>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area3#page5#enu12">
+          <layout:Field field="sv1#area3#page5#enu12#fld34"/>
+          <layout:Link link="sv1#area3#page5#enu12#ln43"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area3#page5#enu3">
+          <layout:Field field="sv1#area3#page5#enu3#fld11"/>
+          <layout:Link link="sv1#area3#page5#enu3#ln9"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area3#page5#mssu3" layout:unitVisibilityCondition="sv1#area3#page5#cexpr5"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area3#page5#pwu3" layout:style="PureStyle">
+          <layout:Attribute attribute="ent9#att22"/>
+          <layout:Attribute attribute="ent9#att28"/>
+          <layout:Link link="sv1#area3#page5#pwu3#ln58"/>
+          <layout:Link link="sv1#area3#page5#pwu3#ln59"/>
+          <layout:Link link="sv1#area3#page5#pwu3#ln49"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv1#area3#page5#var8" name="var8" type="integer" value="0"/>
+  <ConditionExpression id="sv1#area3#page5#cexpr5" name="ActivationExpression 5">
+    <TextValue xml:space="preserve">return (var8==1)</TextValue>
+  </ConditionExpression>
+</Page>

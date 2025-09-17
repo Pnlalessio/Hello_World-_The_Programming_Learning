@@ -1,0 +1,12 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="190" gr:y="1185" id="sv1#area7" name="Manage support requests" landmark="true" defaultPage="sv1#area7#page19">
+  <OperationUnits>
+    <ModifyUnit gr:x="715" gr:y="40" id="sv1#area7#mfu8" name="Update solution" entity="ent1">
+      <Selector id="sv1#area7#mfu8#su12" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area7#mfu8#su12#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv1#area7#mfu8#oln14" name="OKFlow14" to="sv1#area7#page19">
+        <LinkParameter id="sv1#area7#mfu8#oln14#par78" name="0_var4" sourceValue="0" targetVariable="sv1#area7#page19#var4"/>
+      </OKLink>
+    </ModifyUnit>
+  </OperationUnits>
+</Area>

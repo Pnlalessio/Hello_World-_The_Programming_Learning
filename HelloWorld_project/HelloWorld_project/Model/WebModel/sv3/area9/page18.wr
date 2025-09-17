@@ -1,0 +1,68 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="100" gr:y="675" id="sv3#area9#page18" name="Edit course">
+  <ContentUnits>
+    <EntryUnit id="sv3#area9#page18#enu17" name="Edit course" gr:x="0" gr:y="0" linkOrder="sv3#area9#page18#enu17#ln99 sv3#area9#page18#enu17#ln101" entity="ent2">
+      <Field id="sv3#area9#page18#enu17#fld38" name="Name" type="string" modifiable="true" preloaded="true">
+        <VRules>
+          <MandatoryValidationRule id="sv3#area9#page18#enu17#fld38#mnd33" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Field id="sv3#area9#page18#enu17#fld39" name="Description" type="text" modifiable="true" preloaded="true">
+        <VRules>
+          <MandatoryValidationRule id="sv3#area9#page18#enu17#fld39#mnd34" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <SelectionField id="sv3#area9#page18#enu17#sfld4" name="Category" type="string"/>
+      <Link id="sv3#area9#page18#enu17#ln99" name="Save" to="sv3#mfu4" type="normal" validate="true">
+        <LinkParameter id="sv3#area9#page18#enu17#ln99#par215" name="Category_Category.oid(CourseToCategory)" source="sv3#area9#page18#enu17#sfld4" target="sv3#mfu4.rel4#role8.ent9#att22"/>
+        <LinkParameter id="sv3#area9#page18#enu17#ln99#par216" name="Description_description" source="sv3#area9#page18#enu17#fld39" target="sv3#mfu4.ent2#att10"/>
+        <LinkParameter id="sv3#area9#page18#enu17#ln99#par217" name="Key [oid]_KeyCondition23 [oid]" source="key.ent2#att6" target="sv3#mfu4#su33#kcond23.ent2#att6"/>
+        <LinkParameter id="sv3#area9#page18#enu17#ln99#par218" name="Name_Name" source="sv3#area9#page18#enu17#fld38" target="sv3#mfu4.ent2#att7"/>
+      </Link>
+      <Link id="sv3#area9#page18#enu17#ln101" name="Cancel" to="sv3#area9#page13#pwu7" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="35,-115,-10,140"/>
+    </EntryUnit>
+    <SelectorUnit gr:x="160" gr:y="0" id="sv3#area9#page18#seu7" name="Categories" entity="ent9">
+      <Link id="sv3#area9#page18#seu7#ln97" name="Flow97" to="sv3#area9#page18#enu17" type="transport" validate="true">
+        <LinkParameter id="sv3#area9#page18#seu7#ln97#par175" name="Category_Category [label]" source="ent9#att28Array" target="sv3#area9#page18#enu17#sfld4_label"/>
+        <LinkParameter id="sv3#area9#page18#seu7#ln97#par202" name="oid_Category [output]" source="ent9#att22Array" target="sv3#area9#page18#enu17#sfld4_output"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area9#page18#enu17">
+          <layout:Field field="sv3#area9#page18#enu17#fld38"/>
+          <layout:Field field="sv3#area9#page18#enu17#fld39"/>
+          <layout:Field field="sv3#area9#page18#enu17#sfld4"/>
+          <layout:Link link="sv3#area9#page18#enu17#ln99"/>
+          <layout:Link link="sv3#area9#page18#enu17#ln101"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

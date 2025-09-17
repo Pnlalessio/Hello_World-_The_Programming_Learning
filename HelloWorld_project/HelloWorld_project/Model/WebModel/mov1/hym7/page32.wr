@@ -1,0 +1,83 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym7#page32" name="Edit option" layout:style="MetroStyle" layout:pageLayout="WRDefault/Empty" gr:x="1275" gr:y="385">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym7#page32#enu33" name="Edit options" gr:x="0" gr:y="0" linkOrder="mov1#hym7#page32#enu33#ln173">
+      <Field id="mov1#hym7#page32#enu33#fld54" name="Option" type="string" modifiable="true" preloaded="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym7#page32#enu33#fld54#mnd41" name="mandatory field"/>
+        </VRules>
+      </Field>
+      <Link id="mov1#hym7#page32#enu33#ln173" name="Save" to="mov1#hym7#mfu14" type="normal" validate="true">
+        <LinkParameter id="mov1#hym7#page32#enu33#ln173#par359" name="oid_PASSING_KeyCondition42 [oid]" sourceLinkParameter="mov1#hym7#page31#pwu17#ln169#par355" target="mov1#hym7#mfu14#su63#kcond42.ent11#att52"/>
+        <LinkParameter id="mov1#hym7#page32#enu33#ln173#par360" name="Option_Option" source="mov1#hym7#page32#enu33#fld54" target="mov1#hym7#mfu14.ent11#att53"/>
+        <LinkParameter id="mov1#hym7#page32#enu33#ln173#par375" name="Content key_PASSING_Exercise.oid(OptionsToExercise)" sourceLinkParameter="mov1#hym7#page31#pwu17#ln169#par374" target="mov1#hym7#mfu14.rel12#role24.ent6#att17"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym7#page32#enu33" layout:style="MetroStyle">
+          <layout:Field field="mov1#hym7#page32#enu33#fld54"/>
+          <layout:Link link="mov1#hym7#page32#enu33#ln173"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="mov1#hym7#page32#var11" name="var9" type="integer" value="0"/>
+  <ConditionExpression id="mov1#hym7#page32#cexpr11" name="ActivationExpression 9">
+    <TextValue xml:space="preserve">return (var9==0)</TextValue>
+  </ConditionExpression>
+</Page>

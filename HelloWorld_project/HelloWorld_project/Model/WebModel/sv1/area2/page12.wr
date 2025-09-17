@@ -1,0 +1,87 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area2#page12" name="Manage tutors approvals" landmark="false">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="0" gr:y="125" id="sv1#area2#page12#pwu1" name="Pending tutors" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="userOID userName email User#att1 User#att2 rel3#role5.ent3#att9" linkOrder="sv1#area2#page12#pwu1#ln13 sv1#area2#page12#pwu1#ln12">
+      <Selector id="sv1#area2#page12#pwu1#su4" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#area2#page12#pwu1#su4#acond4" name="isApproved" predicate="eq" booleanOperator="or" implied="false" attributes="User#att4" value="0"/>
+        <AttributesCondition id="sv1#area2#page12#pwu1#su4#acond16" name="Search" predicate="contains" ignoreCase="true" booleanOperator="or" implied="true" attributes="userName email User#att1 User#att2"/>
+      </Selector>
+      <Link id="sv1#area2#page12#pwu1#ln12" name="Reject" to="sv1#area2#dlu6" type="normal" validate="true">
+        <LinkParameter id="sv1#area2#page12#pwu1#ln12#par7" name="oid_cond to reject tutor [oid]" source="data[].userOID" target="sv1#area2#dlu6#su15#kcond11.userOID"/>
+        <LinkParameter id="sv1#area2#page12#pwu1#ln12#par8" name="User Name_PASSING" source="data[].userName" passing="true"/>
+        <LinkParameter id="sv1#area2#page12#pwu1#ln12#par11" name="Email_PASSING" source="data[].email" passing="true"/>
+      </Link>
+      <Link id="sv1#area2#page12#pwu1#ln13" name="Approve" to="sv1#area2#mfu3" type="normal" validate="true">
+        <LinkParameter id="sv1#area2#page12#pwu1#ln13#par60" name="oid_cond to accept tutor [oid]" source="data[].userOID" target="sv1#area2#mfu3#su16#kcond12.userOID"/>
+        <LinkParameter id="sv1#area2#page12#pwu1#ln13#par61" name="1_isApproved" sourceValue="1" target="sv1#area2#mfu3.User#att4"/>
+        <LinkParameter id="sv1#area2#page12#pwu1#ln13#par9" name="User Name_PASSING" source="data[].userName" passing="true"/>
+        <LinkParameter id="sv1#area2#page12#pwu1#ln13#par16" name="Email_PASSING" source="data[].email" passing="true"/>
+      </Link>
+    </PowerIndexUnit>
+    <EntryUnit id="sv1#area2#page12#enu6" name="Search pending tutor" gr:x="130" gr:y="0" linkOrder="sv1#area2#page12#enu6#ln47">
+      <Field id="sv1#area2#page12#enu6#fld18" name="Search" type="string" modifiable="true"/>
+      <Link id="sv1#area2#page12#enu6#ln47" name="Search" to="sv1#area2#page12#pwu1" type="normal" validate="true">
+        <LinkParameter id="sv1#area2#page12#enu6#ln47#par204" name="Name_name" source="sv1#area2#page12#enu6#fld18" target="sv1#area2#page12#pwu1#su4#acond16"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area2#page12#enu6">
+          <layout:Link link="sv1#area2#page12#enu6#ln47"/>
+          <layout:Field field="sv1#area2#page12#enu6#fld18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area2#page12#pwu1" layout:style="PureStyle">
+          <layout:Link link="sv1#area2#page12#pwu1#ln13"/>
+          <layout:Link link="sv1#area2#page12#pwu1#ln12"/>
+          <layout:Attribute attribute="userOID"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="User#att1"/>
+          <layout:Attribute attribute="User#att2"/>
+          <layout:Attribute attribute="rel3#role5.ent3#att9"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

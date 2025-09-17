@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <div>
+            Dear $$username$$,
+        </div> <br/>
+        <div>
+             Sorry your application was rejected.
+             
+             <p>Regards</p>
+        </div> <br/>
+    </body>
+</html>

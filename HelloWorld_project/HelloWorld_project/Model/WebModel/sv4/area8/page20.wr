@@ -1,0 +1,135 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1160" gr:y="435" id="sv4#area8#page20" name="Course content">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="320" gr:y="10" id="sv4#area8#page20#pwu11" name="Content list" sortable="true" checkable="false" useCountQuery="false" entity="ent6" displayAttributes="ent6#att18 ent6#att19 ent6#att20" linkOrder="sv4#area8#page20#pwu11#ln84">
+      <Selector id="sv4#area8#page20#pwu11#su24" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area8#page20#pwu11#su24#rcond11" name="RoleCondition11" role="rel6#role11" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#area8#page20#pwu11#ln84" name="View" to="sv4#area8#page25#mssu14" type="normal" validate="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowResizable="true" ajaxWindowAutoResizing="false" ajaxWindowClosable="true" ajaxWindowModal="true" ajaxWindowWidth="500" ajaxWindowHeight="500">
+        <LinkParameter id="sv4#area8#page20#pwu11#ln84#par147" name="oid_PASSING" source="data[].ent6#att17" passing="true"/>
+      </Link>
+      <Link id="sv4#area8#page20#pwu11#ln87" name="Flow87" to="sv4#area8#cru15" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page20#pwu11#ln87#par130" name="oid_PASSING_Course.oid(FeedbackToCourse)" sourceLinkParameter="sv4#area8#page21#pwu15#ln72#par128" target="sv4#area8#cru15.rel8#role16.ent2#att6"/>
+      </Link>
+      <Link id="sv4#area8#page20#pwu11#ln134" name="Flow96" to="sv4#area8#page20#seu17" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page20#pwu11#ln134#par265" name="oid_PASSING_RoleCondition24 [oid]" sourceLinkParameter="sv4#area8#page21#pwu15#ln72#par128" target="sv4#area8#page20#seu17#su49#rcond28.ent2#att6"/>
+      </Link>
+      <Link id="sv4#area8#page20#pwu11#ln121" name="Flow121" to="sv4#area8#page20#seu2" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page20#pwu11#ln121#par1" name="oid_PASSING_RoleCondition23 [oid]" sourceLinkParameter="sv4#area8#page21#pwu15#ln72#par128" target="sv4#area8#page20#seu2#su44#rcond23.ent2#att6"/>
+      </Link>
+    </PowerIndexUnit>
+    <EntryUnit id="sv4#area8#page20#enu43" name="Rate course" gr:x="190" gr:y="390" fieldOrder="sv4#area8#page20#enu43#sfld10" linkOrder="sv4#area8#page20#enu43#ln138 sv4#area8#page20#enu43#ln144">
+      <SelectionField id="sv4#area8#page20#enu43#sfld10" name="rating" type="integer">
+        <Slot id="sv4#area8#page20#enu43#sfld10#slot3" name="ratings" label="true" output="true" value="1|2|3|4|5"/>
+        <VRules>
+          <MandatoryValidationRule id="sv4#area8#page20#enu43#sfld10#mnd48" name="Mandatory Field"/>
+        </VRules>
+      </SelectionField>
+      <Link id="sv4#area8#page20#enu43#ln138" name="Rate" to="sv4#area8#cru15" type="normal" validate="true">
+        <LinkParameter id="sv4#area8#page20#enu43#ln138#par268" name="rating_rating" source="sv4#area8#page20#enu43#sfld10" target="sv4#area8#cru15.ent5#att24"/>
+        <LinkParameter id="sv4#area8#page20#enu43#ln138#par277" name="UserCtxParam.oid_PASSING_User.oid(FeedbackToUser)" sourceLinkParameter="sv4#area8#page20#seu17#ln148#par276" target="sv4#area8#cru15.rel16#role32.userOID"/>
+      </Link>
+      <Link id="sv4#area8#page20#enu43#ln144" name="Update rating" to="sv4#area8#mfu6" type="normal" validate="true">
+        <LinkParameter id="sv4#area8#page20#enu43#ln144#par271" name="oid_PASSING_KeyCondition24 [oid]" sourceLinkParameter="sv4#area8#page20#seu17#ln148#par270" target="sv4#area8#mfu6#su43#kcond24.ent5#att23"/>
+        <LinkParameter id="sv4#area8#page20#enu43#ln144#par273" name="rating_rating" source="sv4#area8#page20#enu43#sfld10" target="sv4#area8#mfu6.ent5#att24"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit id="sv4#area8#page20#seu17" name="Select feedback" gr:x="290" gr:y="155" entity="ent5">
+      <Selector id="sv4#area8#page20#seu17#su49" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area8#page20#seu17#su49#rcond28" name="RoleCondition24" predicate="in" implied="false" role="rel8#role15"/>
+        <RelationshipRoleCondition id="sv4#area8#page20#seu17#su49#rcond29" name="RoleCondition25" predicate="in" implied="false" role="rel16#role31"/>
+      </Selector>
+      <Link id="sv4#area8#page20#seu17#ln148" name="Flow148" to="sv4#area8#page20#enu43" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page20#seu17#ln148#par270" name="oid_PASSING" source="ent5#att23Array" passing="true"/>
+        <LinkParameter id="sv4#area8#page20#seu17#ln148#par276" name="UserCtxParam.oid_PASSING" sourceLinkParameter="sv4#area8#page20#gtu17#ln149#par275" passing="true"/>
+        <LinkParameter id="sv4#area8#page20#seu17#ln148#par278" name="Data Size_var16" source="dataSize" targetVariable="sv4#area8#page20#var16"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit gr:x="85" gr:y="195" id="sv4#area8#page20#gtu17" name="get user" contextParameters="UserCtxParam">
+      <Link id="sv4#area8#page20#gtu17#ln149" name="Flow149" to="sv4#area8#page20#seu17" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page20#gtu17#ln149#par274" name="UserCtxParam.oid_RoleCondition25 [oid]" source="sv4#area8#page20#gtu17.UserCtxParam" target="sv4#area8#page20#seu17#su49#rcond29.userOID"/>
+        <LinkParameter id="sv4#area8#page20#gtu17#ln149#par275" name="UserCtxParam.oid_PASSING" source="sv4#area8#page20#gtu17.UserCtxParam" passing="true"/>
+      </Link>
+      <Link id="sv4#area8#page20#gtu17#ln122" name="Flow122" to="sv4#area8#page20#seu2" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page20#gtu17#ln122#par2" name="UserCtxParam.oid_RoleCondition24 [oid]" source="sv4#area8#page20#gtu17.UserCtxParam" target="sv4#area8#page20#seu2#su44#rcond24.userOID"/>
+      </Link>
+    </GetUnit>
+    <MultiMessageUnit gr:x="0" gr:y="305" id="sv4#area8#page20#mssu19" name="Message" linkOrder="sv4#area8#page20#mssu19#ln96">
+      <Message xml:space="preserve">Do you want to unfollow the course? Click here:</Message>
+      <Link id="sv4#area8#page20#mssu19#ln96" name="Unfollow course" to="sv4#area8#dlu7" automaticCoupling="true" type="normal" validate="true"/>
+    </MultiMessageUnit>
+    <SelectorUnit gr:x="10" gr:y="0" id="sv4#area8#page20#seu2" name="Select course followed" entity="ent8">
+      <Selector id="sv4#area8#page20#seu2#su44" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area8#page20#seu2#su44#rcond23" name="RoleCondition23" predicate="in" implied="false" role="rel10#role20"/>
+        <RelationshipRoleCondition id="sv4#area8#page20#seu2#su44#rcond24" name="RoleCondition24" predicate="in" implied="false" role="rel9#role17"/>
+      </Selector>
+      <Link id="sv4#area8#page20#seu2#ln123" name="Flow123" to="sv4#area8#dlu7" automaticCoupling="true" type="transport" validate="true"/>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv4#area8#page20#enu43">
+          <layout:LayoutParameter name="link-position" value="right" type="unit"/>
+          <layout:LayoutParameter name="mandatory-fields" value="true" type="unit"/>
+          <layout:Field field="sv4#area8#page20#enu43#sfld10"/>
+          <layout:Link link="sv4#area8#page20#enu43#ln138" layout:linkVisibilityCondition="sv4#area8#page20#cexpr19"/>
+          <layout:Link link="sv4#area8#page20#enu43#ln144" layout:linkVisibilityCondition="sv4#area8#page20#cexpr19" layout:linkVisibilityConditionNegated="true"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv4#area8#page20#mssu19">
+          <layout:Link link="sv4#area8#page20#mssu19#ln96"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area8#page20#pwu11" layout:style="PureStyle">
+          <layout:Attribute attribute="ent6#att18"/>
+          <layout:Attribute attribute="ent6#att19"/>
+          <layout:Attribute attribute="ent6#att20"/>
+          <layout:Link link="sv4#area8#page20#pwu11#ln84"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv4#area8#page20#var16" name="var16" type="integer"/>
+  <ConditionExpression id="sv4#area8#page20#cexpr19" name="ActivationExpression 19">
+    <TextValue xml:space="preserve">return (var16==0)</TextValue>
+  </ConditionExpression>
+</Page>

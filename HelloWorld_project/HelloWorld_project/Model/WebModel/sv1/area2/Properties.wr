@@ -1,0 +1,24 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="160" gr:y="265" id="sv1#area2" name="Manage tutors approvals" landmark="true" defaultPage="sv1#area2#page12">
+  <OperationUnits>
+    <DeleteUnit id="sv1#area2#dlu6" name="Reject tutor" gr:x="535" gr:y="55" entity="User">
+      <Selector id="sv1#area2#dlu6#su15" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area2#dlu6#su15#kcond11" name="cond to reject tutor" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv1#area2#dlu6#oln6" name="OKFlow6" to="sv1#mlu3">
+        <LinkParameter id="sv1#area2#dlu6#oln6#par10" name="User Name_PASSING_username" sourceLinkParameter="sv1#area2#page12#pwu1#ln12#par8" target="sv1#mlu3.username"/>
+        <LinkParameter id="sv1#area2#dlu6#oln6#par12" name="Tutor request_Mail - Subject" sourceValue="Tutor request" target="sv1#mlu3.subject"/>
+        <LinkParameter id="sv1#area2#dlu6#oln6#par15" name="Email_PASSING_Mail - To" sourceLinkParameter="sv1#area2#page12#pwu1#ln12#par11" target="sv1#mlu3.to"/>
+      </OKLink>
+    </DeleteUnit>
+    <ModifyUnit id="sv1#area2#mfu3" name="Approve tutor" gr:x="520" gr:y="210" entity="User">
+      <Selector id="sv1#area2#mfu3#su16" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area2#mfu3#su16#kcond12" name="cond to accept tutor" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv1#area2#mfu3#oln8" name="OKFlow8" to="sv1#mlu2">
+        <LinkParameter id="sv1#area2#mfu3#oln8#par17" name="Tutor request_Mail - Subject" sourceValue="Tutor request" target="sv1#mlu2.subject"/>
+        <LinkParameter id="sv1#area2#mfu3#oln8#par18" name="Email_PASSING_Mail - To" sourceLinkParameter="sv1#area2#page12#pwu1#ln13#par16" target="sv1#mlu2.to"/>
+        <LinkParameter id="sv1#area2#mfu3#oln8#par19" name="User Name_PASSING_username" sourceLinkParameter="sv1#area2#page12#pwu1#ln13#par9" target="sv1#mlu2.username"/>
+      </OKLink>
+    </ModifyUnit>
+  </OperationUnits>
+</Area>

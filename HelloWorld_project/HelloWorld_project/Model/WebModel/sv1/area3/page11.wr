@@ -1,0 +1,32 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="605" gr:y="220" id="sv1#area3#page11" name="Edit category">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv1#area3#page11#enu14" name="Edit category" linkOrder="sv1#area3#page11#enu14#ln19">
+      <Field id="sv1#area3#page11#enu14#fld37" name="Category name" type="string" modifiable="true" preloaded="true"/>
+      <Link id="sv1#area3#page11#enu14#ln19" name="Save" to="sv1#mfu1" type="normal" validate="true">
+        <LinkParameter id="sv1#area3#page11#enu14#ln19#par29" name="Category name_Category" source="sv1#area3#page11#enu14#fld37" target="sv1#mfu1.ent9#att28"/>
+        <LinkParameter id="sv1#area3#page11#enu14#ln19#par39" name="oid_PASSING_KeyCondition7 [oid]" sourceLinkParameter="sv1#area3#page5#pwu3#ln59#par38" target="sv1#mfu1#su17#kcond7.ent9#att22"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area3#page11#enu14">
+          <layout:Field field="sv1#area3#page11#enu14#fld37"/>
+          <layout:Link link="sv1#area3#page11#enu14#ln19"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

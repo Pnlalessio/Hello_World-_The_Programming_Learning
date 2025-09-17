@@ -1,0 +1,25 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Tutor View" landmarks="sv3#area5 sv3#area9 sv3#area4 sv3#area13" homePage="sv3#area5#page7">
+  <OperationUnits>
+    <LogoutUnit id="sv3#lou7" name="Logout" gr:x="1200" gr:y="45" siteView="sv2"/>
+    <CreateUnit gr:x="405" gr:y="230" id="sv3#cru3" name="Create course" entity="ent2">
+      <OKLink id="sv3#cru3#oln10" name="OKFlow10" to="sv3#cru10">
+        <LinkParameter id="sv3#cru3#oln10#par63" name="oid_Course.oid(ForumToCourse)" source="ent2#att6Array" target="sv3#cru10.rel11#role22.ent2#att6"/>
+        <LinkParameter id="sv3#cru3#oln10#par70" name="oid_PASSING" source="ent2#att6Array" passing="true"/>
+        <LinkParameter id="sv3#cru3#oln10#par79" name="Name_PASSING" source="ent2#att7Array" passing="true"/>
+      </OKLink>
+    </CreateUnit>
+    <ModifyUnit gr:x="-5" gr:y="950" id="sv3#mfu4" name="Update course" entity="ent2">
+      <Selector id="sv3#mfu4#su33" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#mfu4#su33#kcond23" name="KeyCondition23" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#mfu4#oln48" name="OKFlow48" to="sv3#area9#page13#pwu7" automaticCoupling="true"/>
+    </ModifyUnit>
+    <CreateUnit gr:x="590" gr:y="230" id="sv3#cru10" name="Create forum" entity="ent12">
+      <OKLink id="sv3#cru10#oln12" name="OKFlow12" to="sv3#area5#page7#mssu5">
+        <LinkParameter id="sv3#cru10#oln12#par90" name="Name_PASSING_courseName" sourceLinkParameter="sv3#cru3#oln10#par79" target="sv3#area5#page7#mssu5.courseName"/>
+        <LinkParameter id="sv3#cru10#oln12#par100" name="1_var1" sourceValue="1" targetVariable="sv3#area5#page7#var1"/>
+        <LinkParameter id="sv3#cru10#oln12#par101" name="oid_PASSING" sourceLinkParameter="sv3#cru3#oln10#par70" passing="true"/>
+      </OKLink>
+    </CreateUnit>
+  </OperationUnits>
+</SiteView>

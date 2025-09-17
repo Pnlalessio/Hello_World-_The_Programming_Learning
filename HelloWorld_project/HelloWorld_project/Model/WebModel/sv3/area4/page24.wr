@@ -1,0 +1,45 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#area4#page24" name="View solution" layout:pageLayout="WRDefault/Empty" gr:x="480" gr:y="130">
+  <ContentUnits>
+    <DataUnit id="sv3#area4#page24#dau10" name="Support request solution" gr:x="0" gr:y="0" entity="ent1" displayAttributes="ent1#att5 ent1#att11 ent1#att13">
+      <Selector id="sv3#area4#page24#dau10#su50" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area4#page24#dau10#su50#kcond30" name="KeyCondition24" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area4#page24#dau10" layout:style="MetroStyle">
+          <layout:Attribute attribute="ent1#att5"/>
+          <layout:Attribute attribute="ent1#att11"/>
+          <layout:Attribute attribute="ent1#att13"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

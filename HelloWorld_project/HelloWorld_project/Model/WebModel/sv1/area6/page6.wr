@@ -1,0 +1,78 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area6#page6" name="Delete courses">
+  <ContentUnits>
+    <EntryUnit gr:x="5" gr:y="145" id="sv1#area6#page6#enu13" name="Search course" linkOrder="sv1#area6#page6#enu13#ln71">
+      <Field id="sv1#area6#page6#enu13#fld23" name="Search" type="string" modifiable="true"/>
+      <Link id="sv1#area6#page6#enu13#ln71" name="Search" to="sv1#area6#page6#pwu5" type="normal" validate="true">
+        <LinkParameter id="sv1#area6#page6#enu13#ln71#par146" name="Search_Search" source="sv1#area6#page6#enu13#fld23" target="sv1#area6#page6#pwu5#su30#acond5"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit gr:x="0" gr:y="0" id="sv1#area6#page6#pwu5" name="Courses list" sortable="true" checkable="false" useCountQuery="false" entity="ent2" linkOrder="sv1#area6#page6#pwu5#ln39" displayAttributes="ent2#att6 ent2#att7 ent2#att10 rel1#role2.userName">
+      <Selector id="sv1#area6#page6#pwu5#su30" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#area6#page6#pwu5#su30#acond5" name="Search" predicate="contains" ignoreCase="true" booleanOperator="or" implied="true" attributes="ent2#att7 ent2#att10 rel1#role2.userName"/>
+      </Selector>
+      <Link id="sv1#area6#page6#pwu5#ln39" name="Delete" to="sv1#miu7" type="normal" validate="true">
+        <LinkParameter id="sv1#area6#page6#pwu5#ln39#par98" name="oid_Course key" source="data[].ent2#att6" target="sv1#miu7.mov1#opm4#icu9#icp7"/>
+      </Link>
+    </PowerIndexUnit>
+    <MultiMessageUnit gr:x="185" gr:y="150" id="sv1#area6#page6#mssu13" name="Error"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area6#page6#enu13">
+          <layout:Field field="sv1#area6#page6#enu13#fld23"/>
+          <layout:Link link="sv1#area6#page6#enu13#ln71"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area6#page6#pwu5" layout:style="PureStyle">
+          <layout:Link link="sv1#area6#page6#pwu5#ln39"/>
+          <layout:Attribute attribute="ent2#att6"/>
+          <layout:Attribute attribute="ent2#att7"/>
+          <layout:Attribute attribute="ent2#att10"/>
+          <layout:Attribute attribute="rel1#role2.userName"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area6#page6#mssu13"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
