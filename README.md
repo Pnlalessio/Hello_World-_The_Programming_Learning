@@ -19,17 +19,7 @@ The system offers **four main views**:
 
 ## 🗄️ Domain Model
 The application is backed by an **Apache Derby Database**.  
-Key entities include:
-
-- 📘 **Course** → Course info + statistics  
-- 📂 **Content** → Lessons (with videos) & Exercises (with quizzes/options)  
-- 👨‍🎓 **Course Followed** → Tracks users enrolled in courses  
-- 💬 **Forum / Post / Comment** → Discussion system per course  
-- ✉️ **Private Messages** → User ↔ Tutor direct communication  
-- 🏷️ **Category** → Groups courses by programming language  
-- ⭐ **Feedback** → User ratings (1–5)  
-- 📑 **Curriculum** → Tutors submit CVs for approval  
-- 🆘 **Support Requests** → Users/tutors ask administrators for help  
+![Domain Model](/HelloWorld_project/HelloWorld_project/immagine_2025-09-20_210443473.png)
 
 ---
 
