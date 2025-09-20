@@ -19,8 +19,7 @@ The system offers **four main views**:
 
 ## 🗄️ Domain Model
 The application is backed by an **Apache Derby Database**.  
-![Domain Model](/HelloWorld_project/HelloWorld_project
-/immagine_2025-09-20_210443473.png)
+![Domain Model](/HelloWorld_project/HelloWorld_project/immagine_2025-09-20_210443473.png)
 
 ---
 
